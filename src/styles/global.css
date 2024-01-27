@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  body {
+    @apply bg-gray-min-lvl text-typo-high-lvl;
+  }
+  /* fonts */
+  @font-face {
+    font-family: "an-regular";
+    src: url("../fonts/an-regular.eot");
+    src: url("../fonts/an-regular.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/an-regular.woff2") format("woff2"),
+      url("../fonts/an-regular.woff") format("woff"),
+      url("../fonts/an-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  .ec-font-caption {
+    @apply font-sans;
+    @apply text-caption tracking-[0.04375rem];
+  }
+  .ec-font-base {
+    @apply font-sans;
+    @apply text-base tracking-[0.04375rem];
+  }
+  .ec-font-heading-1 {
+    @apply font-sans;
+    @apply text-heading-1 tracking-[0.04375rem];
+  }
+  .ec-font-subheading {
+    @apply font-sans;
+    @apply text-subheading tracking-[0.0375rem];
+  }
+  /* layout classes */
+  .ec-layout-visual-content,
+  .ec-layout-text-content {
+    @apply mx-auto px-4 md:px-6 xl:px-0 w-full;
+  }
+
+  .ec-layout-visual-content {
+    @apply max-w-limit-visual-content;
+  }
+
+  .ec-layout-text-content {
+    @apply max-w-limit-text-content;
+  }
+}
