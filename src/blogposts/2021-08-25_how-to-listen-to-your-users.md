@@ -14,7 +14,7 @@ On a macro there are just three ways to do this - some work better than others.
 <br />
 In this short article I'll dig a bit deeper into these three approaches.
 
-## Approach 1: Knowing better without actually knowing better
+### Approach 1: Knowing better without actually knowing better
 <br />
 I'm sure that some of you guys out there have had experiences working with somebody who thinks he knows very well what the product should look like to be the perfect solution for the users without actually having any kind of evidence. 
 <br />
@@ -25,7 +25,7 @@ Fortunately there are fewer and fewer people with that attitude, because more an
 If you in fact ARE one of those guys then I would strongly recommend to try the next two approaches to be on the safe side!
 <br /><br />
 
-## Approach 2: Collecting data from actual users to get general ideas
+### Approach 2: Collecting data from actual users to get general ideas
 <br />
 It's no secret that websites and apps are tracking our behaviour and interaction. Nevertheless there is a transparent and an intransparent way of doing so. 
 <br /><br />
@@ -34,7 +34,7 @@ Tracking simple data giving users the option to deactivate this via a (well-desi
 Another option would be to directly ask users while they actually use the product or even better: after they finished doing something on your website or app. For example asking users who bought something of your webshop how much they liked the buying process from 1 to 10 or if they found everything they needed. Giving a user options to give feedback without disturbing him is the key here. 
 <br /><br />
 
-## Approach 3: Talking to actual users to get qualitative insights
+### Approach 3: Talking to actual users to get qualitative insights
 <br />
 The richest way is to actually ask your users or your target group what they want. 
 <br /><br />
@@ -54,6 +54,6 @@ The only way to handle this is by asking specific and segregated questions. If y
 
 <br /><br /><br /><br /><br /><br />
 
-### Sources
+#### Sources
 
 * [Antonio Rotolo @Ludwig](https://ludwig.guru/blog/the-story-of-how-we-listened-to-our-users-and-made-a-better-product/)

@@ -12,7 +12,7 @@ We all know the situation when we want to change something in our lives. It can 
 
 **We forget that everything is hard before it gets easy.**
 
-## To learn = to lose at first
+### To learn = to lose at first
 <br/>
 
 As a child you learned many different things. You learned to walk, to speak, to write and even to do math. These things were hard at first too, why is it that you did not give up back then?<br /><br />
@@ -35,6 +35,6 @@ We forget that it's normal for a new thing to be hard before it gets easy.<br />
 
 <br /><br /><br /><br /><br /><br />
 
-### Sources
+#### Sources
 
 * [Gary Vee @YouTube](https://www.youtube.com/embed/JwLyWbZbbdg)

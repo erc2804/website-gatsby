@@ -11,7 +11,7 @@ verticalImgPosInPercent: 55
 This quote by business consultant <a href="https://simonsinek.com/">Simon Sinek</a> might sound a bit weird at first, as it does not make sense perfectly from a structural perspective.<br />
 Let me explain a bit more as diving deeper into this will pay off in many ways for people who are building their own business or planning to do so.
 
-## The Golden Circle
+### The Golden Circle
 
 <img style="border: 2px solid #efefef;" src="https://blog-assets.freshworks.com/freshsales-crm/wp-content/uploads/2018/08/Screen-Shot-2018-08-31-at-11.46.12-PM.png" alt="Golden Circle - image" />
 
@@ -19,15 +19,15 @@ Let me explain a bit more as diving deeper into this will pay off in many ways f
 
 The Golden Circle is the visual of Sinek's 'Why, How, What'-model. Here is a short wrap up of how Sinek describes these three questions from an organization's point of view:<br /><br />
 
-### What?
+#### What?
 
 Every organization knows what they do. They know what products or services they are offering, basically for what they get profit for. The 'what' is what many companies live and die by.<br /><br />
 
-### How?
+#### How?
 
 Only a few companies know their 'how'. They may know their USP (unique selling proposition) by doing research and finding the best way to bring their products/services to their customers.<br /><br />
 
-### Why?
+#### Why?
 
 Very few organizations know their 'why'. By 'why' Sinek does not mean 'to make profit', this is something Sinek defines as a result. A real 'why' would be the purpose, cause or belief of the organization.<br /><br />
 
@@ -42,7 +42,7 @@ The latter works way better as potential buyers get the intention they are suppo
 **So find your 'why' and start from there!**
 <br /><br /><br /><br /><br /><br />
 
-### Sources
+#### Sources
 
 * [Simon Sinek @TED](https://www.youtube.com/watch?v=qp0HIF3SfI4)
 * [Babak Mohammadi @LinkedIn](https://www.linkedin.com/pulse/concept-golden-circle-by-simon-sinek-babak-mohammadi/)

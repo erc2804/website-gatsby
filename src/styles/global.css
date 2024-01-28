@@ -53,19 +53,28 @@
   .prose {
     @apply ec-font-base;
     img {
-      @apply mt-4 max-w-full;
+      @apply mt-4 max-w-full w-full;
+    }
+    .blog-video-wrapper {
+      @apply mt-4 aspect-video relative;
+      & iframe {
+        @apply absolute inset-0 size-full;
+      }
     }
     figcaption {
-      @apply mb-8 text-sm;
+      @apply mt-1 mb-8 text-sm;
     }
     p {
       @apply m-0;
     }
-    h2 {
-      @apply mt-24 mb-2 first:mt-8;
-    }
     h3 {
-      @apply mb-1;
+      @apply mt-24 mb-2 first:mt-8 ec-font-subheading font-bold;
+    }
+    h4 {
+      @apply mb-2 font-bold;
+    }
+    a {
+      @apply text-brand-green-high-lvl hover:underline;
     }
   }
 }
