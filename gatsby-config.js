@@ -27,5 +27,18 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `ercancicek`,
+        short_name: `ercancicek`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#5cdb95`,
+        display: `standalone`,
+        icon: `src/images/logo_original.png`
+      },
+    },
   ]
 };
