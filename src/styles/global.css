@@ -56,8 +56,8 @@
       @apply mt-4 max-w-full w-full;
     }
     .blog-video-wrapper {
-      @apply mt-4 aspect-video relative;
-      & iframe {
+      @apply mt-4 aspect-video w-full relative;
+      iframe {
         @apply absolute inset-0 size-full;
       }
     }
