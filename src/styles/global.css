@@ -49,4 +49,23 @@
   .ec-layout-text-content {
     @apply max-w-limit-text-content;
   }
+  /* prose */
+  .prose {
+    @apply ec-font-base;
+    img {
+      @apply mt-4 max-w-full;
+    }
+    figcaption {
+      @apply mb-8 text-sm;
+    }
+    p {
+      @apply m-0;
+    }
+    h2 {
+      @apply mt-24 mb-2 first:mt-8;
+    }
+    h3 {
+      @apply mb-1;
+    }
+  }
 }
