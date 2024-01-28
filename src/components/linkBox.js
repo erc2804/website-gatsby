@@ -5,7 +5,7 @@ const LinkBox = ({ label, url, bgColorClass, isSmall, children }) => {
     <a
       href={url}
       className={`flex justify-center ${
-        isSmall ? "aspect-[4/1] md:aspect-[2.5/1]" : "aspect-square w-full"
+        isSmall ? "aspect-[2.5/1]" : "aspect-square w-full"
       } ${bgColorClass} rounded-md overflow-hidden relative group`}
       rel="noopener noreferrer"
     >

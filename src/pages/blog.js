@@ -33,7 +33,7 @@ export default function Blog({ data }) {
 
   return (
     <Layout>
-      <main className="ec-layout-visual-content mt-24">
+      <main className="ec-layout-visual-content my-24">
         <PageHeadline>Blog</PageHeadline>
         <div className="flex flex-col gap-10">
           {blogPosts.map((blogPost, idx) => (
@@ -123,4 +123,4 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = () => <SEO title="Blog" />
+export const Head = () => <SEO title="Blog" pathname="/blog" />

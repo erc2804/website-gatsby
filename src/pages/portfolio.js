@@ -85,9 +85,9 @@ export default function Portfolio({ data }) {
   }, {})
   return (
     <Layout>
-      <main className="ec-layout-visual-content mt-24">
+      <main className="ec-layout-visual-content my-24">
         <PageHeadline>Portfolio</PageHeadline>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           {allPortfolioBoxes.map((portfolioBox, idx) => (
             <LinkBox
               key={idx}

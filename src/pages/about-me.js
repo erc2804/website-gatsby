@@ -47,7 +47,7 @@ const allSocialMediaBoxes = [
 export default function Aboutme() {
   return (
     <Layout>
-      <main className="ec-layout-visual-content mt-24">
+      <main className="ec-layout-visual-content my-24">
         <PageHeadline>About Me</PageHeadline>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10 md:gap-y-20">
           <div className="max-w-40 md:max-w-none size-fit rounded-full overflow-hidden relative">
@@ -100,4 +100,4 @@ export default function Aboutme() {
   )
 }
 
-export const Head = () => <SEO title="About Me" />
+export const Head = () => <SEO title="About Me" pathname="/about-me" />
