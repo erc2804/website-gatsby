@@ -1,8 +1,8 @@
-import React, { useRef, useEffect, useState, useCallback } from "react";
-import { Link } from "gatsby";
-import NavLink from "./navLink";
-import EcLogo from "./ecLogo";
-import BurgerMenu from "./burgerMenu";
+import React, { useRef, useEffect, useState, useCallback } from "react"
+import { Link } from "gatsby"
+import NavLink from "./navLink"
+import EcLogo from "./ecLogo"
+import BurgerMenu from "./burgerMenu"
 
 const navElements = [
   {
@@ -17,40 +17,46 @@ const navElements = [
     label: "About Me",
     to: "/about-me",
   },
-];
+]
 
 const Header = ({ onDark }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const prevWindowWidth = useRef(windowWidth);
+  const [isOpen, setIsOpen] = useState(false)
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  )
+  const prevWindowWidth = useRef(windowWidth)
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   const handleResize = useCallback(() => {
-    setWindowWidth(window.innerWidth);
-    if (prevWindowWidth.current < 768 && window.innerWidth >= 768) {
-      setIsOpen(false);
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth)
+      if (prevWindowWidth.current < 768 && window.innerWidth >= 768) {
+        setIsOpen(false)
+      }
+      prevWindowWidth.current = window.innerWidth
     }
-    prevWindowWidth.current = window.innerWidth;
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add("overflow-hidden");
+      document.body.classList.add("overflow-hidden")
     } else {
-      document.body.classList.remove("overflow-hidden");
+      document.body.classList.remove("overflow-hidden")
     }
-  }, [isOpen]);
+  }, [isOpen])
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize)
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [handleResize]);
+      return () => {
+        window.removeEventListener("resize", handleResize)
+      }
+    }
+  }, [handleResize])
 
   return (
     <header
@@ -87,7 +93,7 @@ const Header = ({ onDark }) => {
         </div>
       )}
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

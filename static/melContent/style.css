@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'super_mario_256';
+    src: url('../melFonts/supermario256-webfont.woff2') format('woff2'),
+         url('../melFonts/supermario256-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#bg_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #6b88fe;
+  overflow: hidden;
+}
+
+/* --- overlay & overlay btn --- */
+#pipe {
+  position: absolute;
+  right: 1em;
+  top: -5%;
+  height: 10%;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  z-index: 3;
+}
+
+#instr_overlay_btn {
+  position: absolute;
+  top: -10%;
+  right: 1em;
+  height: 10%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#instr_overlay {
+  font-family: 'super_mario_256';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  letter-spacing: .05em;
+  text-align: center;
+  font-size: 1.5em;
+  z-index: 99;
+}
+
+#instr_overlay > span:nth-child(2) {
+  margin-top: 1em;
+}
+
+#instr_overlay > span:last-child {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  font-size: .7em;
+}
+
+/* --- world elements --- */
+#bg_ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background-image: url('img/world_block.png');
+  background-repeat: repeat;
+  background-size: 5%;
+}
+
+.onGround {
+  position: absolute;
+  bottom: 10%;
+  z-index: 1;
+}
+
+#bushes {
+  left: 5%;
+}
+#hill {
+  left: 40%;
+}
+#bush {
+  left: 80%;
+}
+
+#super-mel {
+  position: absolute;
+  left: -10%;
+  width: 62.5px; /* placeholder */
+  height: 105.5px; /* placeholder */
+  z-index: 2;
+}
+
+.world_block {
+  position: absolute;
+  bottom: 35%; /* placeholder */
+  width: 75px; /* placeholder */
+  height: 75px; /* placeholder */
+  z-index: 1;
+}
+
+.world_coin {
+  position: absolute;
+  z-index: 3;
+}
+
+#block_1, #block_1_inactive, #coin_1 {
+  left: 25%;
+}
+#block_2, #block_2_inactive, #coin_2 {
+  left: 50%;
+}
+#block_3, #block_3_inactive, #coin_3 {
+  left: 75%;
+}
+
+.clouds {
+  position: absolute;
+  width: 40%;
+  z-index: 4;
+}
+
+.cloud_bottom {
+  position: absolute;
+  width: 10%;
+}
+
+#cloud_1 {
+  bottom: 80%;
+  left: 8%;
+}
+#cloud_bottom_1 {
+  bottom: 65%;
+  left: 25%;
+}
+#cloud_2 {
+  bottom: 55%;
+  left: 33%;
+}
+#cloud_bottom_2 {
+  bottom: 45%;
+  left: 50%;
+}
+#cloud_3 {
+  bottom: 75%;
+  left: 58%;
+}
+#cloud_bottom_3 {
+  bottom: 60%;
+  left: 75%;
+}
+
+/* --- media queries --- */
+@media all and (orientation: landscape) {
+  .clouds {
+    width: 20%;
+  }
+  .cloud_bottom {
+    width: 5%;
+  }
+  #cloud_1 {
+    left: 17%;
+  }
+  #cloud_2 {
+    bottom: 63%;
+    left: 42%;
+  }
+  #cloud_bottom_2 {
+    bottom: 48%;
+  }
+  #cloud_3 {
+    left: 66%;
+  }
+}
+
+/* --- utilities --- */
+.deepHide {
+  display: none !important;
+}
+
+.flex-it {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* --- animations --- */
+.wobbleAnim {
+  -webkit-animation: wobble 1s 1;
+  animation: wobble 1s 1;
+}
+
+@-webkit-keyframes wobble {
+  16.65% {
+    -webkit-transform: translateY(-8px);
+  }
+  33.3% {
+    -webkit-transform: translateY(6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(-4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes wobble {
+  16.65% {
+    -webkit-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  33.3% {
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+    transform: translateY(-1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Layout from "../components/layout";
-import { SEO } from "../components/seo";
-import bgLandscapeImg from "../images/index/bg-landscape.jpg";
-import bgPortraitImg from "../images/index/bg-portrait.jpg";
+import React, { useState, useEffect } from "react"
+import Layout from "../components/layout"
+import { SEO } from "../components/seo"
+import bgLandscapeImg from "../images/index/bg-landscape.jpg"
+import bgPortraitImg from "../images/index/bg-portrait.jpg"
 
 const allSkills = [
   {
@@ -21,70 +21,72 @@ const allSkills = [
     label: "Adobe CC",
     url: "https://www.adobe.com/creativecloud.html",
   },
-];
+]
 
-const finalAdpillarTexts = ["Designer", "Developer"];
+const finalAdpillarTexts = ["Designer", "Developer"]
 
 export default function Home() {
-  const [currentAdpillarText, setCurrentAdpillarText] = useState("");
-  let initialAdpillarTimeout = null;
-  let adpillarWordIdx = 0;
-  let adpillarIntval = null;
-  let clearAdpillarIntval = null;
-  let nextAdpillarTimeout = null;
-  let nextAdpillarWordTimeout = null;
+  const [currentAdpillarText, setCurrentAdpillarText] = useState("")
+  let initialAdpillarTimeout = null
+  let adpillarWordIdx = 0
+  let adpillarIntval = null
+  let clearAdpillarIntval = null
+  let nextAdpillarTimeout = null
+  let nextAdpillarWordTimeout = null
 
   useEffect(() => {
-    initialAdpillarTimeout = setTimeout(
-      () => startAdpillarAnim(adpillarWordIdx),
-      300
-    );
+    if (typeof window !== "undefined") {
+      initialAdpillarTimeout = setTimeout(
+        () => startAdpillarAnim(adpillarWordIdx),
+        300
+      )
+    }
 
     return () => {
-      clearInterval(adpillarIntval);
-      clearInterval(clearAdpillarIntval);
-      clearTimeout(initialAdpillarTimeout);
-      clearTimeout(nextAdpillarTimeout);
-      clearTimeout(nextAdpillarWordTimeout);
-    };
-  }, []);
+      clearInterval(adpillarIntval)
+      clearInterval(clearAdpillarIntval)
+      clearTimeout(initialAdpillarTimeout)
+      clearTimeout(nextAdpillarTimeout)
+      clearTimeout(nextAdpillarWordTimeout)
+    }
+  }, [])
 
   const startAdpillarAnim = (idx, finalAdpillarIdx = 0) => {
     if (finalAdpillarTexts[idx][finalAdpillarIdx] === undefined) {
-      nextAdpillarWord();
-      return;
+      nextAdpillarWord()
+      return
     }
 
     setCurrentAdpillarText(
       (currentText) => currentText + finalAdpillarTexts[idx][finalAdpillarIdx]
-    );
+    )
 
-    setTimeout(() => startAdpillarAnim(idx, finalAdpillarIdx + 1), 150);
-  };
+    setTimeout(() => startAdpillarAnim(idx, finalAdpillarIdx + 1), 150)
+  }
 
   const nextAdpillarWord = () => {
-    adpillarWordIdx++;
+    adpillarWordIdx++
     if (finalAdpillarTexts[adpillarWordIdx]) {
       nextAdpillarWordTimeout = setTimeout(() => {
-        clearAdpillar();
-      }, 2000);
+        clearAdpillar()
+      }, 2000)
     }
-  };
+  }
 
   const clearAdpillar = () => {
     setCurrentAdpillarText((currentText) => {
       if (currentText.length === 0) {
         nextAdpillarTimeout = setTimeout(() => {
-          startAdpillarAnim(adpillarWordIdx);
-        }, 500);
-        return currentText;
+          startAdpillarAnim(adpillarWordIdx)
+        }, 500)
+        return currentText
       }
 
-      const newText = currentText.slice(0, -1);
-      setTimeout(() => clearAdpillar(), 50);
-      return newText;
-    });
-  };
+      const newText = currentText.slice(0, -1)
+      setTimeout(() => clearAdpillar(), 50)
+      return newText
+    })
+  }
 
   return (
     <Layout onDark>
@@ -107,7 +109,11 @@ export default function Home() {
         <div className="pt-40 md:pt-52 xl:pt-40 2xl:pt-52 flex flex-col xl:flex-row ec-font-subheading">
           {allSkills.map((skill, idx) => (
             <div key={skill.label}>
-              <a href={skill.url} className="text-brand-sand hover:text-gray-min-lvl" rel="noopener noreferrer">
+              <a
+                href={skill.url}
+                className="text-brand-sand hover:text-gray-min-lvl"
+                rel="noopener noreferrer"
+              >
                 &nbsp;{skill.label}
               </a>
               {idx < allSkills.length - 1 && (
@@ -128,7 +134,7 @@ export default function Home() {
         />
       </picture>
     </Layout>
-  );
+  )
 }
 
-export const Head = () => <SEO title="Home" />;
+export const Head = () => <SEO title="Home" />

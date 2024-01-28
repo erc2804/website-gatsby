@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
 const BurgerMenu = ({ onDark, isOpen }) => {
   const burgerMenuLineClasses = `absolute w-full h-[7px] rounded-full transform origin-right ${
     onDark && !isOpen ? "bg-brand-sand" : "bg-gray-high-lvl"
-  } transition-all`;
+  } transition-all`
 
   return (
     <div className="size-8 relative">
@@ -23,7 +23,7 @@ const BurgerMenu = ({ onDark, isOpen }) => {
         } duration-300`}
       />
     </div>
-  );
-};
+  )
+}
 
-export default BurgerMenu;
+export default BurgerMenu

@@ -1,15 +1,15 @@
-import React from "react";
-import Layout from "../components/layout";
-import { SEO } from "../components/seo";
-import LinkBox from "../components/linkBox";
-import PageHeadline from "../components/pageHeadline";
-import { LinkedInIcon } from "../components/icons/linkedinIcon";
-import { XingIcon } from "../components/icons/xingIcon";
-import { MailSquareIcon } from "../components/icons/mailSquareIcon";
-import { StaticImage } from "gatsby-plugin-image";
+import React from "react"
+import Layout from "../components/layout"
+import { SEO } from "../components/seo"
+import LinkBox from "../components/linkBox"
+import PageHeadline from "../components/pageHeadline"
+import { LinkedInIcon } from "../components/icons/linkedinIcon"
+import { XingIcon } from "../components/icons/xingIcon"
+import { MailSquareIcon } from "../components/icons/mailSquareIcon"
+import { StaticImage } from "gatsby-plugin-image"
 
 const linkboxAnimClasses =
-  "my-6 scale-[0.80] xl:scale-100 xl:group-hover:scale-[0.80] transition-transform duration-200";
+  "my-6 scale-[0.80] xl:scale-100 xl:group-hover:scale-[0.80] transition-transform duration-200"
 
 const allSocialMediaBoxes = [
   {
@@ -42,7 +42,7 @@ const allSocialMediaBoxes = [
     ),
     bgColorClass: "bg-brand-green-medium-lvl",
   },
-];
+]
 
 export default function Aboutme() {
   return (
@@ -97,7 +97,7 @@ export default function Aboutme() {
         </div>
       </main>
     </Layout>
-  );
+  )
 }
 
-export const Head = () => <SEO title="About Me" />;
+export const Head = () => <SEO title="About Me" />

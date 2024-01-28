@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const EcLogo = ({ onDark, isOpen }) => (
   <svg
@@ -41,6 +41,6 @@ const EcLogo = ({ onDark, isOpen }) => (
       />
     </g>
   </svg>
-);
+)
 
-export default EcLogo;
+export default EcLogo

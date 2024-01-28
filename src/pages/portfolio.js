@@ -1,16 +1,16 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import { SEO } from "../components/seo";
-import LinkBox from "../components/linkBox";
-import PageHeadline from "../components/pageHeadline";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { JsFiddleIcon } from "../components/icons/jsFiddleIcon";
-import { CodepenIcon } from "../components/icons/codepenIcon";
-import { LottieIcon } from "../components/icons/lottieIcon";
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import { SEO } from "../components/seo"
+import LinkBox from "../components/linkBox"
+import PageHeadline from "../components/pageHeadline"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { JsFiddleIcon } from "../components/icons/jsFiddleIcon"
+import { CodepenIcon } from "../components/icons/codepenIcon"
+import { LottieIcon } from "../components/icons/lottieIcon"
 
 const linkboxAnimClasses =
-  "my-6 scale-[0.80] xl:scale-100 xl:group-hover:scale-[0.80] transition-transform duration-200";
+  "my-6 scale-[0.80] xl:scale-100 xl:group-hover:scale-[0.80] transition-transform duration-200"
 
 const allPortfolioBoxes = [
   {
@@ -76,13 +76,13 @@ const allPortfolioBoxes = [
     image: "melmenu",
     bgColorClass: "bg-brand-green-high-lvl",
   },
-];
+]
 
 export default function Portfolio({ data }) {
   const images = data.allFile.edges.reduce((acc, edge) => {
-    acc[edge.node.name] = edge.node.childImageSharp.gatsbyImageData;
-    return acc;
-  }, {});
+    acc[edge.node.name] = edge.node.childImageSharp.gatsbyImageData
+    return acc
+  }, {})
   return (
     <Layout>
       <main className="ec-layout-visual-content mt-24">
@@ -99,7 +99,7 @@ export default function Portfolio({ data }) {
               {portfolioBox.image ? (
                 <GatsbyImage
                   image={images[portfolioBox.image]}
-                  alt={portfolioBox.label}
+                  alt={`smartphone image of the portfolio entry: ${portfolioBox.label}`}
                   imgStyle={{ objectFit: `contain` }}
                   className={linkboxAnimClasses}
                 />
@@ -113,7 +113,7 @@ export default function Portfolio({ data }) {
         </div>
       </main>
     </Layout>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -134,6 +134,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
 
-export const Head = () => <SEO title="Portfolio" pathname="/portfolio" />;
+export const Head = () => <SEO title="Portfolio" pathname="/portfolio" />

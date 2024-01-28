@@ -1,20 +1,20 @@
-import React from "react";
-import { useSiteMetadata } from "../hooks/use-site-metadata";
-import ecLogo from "../images/logo_original.png";
+import React from "react"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+import ecLogo from "../images/logo_original.png"
 
 export const SEO = ({ title, description, pathname, children }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
     siteUrl,
-  } = useSiteMetadata();
+  } = useSiteMetadata()
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: ecLogo,
     url: `${siteUrl}${pathname || ``}`,
-  };
+  }
 
   return (
     <>
@@ -31,5 +31,5 @@ export const SEO = ({ title, description, pathname, children }) => {
       <link rel="canonical" href={seo.url} />
       {children}
     </>
-  );
-};
+  )
+}
