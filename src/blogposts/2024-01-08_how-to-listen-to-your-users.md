@@ -1,6 +1,6 @@
 ---
-id: 1629846000
-date: "2021-08-25"
+id: 1704672000
+date: "2024-01-08"
 title: "How to listen to your users and make better products"
 imageUrl: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80"
 verticalImgPosInPercent: 85
@@ -45,7 +45,7 @@ Another important aspect is HOW you ask. Users perfectly know what they want, bu
 
 **“If I had asked people what they wanted, they would have said faster horses.”**
 
-<img style="border: 2px solid #efefef;" src="http://uxmag.com/sites/default/files/Uxmag-articles/2021-Articles/HowWeListenedtoOurUsers/1_6C21-L8-MfKqHsY8XSukiw.jpeg" alt="Ford Motors - image" />
+<img style="border: 2px solid #efefef;" src="https://uxmag.com/wp-content/uploads/files/Uxmag-articles/2021-Articles/HowWeListenedtoOurUsers/1_6C21-L8-MfKqHsY8XSukiw.jpeg" alt="Ford Motors - image" />
 
 <figcaption>I wanted to add this because I just like that image. <a href="https://uxmag.com/articles/how-we-listened-to-our-users-and-made-a-better-product">Source</a></figcaption>
 

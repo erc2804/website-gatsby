@@ -37,11 +37,7 @@ This can lead the potential buyer to become a lost opportunity for you, maybe on
 ### Choices
 <br />
 
-People like having a choice. Choices are giving us the feeling of being in control and nothing let's us be more positive then the feeling of being in control. Be sure give choices as often as possible, but **not too many** as it quickly gets overchallenging. The magic number 4 from above is a good amount here too.<br /><br />
-
-<img style="border: 2px solid #efefef;" src="https://img.business.com/custom/of=png/aHR0cDovL3d3dy5idXNpbmVzcy5jb20vaW1hZ2VzL2NvbnRlbnQvNTY5LzY3MzQzMzI4N2IxZmI3YWI4ZTc5OS9hYXJvbjQuNzQyYnk2MjcucG5nIDc0Mnc=" alt="Choices - image" />
-
-<figcaption>It is shown that when offered three options people tend to choose the middle one. <a href="https://www.business.com/articles/the-psychology-of-choice-and-how-your-startup-can-leverage-it/">Source</a></figcaption>
+People like having a choice. Choices are giving us the feeling of being in control and nothing let's us be more positive then the feeling of being in control. Be sure give choices as often as possible, but **not too many** as it quickly gets overchallenging. The magic number 4 from above is a good amount here too.<br />
 
 ### flow state
 <br />

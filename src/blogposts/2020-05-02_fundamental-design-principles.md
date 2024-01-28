@@ -10,7 +10,7 @@ verticalImgPosInPercent: 45
 ### Space
 <br />
 
-### 1. Proximity relationships
+#### 1. Proximity relationships
 Elements which are closer to each other than to other elements are perceived as being more related. <br/>
 For example: There should be more space between different paragraphs than between the lines inside a paragraph.
 <br /><br />
@@ -20,9 +20,9 @@ Try to use as much negative space as you can in your designs.<br/>
 Negative space clears out your design and makes it more intuitive.<br/>
 Putting too many elements into limited space is like trying to listen to several people at once, it will be really hard to follow.
 
-![](https://bwekl5gwew43yjddqozlr2y-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/Screen-Shot-2018-01-12-at-4.12.45-PM.png)
+<img style="border: 2px solid #efefef;" src="https://elementor.com/cdn-cgi/image/f=auto,w=720/marketing/wp-content/uploads/sites/9/2021/06/6-google-white-space-design.png" alt="Negative space - image" />
 
-<figcaption>Apple is a great example for the usage of negative space.</figcaption>
+<figcaption>Google is a great example for the usage of negative space. <a href="https://elementor.com/blog/white-space-web-design/">Source</a></figcaption>
 <br /><br />
 
 #### 3. Order
@@ -92,3 +92,4 @@ To make sure the colors contrasts are fine turn your view to black and white and
 #### Sources
 
 * [Bethany Loginow @brownboxbranding.com](https://www.brownboxbranding.com/10-web-design-trends-rise-2018/screen-shot-2018-01-12-at-4-12-45-pm/)
+* [Matan Naveh @elementor](https://elementor.com/blog/white-space-web-design/)
