@@ -128,7 +128,7 @@ export const pageQuery = graphql`
         node {
           name
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, placeholder: NONE)
+            gatsbyImageData(layout: CONSTRAINED, placeholder: NONE, quality: 100)
           }
         }
       }
