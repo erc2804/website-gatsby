@@ -3,27 +3,13 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `ercancicek`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Welcome`,
+    description: `Ercan Cicek is a UX Designer and UX Developer based in Dusseldorf with more than eight years of work experience in conceptualizing and implementing web applications in the frontend.`,
+    siteUrl: `https://www.ercancicek.com`,
   },
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
-    },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
-    },
-    __key: "pages"
-  }]
+  plugins: [
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+  ]
 };

@@ -47,12 +47,25 @@ module.exports = {
           "subtle-lvl": "#F3F4F6",
           "min-lvl": "#FFFFFF",
         },
+        transparency: {
+          "medium-lvl": "rgba(0, 0, 0, 0.66)",
+          "low-lvl": "rgba(0, 0, 0, 0.33)",
+        },
         typo: {
           "high-lvl": "#332A2A",
           "medium-lvl": "#645454",
           "low-lvl": "#B6A0A0",
         },
       },
+      animation: {
+        'blink': 'blink 1s step-end infinite',
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: 0 },
+          '50%': { opacity: 1 },
+        }
+      }
     },
   },
 };
