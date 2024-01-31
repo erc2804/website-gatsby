@@ -18,10 +18,10 @@ const Types = {
 }
 
 const ColorClassesPerType = {
-  WEB: "bg-brand-green-high-lvl",
-  APP: "bg-brand-green-low-lvl",
-  SHOP: "bg-brand-green-medium-lvl",
   OTHER: "bg-brand-blue",
+  APP: "bg-brand-green-low-lvl",
+  SHOP: "bg-brand-green-high-lvl",
+  WEB: "bg-brand-green-medium-lvl",
 }
 
 const linkboxAnimClasses =
@@ -29,6 +29,48 @@ const linkboxAnimClasses =
 const IconDefClasses = "fill-brand-sand size-full max-h-[66%]"
 
 const allPortfolioBoxes = [
+  {
+    type: Types.APP,
+    label: "iOS app, CasualVocab",
+    url: "https://apps.apple.com/de/app/casualvocab-widget-japanese/id1622203836?l=en",
+    image: "casualvocab",
+    techs: ["Swift", "SwiftUI"],
+  },
+  {
+    type: Types.APP,
+    label: "Flutter app, Welliba",
+    url: "https://apps.apple.com/de/app/welliba-companion/id1597739395",
+    image: "welliba_app",
+    techs: ["Flutter", "Figma", "UX-Design"],
+  },
+  {
+    type: Types.SHOP,
+    label: "Webshop, kindeskinder",
+    url: "https://kindeskinder.biz/",
+    image: "kindeskinder",
+    techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
+  },
+  {
+    type: Types.SHOP,
+    label: "Webshop, PuraVida & Oswald",
+    url: "https://oswald-puravida-wein.de/",
+    image: "pvoswald",
+    techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
+  },
+  {
+    type: Types.WEB,
+    label: "Website, HIT",
+    url: "https://www.hit.de/",
+    image: "hit",
+    techs: ["Vue.js", "Nuxt.js", "TailwindCSS", "Pimcore", "Figma"],
+  },
+  {
+    type: Types.WEB,
+    label: "Website, tech demo",
+    url: "https://ercancicek.com/mel-menu.html",
+    image: "melmenu",
+    techs: ["jQuery", "JavaScript", "CSS"],
+  },
   {
     type: Types.OTHER,
     label: "my fiddles",
@@ -52,41 +94,6 @@ const allPortfolioBoxes = [
     icon: (
       <LottieIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
     ),
-  },
-  {
-    type: Types.APP,
-    label: "iOS app, CasualVocab",
-    url: "https://apps.apple.com/de/app/casualvocab-widget-japanese/id1622203836?l=en",
-    image: "casualvocab",
-    techs: ["Swift", "SwiftUI"],
-  },
-  {
-    type: Types.WEB,
-    label: "Website, HIT",
-    url: "https://www.hit.de/",
-    image: "hit",
-    techs: ["Vue.js", "Nuxt.js", "TailwindCSS", "Pimcore", "Figma"],
-  },
-  {
-    type: Types.SHOP,
-    label: "Webshop, kindeskinder",
-    url: "https://kindeskinder.biz/",
-    image: "kindeskinder",
-    techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
-  },
-  {
-    type: Types.SHOP,
-    label: "Webshop, PuraVida & Oswald",
-    url: "https://oswald-puravida-wein.de/",
-    image: "pvoswald",
-    techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
-  },
-  {
-    type: Types.WEB,
-    label: "Website, tech demo",
-    url: "https://ercancicek.com/mel-menu.html",
-    image: "melmenu",
-    techs: ["jQuery", "JavaScript", "CSS"],
   },
   {
     type: Types.OTHER,
