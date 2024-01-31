@@ -17,7 +17,7 @@ When presenting keep in mind that even if there is no finelined pattern on your 
 
 Brains can handle information only in blocks. Too much information coming in at once will be flushed out of the brain with ease. **The magic number here is 4**. That's why IBAN numbers, PIN Codes etc. are often shown in blocks of 4, to make them easier to be remembered.<br /><br />
 
-<img style="border: 2px solid #efefef;" src="https://cdn.tutsplus.com/webdesign/uploads/legacy/004_Z_Layout/3.jpg" alt="The Z-Pattern - image" />
+<img style="border: 2px solid #efefef;" src="https://cdn.tutsplus.com/webdesign/uploads/legacy/004_Z_Layout/3.jpg" alt="The Z-Pattern" />
 
 <figcaption>In webdesign there is for example the so called Z-layout or Z-pattern. <a href="https://webdesign.tutsplus.com/articles/understanding-the-z-layout-in-web-design--webdesign-28">Source</a></figcaption>
 

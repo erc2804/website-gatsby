@@ -24,6 +24,7 @@ const Header = ({ onDark }) => {
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   )
+  const [isScrolled, setIsScrolled] = useState(false)
   const prevWindowWidth = useRef(windowWidth)
 
   const toggleMenu = () => {
@@ -37,6 +38,12 @@ const Header = ({ onDark }) => {
         setIsOpen(false)
       }
       prevWindowWidth.current = window.innerWidth
+    }
+  }, [])
+
+  const handleScroll = useCallback(() => {
+    if (typeof window !== "undefined") {
+      setIsScrolled(window.scrollY > 40)
     }
   }, [])
 
@@ -58,11 +65,21 @@ const Header = ({ onDark }) => {
     }
   }, [handleResize])
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll)
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll)
+      }
+    }
+  }, [handleScroll])
+
   return (
     <header
       className={`fixed top-0 left-0 w-full flex flex-col ${
         isOpen ? "h-dvh bg-gray-min-lvl" : ""
-      } ${!onDark ? "bg-gray-min-lvl" : ""} z-50`}
+      } ${!onDark ? "bg-gray-min-lvl" : ""} ${isScrolled && !onDark ? "shadow-md" : ""} transition-all z-50`}
     >
       <nav className="flex-none px-6 py-5 flex flex-row items-center justify-between md:justify-start md:gap-12 h-24">
         <Link to="/" aria-label="Home">

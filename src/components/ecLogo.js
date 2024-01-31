@@ -36,7 +36,7 @@ const EcLogo = ({ onDark, isOpen }) => (
         strokeLinecap="round"
         strokeLinejoin="round"
         className={`${
-          onDark && !isOpen ? "stroke-brand-sand" : "stroke-[#46237A]"
+          onDark && !isOpen ? "stroke-brand-sand" : "stroke-brand-purple"
         } transition-colors`}
       />
     </g>

@@ -21,7 +21,7 @@ As we get older it seems that we become more and more resitant to **the learning
 
 Enjoying to lose is a very rare skill nowadays. Without the joy of losing it's not possible to learn something new or to surpass oneself. So do not get tired to lose and do not be afraid of it. Take yourself as a child as your role model when it comes to try something new. When we were trying to walk we stood up and fell many times before it finally worked. The first time we rode a bike we risked falling and hurting ourselves but still most of us are able to ride a bike today.<br /><br />
 
-<div class="blog-video-wrapper"><iframe src="https://www.youtube.com/embed/P2wpyKOBTDM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div className="blog-video-wrapper"><iframe src="https://www.youtube.com/embed/P2wpyKOBTDM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 <figcaption>Gary Vaynerchuk tells you how it should be <a href="https://www.youtube.com/watch?v=P2wpyKOBTDM">Source</a></figcaption>
 

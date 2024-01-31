@@ -13,7 +13,7 @@ Let me explain a bit more as diving deeper into this will pay off in many ways f
 
 ### The Golden Circle
 
-<img style="border: 2px solid #efefef;" src="https://blog-assets.freshworks.com/freshsales-crm/wp-content/uploads/2018/08/Screen-Shot-2018-08-31-at-11.46.12-PM.png" alt="Golden Circle - image" />
+<img style="border: 2px solid #efefef;" src="https://blog-assets.freshworks.com/freshsales-crm/wp-content/uploads/2018/08/Screen-Shot-2018-08-31-at-11.46.12-PM.png" alt="Golden Circle" />
 
 <figcaption>A concise visual regarding the Golden Circle. <a href="https://www.freshworks.com/freshsales-crm/resources/summary-of-start-with-why-blog/">Source</a></figcaption>
 

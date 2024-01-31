@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { SEO } from "../components/seo"
+import { Seo } from "../components/seo"
 import LinkBox from "../components/linkBox"
 import PageHeadline from "../components/pageHeadline"
 import { LinkedInIcon } from "../components/icons/linkedinIcon"
@@ -33,7 +33,7 @@ const allSocialMediaBoxes = [
     bgColorClass: "bg-brand-green-high-lvl",
   },
   {
-    label: "Mail: erc2804@outlook.de",
+    label: "Email",
     url: "mailto:erc2804@outlook.de",
     icon: (
       <MailSquareIcon
@@ -41,19 +41,20 @@ const allSocialMediaBoxes = [
       />
     ),
     bgColorClass: "bg-brand-green-medium-lvl",
+    descText: "erc2804@outlook.de"
   },
 ]
 
 export default function Aboutme() {
   return (
     <Layout>
-      <main className="ec-layout-visual-content my-24">
+      <main className="ec-layout-visual-content py-24">
         <PageHeadline>About Me</PageHeadline>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10 md:gap-y-20">
           <div className="max-w-40 md:max-w-none size-fit rounded-full overflow-hidden relative">
             <StaticImage
               src="../images/about-me/ercancicek.jpg"
-              alt="Ercan Cicek profile picture"
+              alt="Ercan Cicek profile"
               className="aspect-square rounded-full z-10"
               objectPosition={"40%"}
             />
@@ -87,6 +88,7 @@ export default function Aboutme() {
               key={idx}
               label={socialMediaBox.label}
               url={socialMediaBox.url}
+              descText={socialMediaBox.descText}
               bgColorClass={socialMediaBox.bgColorClass}
             >
               <div className="flex justify-center items-center size-full">
@@ -100,4 +102,4 @@ export default function Aboutme() {
   )
 }
 
-export const Head = () => <SEO title="About Me" pathname="/about-me" />
+export const Head = () => <Seo title="About Me" pathname="/about-me" />

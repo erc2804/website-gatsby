@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
-import { SEO } from "../components/seo"
+import { Seo } from "../components/seo"
 import bgLandscapeImg from "../images/index/bg-landscape.jpg"
 import bgPortraitImg from "../images/index/bg-portrait.jpg"
 
@@ -90,7 +90,7 @@ export default function Home() {
 
   return (
     <Layout onDark>
-      <div class="min-h-dvh relative">
+      <div className="min-h-dvh relative">
         <main className="z-30 relative pt-24 ps-8 md:ps-14 xl:ps-32 2xl:ps-52">
           <h1 className="pt-36 md:pt-52 xl:pt-40 2xl:pt-52 flex flex-col gap-2 text-4xl md:text-7xl xl:text-8xl tracking-[0.125rem] uppercase overflow-hidden">
             <span>
@@ -130,7 +130,7 @@ export default function Home() {
           <source media="(min-width: 1280px)" srcSet={bgLandscapeImg} />
           <img
             src={bgPortraitImg}
-            alt="Decorative background image"
+            alt="Decorative background"
             className="absolute inset-0 size-full object-cover object-right z-10"
           />
         </picture>
@@ -139,4 +139,4 @@ export default function Home() {
   )
 }
 
-export const Head = () => <SEO title="Home" />
+export const Head = () => <Seo title="Home" />

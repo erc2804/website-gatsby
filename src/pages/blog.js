@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { SEO } from "../components/seo"
+import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { CalendarIcon } from "../components/icons/calendarIcon"
 import { ChevronDownIcon } from "../components/icons/chevronDownIcon"
@@ -33,7 +33,7 @@ export default function Blog({ data }) {
 
   return (
     <Layout>
-      <main className="ec-layout-visual-content my-24">
+      <main className="ec-layout-visual-content py-24">
         <PageHeadline>Blog</PageHeadline>
         <div className="flex flex-col gap-10">
           {blogPosts.map((blogPost, idx) => (
@@ -123,4 +123,4 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = () => <SEO title="Blog" pathname="/blog" />
+export const Head = () => <Seo title="Blog" pathname="/blog" />

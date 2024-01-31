@@ -31,6 +31,7 @@ module.exports = {
       },
       colors: {
         brand: {
+          purple: "#46237A",
           blue: "#05386B",
           green: {
             "high-lvl": "#379683",
@@ -58,14 +59,14 @@ module.exports = {
         },
       },
       animation: {
-        'blink': 'blink 1s step-end infinite',
+        blink: "blink 1s step-end infinite",
       },
       keyframes: {
         blink: {
-          '0%, 100%': { opacity: 0 },
-          '50%': { opacity: 1 },
-        }
-      }
+          "0%, 100%": { opacity: 0 },
+          "50%": { opacity: 1 },
+        },
+      },
     },
   },
-};
+}

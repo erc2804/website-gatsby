@@ -2,7 +2,7 @@ import React from "react"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import ecLogo from "../images/logo_original.png"
 
-export const SEO = ({ title, description, pathname, children }) => {
+export const Seo = ({ title, description, pathname, children }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,

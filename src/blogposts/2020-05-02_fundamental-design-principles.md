@@ -20,7 +20,7 @@ Try to use as much negative space as you can in your designs.<br/>
 Negative space clears out your design and makes it more intuitive.<br/>
 Putting too many elements into limited space is like trying to listen to several people at once, it will be really hard to follow.
 
-<img style="border: 2px solid #efefef;" src="https://elementor.com/cdn-cgi/image/f=auto,w=720/marketing/wp-content/uploads/sites/9/2021/06/6-google-white-space-design.png" alt="Negative space - image" />
+<img style="border: 2px solid #efefef;" src="https://elementor.com/cdn-cgi/image/f=auto,w=720/marketing/wp-content/uploads/sites/9/2021/06/6-google-white-space-design.png" alt="Negative space" />
 
 <figcaption>Google is a great example for the usage of negative space. <a href="https://elementor.com/blog/white-space-web-design/">Source</a></figcaption>
 <br /><br />

@@ -1,105 +1,137 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { SEO } from "../components/seo"
+import { Seo } from "../components/seo"
 import LinkBox from "../components/linkBox"
 import PageHeadline from "../components/pageHeadline"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { JsFiddleIcon } from "../components/icons/jsFiddleIcon"
 import { CodepenIcon } from "../components/icons/codepenIcon"
 import { LottieIcon } from "../components/icons/lottieIcon"
+import { GithubIcon } from "../components/icons/githubIcon"
+
+const Types = {
+  WEB: "WEB",
+  APP: "APP",
+  SHOP: "SHOP",
+  OTHER: "OTHER",
+}
+
+const ColorClassesPerType = {
+  WEB: "bg-brand-green-high-lvl",
+  APP: "bg-brand-green-low-lvl",
+  SHOP: "bg-brand-green-medium-lvl",
+  OTHER: "bg-brand-blue",
+}
 
 const linkboxAnimClasses =
   "my-6 scale-[0.80] xl:scale-100 xl:group-hover:scale-[0.80] transition-transform duration-200"
+const IconDefClasses = "fill-brand-sand size-full max-h-[66%]"
 
 const allPortfolioBoxes = [
   {
+    type: Types.OTHER,
     label: "my fiddles",
     url: "https://jsfiddle.net/user/erc2804/",
     icon: (
-      <JsFiddleIcon
-        iconClasses={`fill-gray-min-lvl h-full ${linkboxAnimClasses}`}
-      />
+      <JsFiddleIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
     ),
-    bgColorClass: "bg-brand-blue",
-    isSmall: true,
   },
   {
+    type: Types.OTHER,
     label: "my codepens",
     url: "https://codepen.io/erc2804",
     icon: (
-      <CodepenIcon
-        iconClasses={`fill-gray-min-lvl h-full ${linkboxAnimClasses}`}
-      />
+      <CodepenIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
     ),
-    bgColorClass: "bg-brand-blue",
-    isSmall: true,
   },
   {
+    type: Types.OTHER,
     label: "my lottiefiles",
     url: "https://lottiefiles.com/erc2804",
     icon: (
-      <LottieIcon
-        iconClasses={`fill-gray-min-lvl h-full ${linkboxAnimClasses}`}
-      />
+      <LottieIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
     ),
-    bgColorClass: "bg-brand-blue",
-    isSmall: true,
   },
   {
+    type: Types.APP,
+    label: "iOS app, CasualVocab",
+    url: "https://apps.apple.com/de/app/casualvocab-widget-japanese/id1622203836?l=en",
+    image: "casualvocab",
+    techs: ["Swift", "SwiftUI"],
+  },
+  {
+    type: Types.WEB,
     label: "Website, HIT",
     url: "https://www.hit.de/",
     image: "hit",
-    bgColorClass: "bg-brand-green-high-lvl",
+    techs: ["Vue.js", "Nuxt.js", "TailwindCSS", "Pimcore", "Figma"],
   },
   {
-    label: "CasualVocab, iOS app",
-    url: "https://apps.apple.com/de/app/casualvocab-widget-japanese/id1622203836?l=en",
-    image: "casualvocab",
-    bgColorClass: "bg-brand-green-medium-lvl",
-  },
-  {
-    label: "Shopify-Webshop, kindeskinder",
+    type: Types.SHOP,
+    label: "Webshop, kindeskinder",
     url: "https://kindeskinder.biz/",
     image: "kindeskinder",
-    bgColorClass: "bg-brand-sand",
+    techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
   },
   {
-    label: "Shopify-Webshop, PuraVida & Oswald",
+    type: Types.SHOP,
+    label: "Webshop, PuraVida & Oswald",
     url: "https://oswald-puravida-wein.de/",
     image: "pvoswald",
-    bgColorClass: "bg-brand-green-low-lvl",
+    techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
   },
   {
-    label: "custom mobile menu, tech demo",
+    type: Types.WEB,
+    label: "Website, tech demo",
     url: "https://ercancicek.com/mel-menu.html",
     image: "melmenu",
-    bgColorClass: "bg-brand-green-high-lvl",
+    techs: ["jQuery", "JavaScript", "CSS"],
+  },
+  {
+    type: Types.OTHER,
+    label: "Website source code",
+    url: "https://github.com/erc2804/website-gatsby",
+    icon: (
+      <GithubIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
+    ),
+    techs: ["React", "Gatsby", "TailwindCSS", "PWA", "Figma"],
   },
 ]
 
-export default function Portfolio({ data }) {
-  const images = data.allFile.edges.reduce((acc, edge) => {
-    acc[edge.node.name] = edge.node.childImageSharp.gatsbyImageData
-    return acc
-  }, {})
+export default function Portfolio({
+  data: {
+    allFile: { edges },
+  },
+}) {
+  const images = Object.fromEntries(
+    edges.map(
+      ({
+        node: {
+          name,
+          childImageSharp: { gatsbyImageData },
+        },
+      }) => [name, gatsbyImageData]
+    )
+  )
   return (
     <Layout>
-      <main className="ec-layout-visual-content my-24">
+      <main className="ec-layout-visual-content py-24">
         <PageHeadline>Portfolio</PageHeadline>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-          {allPortfolioBoxes.map((portfolioBox, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {allPortfolioBoxes.map((portfolioBox) => (
             <LinkBox
-              key={idx}
+              key={portfolioBox.label}
               label={portfolioBox.label}
               url={portfolioBox.url}
-              bgColorClass={portfolioBox.bgColorClass}
-              isSmall={portfolioBox.isSmall ?? false}
+              descText={portfolioBox.techs?.join(", ")}
+              bgColorClass={ColorClassesPerType[portfolioBox.type]}
+              isSmall={portfolioBox.isSmall}
             >
               {portfolioBox.image ? (
                 <GatsbyImage
                   image={images[portfolioBox.image]}
-                  alt={`smartphone image of the portfolio entry: ${portfolioBox.label}`}
+                  alt={`smartphone screen of the portfolio entry: ${portfolioBox.label}`}
                   imgStyle={{ objectFit: `contain` }}
                   className={linkboxAnimClasses}
                 />
@@ -128,7 +160,11 @@ export const pageQuery = graphql`
         node {
           name
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, placeholder: NONE, quality: 100)
+            gatsbyImageData(
+              layout: CONSTRAINED
+              placeholder: NONE
+              quality: 100
+            )
           }
         }
       }
@@ -136,4 +172,4 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = () => <SEO title="Portfolio" pathname="/portfolio" />
+export const Head = () => <Seo title="Portfolio" pathname="/portfolio" />
