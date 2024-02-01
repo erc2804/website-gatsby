@@ -91,10 +91,9 @@ export default function Blog({ data }) {
                   <span className="flex-none mt-1.5">{blogPost.date}</span>
                 </h2>
                 <div
-                  className="prose"
+                  className="prose mb-24"
                   dangerouslySetInnerHTML={{ __html: blogPost.htmlContent }}
                 ></div>
-                <hr className="mt-24 mb-16 border-gray-low-lvl" />
               </div>
             </article>
           ))}

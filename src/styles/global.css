@@ -55,11 +55,8 @@
     img {
       @apply mt-4 max-w-full w-full;
     }
-    .blog-video-wrapper {
-      @apply mt-4 aspect-video w-full relative;
-      iframe {
-        @apply absolute inset-0 size-full;
-      }
+    iframe {
+      @apply mt-4 aspect-video w-full;
     }
     figcaption {
       @apply mt-1 mb-8 text-sm;
