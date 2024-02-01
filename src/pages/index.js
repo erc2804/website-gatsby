@@ -115,10 +115,10 @@ export default function Home() {
                   className="text-brand-sand hover:text-gray-min-lvl"
                   rel="noopener noreferrer"
                 >
-                  &nbsp;{skill.label}
+                  {skill.label}
                 </a>
                 {idx < allSkills.length - 1 && (
-                  <span className="text-brand-green-medium-lvl">&nbsp;&#47;</span>
+                  <span className="text-brand-green-medium-lvl">&nbsp;&#47;&nbsp;</span>
                 )}
               </div>
             ))}
