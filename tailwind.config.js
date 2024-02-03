@@ -37,7 +37,7 @@ module.exports = {
           green: {
             "high-lvl": "#379683",
             "medium-lvl": "#5CDB95",
-            "low-lvl": "#8EE4AF",
+            "low-lvl": "#AEEBC1",
           },
           sand: "#EDF5E1",
         },

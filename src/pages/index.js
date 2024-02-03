@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { Seo } from "../components/seo"
 import bgLandscapeImg from "../images/index/bg-landscape.jpg"
 import bgPortraitImg from "../images/index/bg-portrait.jpg"
+import AdpillarText from "../components/adpillarText"
 
 const allSkills = [
   {
@@ -23,71 +24,9 @@ const allSkills = [
   },
 ]
 
-const finalAdpillarTexts = ["Designer", "Developer"]
+const adpillarTexts = ["Designer", "Developer"]
 
 export default function Home() {
-  const [currentAdpillarText, setCurrentAdpillarText] = useState("")
-  let initialAdpillarTimeout = null
-  let adpillarWordIdx = 0
-  let adpillarIntval = null
-  let clearAdpillarIntval = null
-  let nextAdpillarTimeout = null
-  let nextAdpillarWordTimeout = null
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      initialAdpillarTimeout = setTimeout(
-        () => startAdpillarAnim(adpillarWordIdx),
-        300
-      )
-    }
-
-    return () => {
-      clearInterval(adpillarIntval)
-      clearInterval(clearAdpillarIntval)
-      clearTimeout(initialAdpillarTimeout)
-      clearTimeout(nextAdpillarTimeout)
-      clearTimeout(nextAdpillarWordTimeout)
-    }
-  }, [])
-
-  const startAdpillarAnim = (idx, finalAdpillarIdx = 0) => {
-    if (finalAdpillarTexts[idx][finalAdpillarIdx] === undefined) {
-      nextAdpillarWord()
-      return
-    }
-
-    setCurrentAdpillarText(
-      (currentText) => currentText + finalAdpillarTexts[idx][finalAdpillarIdx]
-    )
-
-    setTimeout(() => startAdpillarAnim(idx, finalAdpillarIdx + 1), 150)
-  }
-
-  const nextAdpillarWord = () => {
-    adpillarWordIdx++
-    if (finalAdpillarTexts[adpillarWordIdx]) {
-      nextAdpillarWordTimeout = setTimeout(() => {
-        clearAdpillar()
-      }, 2000)
-    }
-  }
-
-  const clearAdpillar = () => {
-    setCurrentAdpillarText((currentText) => {
-      if (currentText.length === 0) {
-        nextAdpillarTimeout = setTimeout(() => {
-          startAdpillarAnim(adpillarWordIdx)
-        }, 500)
-        return currentText
-      }
-
-      const newText = currentText.slice(0, -1)
-      setTimeout(() => clearAdpillar(), 50)
-      return newText
-    })
-  }
-
   return (
     <Layout onDark>
       <div className="min-h-dvh relative">
@@ -101,10 +40,7 @@ export default function Home() {
             <span>
               <span className="text-brand-sand">UX</span>
               &nbsp;
-              <span className="text-brand-green-medium-lvl">
-                {currentAdpillarText}
-              </span>
-              <span className="text-brand-green-medium-lvl animate-blink">_</span>
+              <AdpillarText adpillarTexts={adpillarTexts} textClasses="text-brand-green-medium-lvl" />
             </span>
           </h1>
           <div className="pt-40 md:pt-52 xl:pt-40 2xl:pt-52 pb-8 flex flex-col xl:flex-row ec-font-subheading">

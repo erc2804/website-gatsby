@@ -34,7 +34,7 @@ export default function Blog({ data }) {
   return (
     <Layout>
       <main className="ec-layout-visual-content py-24">
-        <PageHeadline>BLOG</PageHeadline>
+      <PageHeadline text="BLOG" />
         <div className="flex flex-col gap-10">
           {blogPosts.map((blogPost, idx) => (
             <article key={idx} className="w-full">

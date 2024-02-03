@@ -49,7 +49,7 @@ export default function Aboutme() {
   return (
     <Layout>
       <main className="ec-layout-visual-content py-24">
-        <PageHeadline>ABOUT ME</PageHeadline>
+      <PageHeadline text="ABOUT ME" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10 md:gap-y-20">
           <div className="max-w-40 md:max-w-none size-fit rounded-full overflow-hidden relative">
             <StaticImage
