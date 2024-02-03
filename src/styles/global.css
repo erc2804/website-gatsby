@@ -32,6 +32,10 @@
     @apply font-sans;
     @apply text-heading-1 tracking-[0.04375rem];
   }
+  .ec-font-heading-2 {
+    @apply font-sans;
+    @apply text-heading-2 tracking-[0.04375rem];
+  }
   .ec-font-subheading {
     @apply font-sans;
     @apply text-subheading tracking-[0.0375rem];

@@ -21,7 +21,8 @@ module.exports = {
             lineHeight: "1.6rem",
           },
         ],
-        "heading-1": ["1.5rem"],
+        "heading-1": ["2.25rem"],
+        "heading-2": ["1.5rem"],
         subheading: [
           "1.25rem",
           {

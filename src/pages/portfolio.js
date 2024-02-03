@@ -124,7 +124,7 @@ export default function Portfolio({
   return (
     <Layout>
       <main className="ec-layout-visual-content py-24">
-        <PageHeadline>Portfolio</PageHeadline>
+        <PageHeadline>PORTFOLIO</PageHeadline>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {allPortfolioBoxes.map((portfolioBox) => (
             <LinkBox

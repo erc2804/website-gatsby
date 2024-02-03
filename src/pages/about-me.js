@@ -49,7 +49,7 @@ export default function Aboutme() {
   return (
     <Layout>
       <main className="ec-layout-visual-content py-24">
-        <PageHeadline>About Me</PageHeadline>
+        <PageHeadline>ABOUT ME</PageHeadline>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10 md:gap-y-20">
           <div className="max-w-40 md:max-w-none size-fit rounded-full overflow-hidden relative">
             <StaticImage
@@ -62,7 +62,7 @@ export default function Aboutme() {
           </div>
 
           <div className="md:col-span-2 flex flex-col gap-6">
-            <h2 className="ec-font-heading-1 leading-[1.2] font-bold text-6xl text-brand-green-medium-lvl">
+            <h2 className="ec-font-heading-2 leading-[1.2] font-bold text-6xl text-brand-green-medium-lvl">
               <span className="hidden">Ercan Cicek</span>
               <span>
                 Developer. Designer.&nbsp;

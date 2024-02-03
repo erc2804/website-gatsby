@@ -34,7 +34,7 @@ export default function Blog({ data }) {
   return (
     <Layout>
       <main className="ec-layout-visual-content py-24">
-        <PageHeadline>Blog</PageHeadline>
+        <PageHeadline>BLOG</PageHeadline>
         <div className="flex flex-col gap-10">
           {blogPosts.map((blogPost, idx) => (
             <article key={idx} className="w-full">
@@ -62,7 +62,7 @@ export default function Blog({ data }) {
                       blogPost.isOpen ? "translate-y-full" : ""
                     } transition-transform`}
                   >
-                    <div className="px-0.5 ec-font-heading-1 text-brand-green-medium-lvl text-left">
+                    <div className="px-0.5 ec-font-heading-2 text-brand-green-medium-lvl text-left">
                       {blogPost.title}
                     </div>
                     <div className="flex flex-row gap-2 items-center">
@@ -85,7 +85,7 @@ export default function Blog({ data }) {
                 }`}
               >
                 <h2 className="flex flex-row gap-3 justify-between mt-7 text-left">
-                  <span className="flex-1 ec-font-heading-1 first:pr-4">
+                  <span className="flex-1 ec-font-heading-2 first:pr-4">
                     {blogPost.title}
                   </span>
                   <span className="flex-none mt-1.5">{blogPost.date}</span>
