@@ -3,45 +3,31 @@ import Layout from "../components/layout"
 import { Seo } from "../components/seo"
 import LinkBox from "../components/linkBox"
 import PageHeadline from "../components/pageHeadline"
+import { PortfolioCategories } from "../constants/portfolioCategories"
 import { LinkedInIcon } from "../components/icons/linkedinIcon"
 import { XingIcon } from "../components/icons/xingIcon"
 import { MailSquareIcon } from "../components/icons/mailSquareIcon"
 import { StaticImage } from "gatsby-plugin-image"
 
-const linkboxAnimClasses =
-  "my-6 scale-[0.80] xl:scale-100 xl:group-hover:scale-[0.80] transition-transform duration-200"
-
 const allSocialMediaBoxes = [
   {
+    type: PortfolioCategories.APP,
     label: "LinkedIn",
     url: "https://www.linkedin.com/in/ercancicek",
-    icon: (
-      <LinkedInIcon
-        iconClasses={`fill-gray-min-lvl size-3/5 ${linkboxAnimClasses}`}
-      />
-    ),
-    bgColorClass: "bg-brand-blue",
+    icon: <LinkedInIcon />,
   },
   {
+    type: PortfolioCategories.WEB,
     label: "Xing",
     url: "https://www.xing.com/profile/Ercan_Cicek10?sc_o=mxb_p",
-    icon: (
-      <XingIcon
-        iconClasses={`fill-gray-min-lvl size-3/5 ${linkboxAnimClasses}`}
-      />
-    ),
-    bgColorClass: "bg-brand-green-high-lvl",
+    icon: <XingIcon />,
   },
   {
+    type: PortfolioCategories.SHOP,
     label: "Email",
     url: "mailto:erc2804@outlook.de",
-    icon: (
-      <MailSquareIcon
-        iconClasses={`fill-gray-max-lvl size-3/5 ${linkboxAnimClasses}`}
-      />
-    ),
-    bgColorClass: "bg-brand-green-medium-lvl",
-    descText: "erc2804@outlook.de"
+    icon: <MailSquareIcon />,
+    descText: "erc2804@outlook.de",
   },
 ]
 
@@ -49,7 +35,7 @@ export default function Aboutme() {
   return (
     <Layout>
       <main className="ec-layout-visual-content py-24">
-      <PageHeadline text="ABOUT ME" />
+        <PageHeadline text="ABOUT ME" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10 md:gap-y-20">
           <div className="max-w-40 md:max-w-none size-fit rounded-full overflow-hidden relative">
             <StaticImage
@@ -86,14 +72,12 @@ export default function Aboutme() {
           {allSocialMediaBoxes.map((socialMediaBox, idx) => (
             <LinkBox
               key={idx}
+              type={socialMediaBox.type}
               label={socialMediaBox.label}
               url={socialMediaBox.url}
               descText={socialMediaBox.descText}
-              bgColorClass={socialMediaBox.bgColorClass}
             >
-              <div className="flex justify-center items-center size-full">
-                {socialMediaBox.icon}
-              </div>
+              {socialMediaBox.icon}
             </LinkBox>
           ))}
         </div>

@@ -5,102 +5,91 @@ import { Seo } from "../components/seo"
 import LinkBox from "../components/linkBox"
 import PageHeadline from "../components/pageHeadline"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { PortfolioCategories } from "../constants/portfolioCategories"
 import { JsFiddleIcon } from "../components/icons/jsFiddleIcon"
 import { CodepenIcon } from "../components/icons/codepenIcon"
 import { LottieIcon } from "../components/icons/lottieIcon"
 import { GithubIcon } from "../components/icons/githubIcon"
 
-const Types = {
-  WEB: "WEB",
-  APP: "APP",
-  SHOP: "SHOP",
-  OTHER: "OTHER",
-}
-
-const ColorClassesPerType = {
-  OTHER: "bg-brand-blue",
-  APP: "bg-brand-green-low-lvl",
-  SHOP: "bg-brand-green-high-lvl",
-  WEB: "bg-brand-green-medium-lvl",
-}
-
-const linkboxAnimClasses =
-  "my-6 scale-[0.80] xl:scale-100 xl:group-hover:scale-[0.80] transition-transform duration-200"
-const IconDefClasses = "fill-brand-sand size-full max-h-[66%]"
-
 const allPortfolioBoxes = [
   {
-    type: Types.APP,
-    label: "iOS app, CasualVocab",
+    type: PortfolioCategories.APP,
+    label: "CasualVocab",
     url: "https://apps.apple.com/de/app/casualvocab-widget-japanese/id1622203836?l=en",
+    categoryDesc: "iOS app",
     image: "casualvocab",
     techs: ["Swift", "SwiftUI"],
   },
   {
-    type: Types.APP,
-    label: "Flutter app, Welliba",
+    type: PortfolioCategories.APP,
+    label: "Welliba",
     url: "https://apps.apple.com/de/app/welliba-companion/id1597739395",
+    categoryDesc: "flutter app",
     image: "welliba_app",
     techs: ["Flutter", "Figma", "UX-Design"],
   },
   {
-    type: Types.SHOP,
-    label: "Webshop, kindeskinder",
+    type: PortfolioCategories.SHOP,
+    label: "kindeskinder",
     url: "https://kindeskinder.biz/",
+    categoryDesc: "Webshop",
     image: "kindeskinder",
     techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
   },
   {
-    type: Types.SHOP,
-    label: "Webshop, PuraVida & Oswald",
+    type: PortfolioCategories.SHOP,
+    label: "PuraVida & Oswald",
     url: "https://oswald-puravida-wein.de/",
+    categoryDesc: "Webshop",
     image: "pvoswald",
     techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
   },
   {
-    type: Types.WEB,
-    label: "Website, HIT",
+    type: PortfolioCategories.WEB,
+    label: "HIT",
     url: "https://www.hit.de/",
+    categoryDesc: "Website",
     image: "hit",
     techs: ["Vue.js", "Nuxt.js", "TailwindCSS", "Pimcore", "Figma"],
   },
   {
-    type: Types.WEB,
-    label: "Website, tech demo",
+    type: PortfolioCategories.WEB,
+    label: "tech demo",
     url: "https://ercancicek.com/mel-menu.html",
+    categoryDesc: "Website",
     image: "melmenu",
     techs: ["jQuery", "JavaScript", "CSS"],
   },
   {
-    type: Types.OTHER,
+    type: PortfolioCategories.OTHER,
     label: "my fiddles",
     url: "https://jsfiddle.net/user/erc2804/",
     icon: (
-      <JsFiddleIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
+      <JsFiddleIcon />
     ),
   },
   {
-    type: Types.OTHER,
+    type: PortfolioCategories.OTHER,
     label: "my codepens",
     url: "https://codepen.io/erc2804",
     icon: (
-      <CodepenIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
+      <CodepenIcon />
     ),
   },
   {
-    type: Types.OTHER,
+    type: PortfolioCategories.OTHER,
     label: "my lottiefiles",
     url: "https://lottiefiles.com/erc2804",
     icon: (
-      <LottieIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
+      <LottieIcon />
     ),
   },
   {
-    type: Types.OTHER,
+    type: PortfolioCategories.OTHER,
     label: "Website source code",
     url: "https://github.com/erc2804/website-gatsby",
     icon: (
-      <GithubIcon iconClasses={`${IconDefClasses} ${linkboxAnimClasses}`} />
+      <GithubIcon />
     ),
     techs: ["React", "Gatsby", "TailwindCSS", "PWA", "Figma"],
   },
@@ -125,14 +114,15 @@ export default function Portfolio({
     <Layout>
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="PORTFOLIO" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {allPortfolioBoxes.map((portfolioBox) => (
             <LinkBox
               key={portfolioBox.label}
+              type={portfolioBox.type}
               label={portfolioBox.label}
               url={portfolioBox.url}
+              categoryDesc={portfolioBox.categoryDesc}
               descText={portfolioBox.techs?.join(", ")}
-              bgColorClass={ColorClassesPerType[portfolioBox.type]}
               isSmall={portfolioBox.isSmall}
             >
               {portfolioBox.image ? (
@@ -140,12 +130,9 @@ export default function Portfolio({
                   image={images[portfolioBox.image]}
                   alt={`smartphone screen of the portfolio entry: ${portfolioBox.label}`}
                   imgStyle={{ objectFit: `contain` }}
-                  className={linkboxAnimClasses}
                 />
               ) : portfolioBox.icon ? (
-                <div className="flex justify-center items-center">
-                  {portfolioBox.icon}
-                </div>
+                  portfolioBox.icon
               ) : null}
             </LinkBox>
           ))}

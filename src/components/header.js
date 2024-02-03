@@ -78,8 +78,8 @@ const Header = ({ onDark }) => {
   return (
     <header
       className={`fixed top-0 left-0 w-full flex flex-col ${
-        isOpen ? "h-dvh bg-gray-min-lvl" : ""
-      } ${!onDark ? "bg-gray-min-lvl" : ""} ${isScrolled && !onDark ? "shadow-md" : ""} transition-all z-50`}
+        isOpen ? "h-dvh bg-gray-subtle-lvl" : ""
+      } ${!onDark ? "bg-gray-subtle-lvl" : ""} ${isScrolled && !onDark ? "shadow-md" : ""} transition-all z-50`}
     >
       <nav className="flex-none px-6 py-5 flex flex-row items-center justify-between md:justify-start md:gap-12 h-24">
         <Link to="/" aria-label="Home">

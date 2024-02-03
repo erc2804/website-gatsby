@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import { Seo } from "../components/seo"
 import bgLandscapeImg from "../images/index/bg-landscape.jpg"

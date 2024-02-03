@@ -7,7 +7,7 @@
     @apply box-border;
   }
   body {
-    @apply bg-gray-min-lvl text-typo-high-lvl;
+    @apply bg-gray-subtle-lvl text-typo-high-lvl;
   }
   /* fonts */
   @font-face {
