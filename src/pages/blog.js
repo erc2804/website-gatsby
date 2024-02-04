@@ -39,7 +39,7 @@ export default function Blog({ data }) {
           {blogPosts.map((blogPost, idx) => (
             <article key={idx} className="w-full">
               <button
-                className="w-full h-52 rounded-md overflow-hidden relative group"
+                className="w-full h-52 rounded-3xl overflow-hidden relative group"
                 onClick={() => toggleBlogEntry(blogPost.id)}
               >
                 <div
@@ -56,10 +56,10 @@ export default function Blog({ data }) {
                       : "bg-transparency-medium-lvl xl:group-hover:bg-transparency-low-lvl"
                   }`}
                 />
-                <div className="p-2 flex flex-row gap-6 items-end absolute inset-0 z-20">
+                <div className="p-4 flex flex-row gap-6 items-end absolute inset-0 z-20">
                   <div
                     className={`flex-1 flex flex-col gap-3 ${
-                      blogPost.isOpen ? "translate-y-full" : ""
+                      blogPost.isOpen ? "translate-y-[calc(100%+1rem)]" : ""
                     } transition-transform`}
                   >
                     <div className="px-0.5 ec-font-heading-2 text-brand-green-medium-lvl text-left">
