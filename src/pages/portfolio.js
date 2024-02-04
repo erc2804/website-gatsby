@@ -26,7 +26,7 @@ const allPortfolioBoxes = [
     url: "https://apps.apple.com/de/app/welliba-companion/id1597739395",
     categoryDesc: "flutter app",
     image: "welliba_app",
-    techs: ["Flutter", "Figma", "UX-Design"],
+    techs: ["Flutter", "Figma"],
   },
   {
     type: PortfolioCategories.SHOP,
@@ -34,15 +34,15 @@ const allPortfolioBoxes = [
     url: "https://kindeskinder.biz/",
     categoryDesc: "Webshop",
     image: "kindeskinder",
-    techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
+    techs: ["Shopify", "Liquid", "JavaScript"],
   },
   {
     type: PortfolioCategories.SHOP,
-    label: "PuraVida & Oswald",
+    label: "PuraVida",
     url: "https://oswald-puravida-wein.de/",
     categoryDesc: "Webshop",
     image: "pvoswald",
-    techs: ["Shopify", "Liquid", "JavaScript", "CSS"],
+    techs: ["Shopify", "Liquid", "JavaScript"],
   },
   {
     type: PortfolioCategories.WEB,
@@ -50,7 +50,7 @@ const allPortfolioBoxes = [
     url: "https://www.hit.de/",
     categoryDesc: "Website",
     image: "hit",
-    techs: ["Vue.js", "Nuxt.js", "TailwindCSS", "Pimcore", "Figma"],
+    techs: ["Vue.js", "Pimcore", "Figma"],
   },
   {
     type: PortfolioCategories.WEB,
@@ -58,40 +58,35 @@ const allPortfolioBoxes = [
     url: "https://ercancicek.com/mel-menu.html",
     categoryDesc: "Website",
     image: "melmenu",
-    techs: ["jQuery", "JavaScript", "CSS"],
+    techs: ["jQuery", "JavaScript", "Figma"],
   },
   {
     type: PortfolioCategories.OTHER,
-    label: "my fiddles",
+    label: "Fiddles",
     url: "https://jsfiddle.net/user/erc2804/",
-    icon: (
-      <JsFiddleIcon />
-    ),
+    icon: <JsFiddleIcon />,
+    techs: ["JavaScript", "S/CSS", "HTML"],
   },
   {
     type: PortfolioCategories.OTHER,
-    label: "my codepens",
+    label: "Codepens",
     url: "https://codepen.io/erc2804",
-    icon: (
-      <CodepenIcon />
-    ),
+    icon: <CodepenIcon />,
+    techs: ["JavaScript", "S/CSS", "HTML"],
   },
   {
     type: PortfolioCategories.OTHER,
-    label: "my lottiefiles",
+    label: "Lottiefiles",
     url: "https://lottiefiles.com/erc2804",
-    icon: (
-      <LottieIcon />
-    ),
+    icon: <LottieIcon />,
+    techs: ["After Effects", "Figma"],
   },
   {
     type: PortfolioCategories.OTHER,
     label: "Website source code",
     url: "https://github.com/erc2804/website-gatsby",
-    icon: (
-      <GithubIcon />
-    ),
-    techs: ["React", "Gatsby", "TailwindCSS", "PWA", "Figma"],
+    icon: <GithubIcon />,
+    techs: ["React", "Gatsby", "PWA", "Figma"],
   },
 ]
 
@@ -114,7 +109,7 @@ export default function Portfolio({
     <Layout>
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="PORTFOLIO" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {allPortfolioBoxes.map((portfolioBox) => (
             <LinkBox
               key={portfolioBox.label}
