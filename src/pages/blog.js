@@ -6,21 +6,22 @@ import PageHeadline from "../components/pageHeadline"
 import { CalendarIcon } from "../components/icons/calendarIcon"
 import { ChevronDownIcon } from "../components/icons/chevronDownIcon"
 
+const transformPosts = (edges) =>
+  edges.map((edge) => ({
+    id: edge.node.frontmatter.id,
+    date: edge.node.frontmatter.date,
+    title: edge.node.frontmatter.title,
+    imageUrl: edge.node.frontmatter.imageUrl,
+    verticalImgPosInPercent: edge.node.frontmatter.verticalImgPosInPercent,
+    htmlContent: edge.node.html,
+    isOpen: false,
+  }))
+
 export default function Blog({ data }) {
   const [blogPosts, setBlogPosts] = useState([])
 
   useEffect(() => {
-    const posts = data.allMarkdownRemark.edges.map((edge) => ({
-      id: edge.node.frontmatter.id,
-      date: edge.node.frontmatter.date,
-      title: edge.node.frontmatter.title,
-      imageUrl: edge.node.frontmatter.imageUrl,
-      verticalImgPosInPercent: edge.node.frontmatter.verticalImgPosInPercent,
-      htmlContent: edge.node.html,
-      isOpen: false,
-    }))
-
-    setBlogPosts(posts)
+    setBlogPosts(transformPosts(data.allMarkdownRemark.edges))
   }, [data])
 
   const toggleBlogEntry = (id) => {
@@ -34,7 +35,7 @@ export default function Blog({ data }) {
   return (
     <Layout>
       <main className="ec-layout-visual-content py-24">
-      <PageHeadline text="BLOG" />
+        <PageHeadline text="BLOG" />
         <div className="flex flex-col gap-10">
           {blogPosts.map((blogPost, idx) => (
             <article key={idx} className="w-full">

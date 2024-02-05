@@ -4,25 +4,7 @@ import { Seo } from "../components/seo"
 import bgLandscapeImg from "../images/index/bg-landscape.jpg"
 import bgPortraitImg from "../images/index/bg-portrait.jpg"
 import AdpillarText from "../components/adpillarText"
-
-const allSkills = [
-  {
-    label: "Vue",
-    url: "https://vuejs.org/",
-  },
-  {
-    label: "React",
-    url: "https://reactjs.org/",
-  },
-  {
-    label: "Figma",
-    url: "https://www.figma.com/",
-  },
-  {
-    label: "Adobe CC",
-    url: "https://www.adobe.com/creativecloud.html",
-  },
-]
+import allSkills from "../constants/skills"
 
 const adpillarTexts = ["Designer", "Developer"]
 
@@ -40,7 +22,10 @@ export default function Home() {
             <span>
               <span className="text-brand-sand">UX</span>
               &nbsp;
-              <AdpillarText adpillarTexts={adpillarTexts} textClasses="text-brand-green-medium-lvl" />
+              <AdpillarText
+                adpillarTexts={adpillarTexts}
+                textClasses="text-brand-green-medium-lvl"
+              />
             </span>
           </h1>
           <div className="pt-40 md:pt-52 xl:pt-40 2xl:pt-52 pb-8 flex flex-col xl:flex-row ec-font-subheading">
@@ -54,7 +39,9 @@ export default function Home() {
                   {skill.label}
                 </a>
                 {idx < allSkills.length - 1 && (
-                  <span className="text-brand-green-medium-lvl">&nbsp;&#47;&nbsp;</span>
+                  <span className="text-brand-green-medium-lvl">
+                    &nbsp;&#47;&nbsp;
+                  </span>
                 )}
               </div>
             ))}

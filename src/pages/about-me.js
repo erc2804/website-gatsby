@@ -2,35 +2,23 @@ import React from "react"
 import Layout from "../components/layout"
 import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
-import { PortfolioCategories } from "../constants/portfolioCategories"
-import { LinkedInIcon } from "../components/icons/linkedinIcon"
-import { XingIcon } from "../components/icons/xingIcon"
-import { EnvelopeIcon } from "../components/icons/envelopeIcon"
 import { StaticImage } from "gatsby-plugin-image"
+import allSocialMediaBoxes from "../constants/socialMediaBoxes"
 
-const allSocialMediaBoxes = [
-  {
-    type: PortfolioCategories.SHOP,
-    label: "Email",
-    address: "erc2804@outlook.de",
-    url: "mailto:erc2804@outlook.de",
-    icon: <EnvelopeIcon />,
-  },
-  {
-    type: PortfolioCategories.APP,
-    label: "LinkedIn",
-    address: "ercancicek",
-    url: "https://www.linkedin.com/in/ercancicek",
-    icon: <LinkedInIcon />,
-  },
-  {
-    type: PortfolioCategories.WEB,
-    label: "Xing",
-    address: "ercan.cicek",
-    url: "https://www.xing.com/profile/Ercan_Cicek10?sc_o=mxb_p",
-    icon: <XingIcon />,
-  },
-]
+const SocialMediaLink = ({ label, url, icon, address }) => (
+  <a
+    href={url}
+    className="rounded-3xl shadow-sm lg:hover:shadow-lg bg-gray-min-lvl px-6 py-4 flex-none flex flex-row gap-4 items-center text-typo-medium-lvl/70 transition-all"
+  >
+    <div className="flex justify-center items-center size-10 [&>svg]:size-full [&>svg]:fill-brand-green-medium-lvl">
+      {icon}
+    </div>
+    <div className="flex flex-col">
+      <span className="ec-font-base">{label}</span>
+      <span className="ec-font-subheading font-bold">{address}</span>
+    </div>
+  </a>
+)
 
 export default function Aboutme() {
   return (
@@ -71,22 +59,9 @@ export default function Aboutme() {
           </div>
         </div>
         <hr className="border-gray-low-lvl my-8 md:my-12" />
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           {allSocialMediaBoxes.map((socialMediaBox) => (
-            <a
-              href={socialMediaBox.url}
-              className="rounded-3xl shadow-sm lg:hover:shadow-lg bg-gray-min-lvl px-6 py-4 flex-none flex flex-row gap-4 items-center text-typo-medium-lvl/70 transition-all"
-            >
-              <div className="flex justify-center items-center size-10 [&>svg]:size-full [&>svg]:fill-brand-green-medium-lvl">
-                {socialMediaBox.icon}
-              </div>
-              <div class="flex flex-col">
-                <span className="ec-font-base">{socialMediaBox.label}</span>
-                <span className="ec-font-subheading font-bold">
-                  {socialMediaBox.address}
-                </span>
-              </div>
-            </a>
+            <SocialMediaLink key={socialMediaBox.label} {...socialMediaBox} />
           ))}
         </div>
       </main>

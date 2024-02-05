@@ -8,7 +8,37 @@ module.exports = {
     siteUrl: `https://www.ercancicek.com`,
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          return allPages.map((page) => {
+            return { ...page }
+          })
+        },
+        serialize: ({ path }) => {
+          return {
+            url: path,
+            changefreq: "monthly",
+          }
+        },
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
@@ -37,8 +67,8 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#5cdb95`,
         display: `standalone`,
-        icon: `src/images/logo_original.png`
+        icon: `src/images/logo_original.png`,
       },
     },
-  ]
-};
+  ],
+}
