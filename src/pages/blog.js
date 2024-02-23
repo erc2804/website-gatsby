@@ -81,15 +81,15 @@ export default function Blog({ data }) {
                 </div>
               </button>
               <div
-                className={`flex flex-col ec-layout-text-content ${
+                className={`flex flex-col ec-layout-text-content px-0 ${
                   blogPost.isOpen ? "" : "hidden"
                 }`}
               >
-                <h2 className="flex flex-row gap-3 justify-between mt-7 text-left">
-                  <span className="flex-1 ec-font-heading-2 first:pr-4">
+                <h2 className="flex flex-row gap-6 justify-between mt-7 text-left">
+                  <span className="flex-1 ec-font-heading-2">
                     {blogPost.title}
                   </span>
-                  <span className="flex-none mt-1.5">{blogPost.date}</span>
+                  <span className="mt-1.5">{blogPost.date}</span>
                 </h2>
                 <div
                   className="prose mb-24"

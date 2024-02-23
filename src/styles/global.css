@@ -69,7 +69,7 @@
       @apply m-0;
     }
     h3 {
-      @apply mt-24 mb-2 first:mt-8 ec-font-subheading font-bold;
+      @apply mt-20 mb-2 first:mt-8 ec-font-subheading font-bold;
     }
     h4 {
       @apply mb-2 font-bold;
