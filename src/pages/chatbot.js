@@ -5,14 +5,19 @@ import PageHeadline from "../components/pageHeadline"
 
 export default function Chatbot() {
   const [response, setResponse] = useState(null);
+  const [messageIsLoading, setMessageIsLoading] = useState(null);
 
   useEffect(() => {
-    const OPEN_API_URL = process.env.GATSBY_OPENAI_API_URL;
-    const OPEN_API_KEY = process.env.GATSBY_OPENAI_API_KEY;
+    setMessageIsLoading(true);
+    const OPENAI_API_URL = process.env.GATSBY_OPENAI_API_URL;
+    const OPENAI_API_KEY = process.env.GATSBY_OPENAI_API_KEY;
+
+    console.log('OPENAI_API_URL', OPENAI_API_URL);
+    console.log('OPENAI_API_KEY', OPENAI_API_KEY);
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${OPEN_API_KEY}`
+      'Authorization': `Bearer ${OPENAI_API_KEY}`
     };
 
     const body = JSON.stringify({
@@ -30,9 +35,12 @@ export default function Chatbot() {
       ]
     });
 
-    fetch(`${OPEN_API_URL}/v1/chat/completions`, { method: 'POST', headers, body })
+    fetch(`${OPENAI_API_URL}/chat/completions`, { method: 'POST', headers, body })
       .then(response => response.json())
-      .then(data => setResponse(data))
+      .then(data => {
+        setResponse(data);
+        setMessageIsLoading(false);
+      })
       .catch(error => console.error('Error:', error));
   }, []);
 
@@ -40,7 +48,11 @@ export default function Chatbot() {
     <Layout>
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="Chatbot" />
-        {/* <div>{response && response.choices[0].message.content}</div> */}
+        {messageIsLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <div>{response?.choices[0]?.message?.content}</div>
+        )}
       </main>
     </Layout>
   )
