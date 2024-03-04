@@ -14,6 +14,10 @@ const navElements = [
     to: "/blog",
   },
   {
+    label: "CSS Animations",
+    to: "/css-animations",
+  },
+  {
     label: "About Me",
     to: "/about-me",
   },
@@ -85,7 +89,7 @@ const Header = ({ onDark }) => {
         <Link to="/" aria-label="Home">
           <EcLogo onDark={onDark} isOpen={isOpen} />
         </Link>
-        <div className="hidden md:flex flex-row gap-6">
+        <div className="hidden md:flex flex-row gap-4 lg:gap-6">
           {navElements.map((navElement) => (
             <NavLink key={navElement.to} to={navElement.to} onDark={onDark}>
               {navElement.label}
