@@ -1,5 +1,5 @@
 import React from "react"
-import { LinkedInIcon } from "../components/icons/linkedinIcon"
+import { LinkedInIcon } from "../components/icons/linkedInIcon"
 import { XingIcon } from "../components/icons/xingIcon"
 import { EnvelopeIcon } from "../components/icons/envelopeIcon"
 
