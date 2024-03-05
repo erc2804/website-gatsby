@@ -14,6 +14,10 @@ const navElements = [
     to: "/blog",
   },
   {
+    label: "AI Chatbot",
+    to: "/ai-chatbot",
+  },
+  {
     label: "About Me",
     to: "/about-me",
   },
