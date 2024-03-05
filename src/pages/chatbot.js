@@ -4,9 +4,41 @@ import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { StaticImage } from "gatsby-plugin-image"
 
+const ChatEntry = ({ role, message, messageLoading }) => (
+  <div className={`flex flex-row gap-4 items-end ${role === "user" ? "justify-end" : ""}`}>
+    {role === "assistant" && (
+      <StaticImage
+        src="../images/about-me/ercancicek.jpg"
+        alt="Ercan Cicek avatar"
+        className="flex-none size-16 rounded-full bg-gray-min-lvl shadow-sm"
+        objectPosition={"40%"}
+      />
+    )}
+    <div className={`flex flex-row ${role === "assistant" ? "bg-brand-green-low-lvl/50 justify-start rounded-r-2xl rounded-tl-2xl" : "bg-brand-blue justify-end rounded-l-2xl rounded-tr-2xl"} items-center px-6 py-5 min-h-16`}>
+      {
+        messageLoading ? (
+          <div className="flex flex-row gap-1 items-center">
+            <div className="animate-typing size-2 inline-block rounded-full bg-brand-green-medium-lvl [animation-delay:200ms]"></div>
+            <div className="animate-typing size-2 inline-block rounded-full bg-brand-green-medium-lvl [animation-delay:300ms]"></div>
+            <div className="animate-typing size-2 inline-block rounded-full bg-brand-green-medium-lvl [animation-delay:400ms]"></div>
+          </div>
+        ) : (
+          <span className={`ec-font-subheading ${role === "user" ? "text-typo-low-lvl" : ""}`}>{message.content}</span>
+        )
+      }
+    </div>
+    {role === "user" && (
+      <div className="flex-none grid place-content-center size-16 rounded-full border border-brand-blue bg-brand-blue/10">
+        You
+      </div>
+    )}
+  </div>
+)
+
 export default function Chatbot() {
   const [response, setResponse] = useState(null)
   const [messageIsLoading, setMessageIsLoading] = useState(null)
+  const [inputValue, setInputValue] = useState("")
   const [newUserMessage, setNewUserMessage] = useState(null)
   const [error, setError] = useState(null)
   const [messages, setMessages] = useState([
@@ -45,7 +77,7 @@ export default function Chatbot() {
           content: data.choices[0].message.content,
         }
         setMessages((prevMessages) => [...prevMessages, assistantMessage])
-        setNewUserMessage(null) // Reset newUserMessage after processing
+        setNewUserMessage(null)
       })
       .catch((error) => {
         console.error("Error:", error)
@@ -54,28 +86,27 @@ export default function Chatbot() {
       })
   }, [messages])
 
-  const handleKeyDown = useCallback((event) => {
-    if (event.key === "Enter") {
-      fetchMessage()
-    }
-  }, [messages])
+  const handleKeyUp = useCallback(
+    (event) => {
+      if (event.key === "Enter") {
+        sendMessage()
+      }
+    },
+    [messages, inputValue]
+  )
 
-  // TODO: make this work
-  // const sendMessage = useCallback(
-  //   (event) => {
-  //     if (inputValue && inputValue.length > 1) {
-  //       const newMessage = {
-  //         role: "user",
-  //         content: inputValue,
-  //       }
-  //       setMessages([...messages, newMessage])
-  //       // --- trigger fetchMessage
-  //       setNewUserMessage(newMessage)
-  //       inputValue = ""
-  //     }
-  //   },
-  //   [messages]
-  // )
+  const sendMessage = useCallback(() => {
+    if (inputValue && inputValue.length > 1) {
+      const newMessage = {
+        role: "user",
+        content: inputValue,
+      }
+      setMessages([...messages, newMessage])
+      // --- trigger fetchMessage
+      setNewUserMessage(newMessage)
+      setInputValue("")
+    }
+  }, [messages, inputValue])
 
   // --- watcher for user messages
   useEffect(() => {
@@ -92,45 +123,15 @@ export default function Chatbot() {
           {/* --- messages */}
           {messages &&
             messages.map((message, index) => {
-              if (message.role === "assistant") {
-                return (
-                  <div key={index} className="flex flex-row gap-4 items-end">
-                    <StaticImage
-                      src="../images/about-me/ercancicek.jpg"
-                      alt="Ercan Cicek avatar"
-                      className="flex-none size-16 rounded-full bg-gray-min-lvl shadow-sm"
-                      objectPosition={"40%"}
-                    />
-                    <div className="flex flex-row justify-start items-center bg-brand-green-low-lvl/50 px-6 py-5 min-h-16 rounded-r-2xl rounded-tl-2xl">
-                      {messageIsLoading ? (
-                        <div className="flex flex-row gap-1 items-center">
-                          <div className="animate-typing size-2 inline-block rounded-full bg-brand-green-medium-lvl [animation-delay:200ms]"></div>
-                          <div className="animate-typing size-2 inline-block rounded-full bg-brand-green-medium-lvl [animation-delay:300ms]"></div>
-                          <div className="animate-typing size-2 inline-block rounded-full bg-brand-green-medium-lvl [animation-delay:400ms]"></div>
-                        </div>
-                      ) : (
-                        <span className="ec-font-subheading">
-                          {message.content}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                )
-              } else if (message.role === "user") {
-                return (
-                  <div key={index} className="flex flex-row justify-end gap-4 items-end">
-                    <div className="flex flex-row justify-end items-center bg-brand-blue px-6 py-5 min-h-16 rounded-l-2xl rounded-tr-2xl">
-                        <span className="ec-font-subheading text-typo-low-lvl">
-                          {message.content}
-                        </span>
-                    </div>
-                    <div className="flex-none grid place-content-center size-16 rounded-full border border-brand-blue bg-brand-blue/10">
-                      You
-                    </div>
-                  </div>
-                )
+              if(message.role === "system") {
+                return null;
               }
+              return <ChatEntry key={index} role={message.role} message={message} />
             })}
+          {/* LOADING */}
+          {messageIsLoading && (
+            <ChatEntry role={"assistant"} messageLoading={true} />
+          )}
           {/* ERROR */}
           {error && <div>{error}</div>}
           {/* USER MESSAGE */}
@@ -138,12 +139,20 @@ export default function Chatbot() {
           <div className="flex flex-row gap-4 items-end">
             <div className="flex-1 relative">
               <input
-                onKeyDown={handleKeyDown}
+                onKeyUp={handleKeyUp}
+                onChange={(e) => setInputValue(e.target.value)}
+                value={inputValue}
                 type="text"
                 className="w-full px-6 py-2 min-h-16 rounded-3xl shadow-sm ec-font-subheading"
                 placeholder="Your message"
               />
-              <button onClick={sendMessage} className="absolute right-6 top-1/2 transform -translate-y-1/2">send</button>
+              <button
+                onClick={sendMessage}
+                className="absolute right-6 top-1/2 transform -translate-y-1/2 disabled:line-through"
+                disabled={inputValue.length <= 1}
+              >
+                send
+              </button>
             </div>
             <div className="flex-none grid place-content-center size-16 rounded-full  border border-brand-blue bg-brand-blue/10">
               You
