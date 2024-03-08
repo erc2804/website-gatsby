@@ -83,8 +83,7 @@ export default function AIChatbot() {
     return [
       {
         role: "system",
-        // content: process.env.GATSBY_OPENAI_API_SYSTEM_MESSAGE,
-        content: process.env.OPENAI_API_SYSTEM_MESSAGE,
+        content: process.env.GATSBY_OPENAI_API_SYSTEM_MESSAGE,
       },
     ]
   })
@@ -97,10 +96,8 @@ export default function AIChatbot() {
 
   const fetchMessage = async () => {
     setAnswerIsLoading(true)
-    // const OPENAI_API_URL = process.env.GATSBY_OPENAI_API_URL
-    // const OPENAI_API_KEY = process.env.GATSBY_OPENAI_API_KEY
-    const OPENAI_API_URL = process.env.OPENAI_API_URL
-    const OPENAI_API_KEY = process.env.OPENAI_API_KEY
+    const OPENAI_API_URL = process.env.GATSBY_OPENAI_API_URL
+    const OPENAI_API_KEY = process.env.GATSBY_OPENAI_API_KEY
 
     const headers = {
       "Content-Type": "application/json",
