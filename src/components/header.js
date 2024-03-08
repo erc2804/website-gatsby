@@ -13,10 +13,10 @@ const navElements = [
     label: "Blog",
     to: "/blog",
   },
-  {
-    label: "AI Chatbot",
-    to: "/ai-chatbot",
-  },
+  // {
+  //   label: "AI Chatbot",
+  //   to: "/ai-chatbot",
+  // },
   {
     label: "About Me",
     to: "/about-me",
