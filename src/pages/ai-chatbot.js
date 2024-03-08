@@ -74,21 +74,24 @@ export default function AIChatbot() {
   const [newUserMessage, setNewUserMessage] = useState(null)
   const [error, setError] = useState(null)
   const [messages, setMessages] = useState(() => {
-    const savedMessages = sessionStorage.getItem("messages")
-    if (savedMessages) {
-      return JSON.parse(savedMessages)
-    } else {
-      return [
-        {
-          role: "system",
-          content: process.env.GATSBY_OPENAI_API_SYSTEM_MESSAGE,
-        },
-      ]
+    if (typeof window !== 'undefined') {
+      const savedMessages = sessionStorage.getItem("messages")
+      if (savedMessages) {
+        return JSON.parse(savedMessages)
+      } 
     }
+    return [
+      {
+        role: "system",
+        content: process.env.GATSBY_OPENAI_API_SYSTEM_MESSAGE,
+      },
+    ]
   })
 
   useEffect(() => {
-    sessionStorage.setItem("messages", JSON.stringify(messages))
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem("messages", JSON.stringify(messages))
+    }
   }, [messages])
 
   const fetchMessage = async () => {
