@@ -85,4 +85,12 @@
   a:focus-visible, button:focus-visible {
     @apply outline outline-4 outline-offset-4 outline-brand-green-high-lvl rounded-lg;
   } 
+  /* utilities */
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    @apply hidden;
+  }
 }

@@ -4,6 +4,7 @@ import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { StaticImage } from "gatsby-plugin-image"
 import allSocialMediaBoxes from "../constants/socialMediaBoxes"
+import AiChatbot from "../components/aiChatbot"
 
 const SocialMediaLink = ({ label, url, icon, address }) => (
   <a
@@ -59,10 +60,19 @@ export default function Aboutme() {
           </div>
         </div>
         <hr className="border-gray-low-lvl my-8 md:my-12" />
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {allSocialMediaBoxes.map((socialMediaBox) => (
-            <SocialMediaLink key={socialMediaBox.label} {...socialMediaBox} />
-          ))}
+        <div className="ec-layout-text-content flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
+            <h3 className="ec-font-heading-2">Questions</h3>
+            <AiChatbot />
+          </div>
+          <div className="flex flex-col gap-6">
+            <h3 className="ec-font-heading-2">Contact</h3>
+            <div className="flex flex-wrap justify-center items-center gap-8">
+              {allSocialMediaBoxes.map((socialMediaBox) => (
+                <SocialMediaLink key={socialMediaBox.label} {...socialMediaBox} />
+              ))}
+            </div>
+          </div>
         </div>
       </main>
     </Layout>
