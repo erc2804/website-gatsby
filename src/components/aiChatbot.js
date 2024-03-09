@@ -38,28 +38,20 @@ const AiChatbot = () => {
   }, [messages])
 
   const callOpenAIAPi = async () => {
-    const OPENAI_API_KEY = process.env.GATSBY_OPENAI_API_KEY;
-    const OPENAI_API_URL = process.env.GATSBY_OPENAI_API_URL;
-  
-    const headers = {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
-    };
-  
     const body = JSON.stringify({
-      model: "gpt-4",
       messages: messages,
-      temperature: 0.33,
     });
   
-    const response = await fetch(`${OPENAI_API_URL}/chat/completions`, {
+    const response = await fetch("/.netlify/functions/makeApiCall", {
       method: "POST",
-      headers,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body,
     });
   
     if (!response.ok) {
-      throw new Error("API call failed");
+      throw new Error("Oops! Something went wrong. Please try again.");
     }
   
     const data = await response.json();
@@ -78,7 +70,6 @@ const AiChatbot = () => {
       setMessages((prevMessages) => [...prevMessages, assistantMessage]);
       setNewUserMessage(null);
     } catch (error) {
-      console.error("Error:", error);
       setError("Oops! Something went wrong. Please try again.");
       setAnswerIsLoading(false);
     }
