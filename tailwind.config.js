@@ -57,6 +57,7 @@ module.exports = {
           "high-lvl": "#332A2A",
           "medium-lvl": "#645454",
           "low-lvl": "#B6A0A0",
+          "min-lvl": "#ECDBDB"
         },
       },
       animation: {
