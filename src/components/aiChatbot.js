@@ -3,15 +3,11 @@ import { SendIcon } from "./icons/sendIcon"
 import ChatEntry from "./chat/chatEntry"
 
 const AiChatbot = () => {
-  const [answerIsLoading, setAnswerIsLoading] = useState(null);
-  const [inputValue, setInputValue] = useState("");
-  const [showInitialTyping, setShowInitialTyping] = useState(false);
-  const [newUserMessage, setNewUserMessage] = useState(null);
-  const [error, setError] = useState(null);
-  const defaultSystemMessage = useMemo(() => ({
-    role: "system",
-    content: `${process.env.GATSBY_OPENAI_API_SYSTEM_MESSAGE} ${process.env.GATSBY_OPENAI_API_CUSTOM_SYSTEM_MESSAGE}`,
-  }), []);
+  const [answerIsLoading, setAnswerIsLoading] = useState(null)
+  const [inputValue, setInputValue] = useState("")
+  const [showInitialTyping, setShowInitialTyping] = useState(false)
+  const [newUserMessage, setNewUserMessage] = useState(null)
+  const [error, setError] = useState(null)
 
   const showInitialTypingEffect = () => {
     setShowInitialTyping(true)
@@ -28,7 +24,7 @@ const AiChatbot = () => {
       }
     }
     showInitialTypingEffect()
-    return [defaultSystemMessage]
+    return []
   })
 
   useEffect(() => {
@@ -40,38 +36,42 @@ const AiChatbot = () => {
   const callOpenAIAPi = async () => {
     const body = JSON.stringify({
       messages: messages,
-    });
-  
+    })
+
     const response = await fetch("/.netlify/functions/makeApiCall", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body,
-    });
-  
+    })
+
+    const data = await response.json()
+
     if (!response.ok) {
-      throw new Error("Oops! Something went wrong. Please try again.");
+      throw new Error(data.message)
     }
-  
-    const data = await response.json();
-    return data;
-  };
+
+    return data
+  }
 
   const fetchMessage = async () => {
     try {
-      setAnswerIsLoading(true);
-      const data = await callOpenAIAPi();
-      setAnswerIsLoading(false);
+      setAnswerIsLoading(true)
+      const data = await callOpenAIAPi()
+      console.log("data: ", data)
+      setAnswerIsLoading(false)
       const assistantMessage = {
         role: "assistant",
         content: data.choices[0].message.content,
-      };
-      setMessages((prevMessages) => [...prevMessages, assistantMessage]);
-      setNewUserMessage(null);
+      }
+      setMessages((prevMessages) => [...prevMessages, assistantMessage])
+      setNewUserMessage(null)
+      setError(null)
     } catch (error) {
-      setError("Oops! Something went wrong. Please try again.");
-      setAnswerIsLoading(false);
+      console.error("error: ", error.message)
+      setError('Oops! Something went wrong. Please try again later. If the error keep occurring, please contact me.')
+      setAnswerIsLoading(false)
     }
   }
 
@@ -99,7 +99,7 @@ const AiChatbot = () => {
     )
     if (nonSystemMessages.length > 0) {
       showInitialTypingEffect()
-      setMessages([defaultSystemMessage])
+      setMessages([])
       sessionStorage.removeItem("messages")
     }
   }
@@ -142,7 +142,7 @@ const AiChatbot = () => {
         <ChatEntry role={"assistant"} messageLoading={true} />
       )}
       {/* --- error --- */}
-      {error && <div>{error}</div>}
+      {error && <div className="text-red-500 font-semibold">{error}</div>}
       {/* --- user message input --- */}
       <div className="flex flex-col gap-2">
         <div className="relative">
