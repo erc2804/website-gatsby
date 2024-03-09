@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { SendIcon } from "./icons/sendIcon"
 import ChatEntry from "./chat/chatEntry"
 
@@ -8,6 +8,7 @@ const AiChatbot = () => {
   const [showInitialTyping, setShowInitialTyping] = useState(false)
   const [newUserMessage, setNewUserMessage] = useState(null)
   const [error, setError] = useState(null)
+  const typingContainerRef = useRef(null);
 
   const showInitialTypingEffect = () => {
     setShowInitialTyping(true)
@@ -59,7 +60,6 @@ const AiChatbot = () => {
     try {
       setAnswerIsLoading(true)
       const data = await callOpenAIAPi()
-      console.log("data: ", data)
       setAnswerIsLoading(false)
       const assistantMessage = {
         role: "assistant",
@@ -70,14 +70,10 @@ const AiChatbot = () => {
       setError(null)
     } catch (error) {
       console.error("error: ", error.message)
-      setError('Oops! Something went wrong. Please try again later. If the error keep occurring, please contact me.')
+      setError(
+        "Oops! Something went wrong. Please try again later. If the error keep occurring, please contact me."
+      )
       setAnswerIsLoading(false)
-    }
-  }
-
-  const handleKeyUp = (event) => {
-    if (event.key === "Enter") {
-      sendMessage()
     }
   }
 
@@ -104,11 +100,19 @@ const AiChatbot = () => {
     }
   }
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    sendMessage();
+  }
+
   useEffect(() => {
-    sessionStorage.setItem("messages", JSON.stringify(messages))
-    // window.scrollTo(0, document.body.scrollHeight)
     if (newUserMessage) {
       fetchMessage()
+    }
+    if (typingContainerRef.current) {
+        setTimeout(() => {
+            typingContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+        });
     }
   }, [messages, newUserMessage])
 
@@ -144,10 +148,9 @@ const AiChatbot = () => {
       {/* --- error --- */}
       {error && <div className="text-red-500 font-semibold">{error}</div>}
       {/* --- user message input --- */}
-      <div className="flex flex-col gap-2">
-        <div className="relative">
+      <div className="flex flex-col gap-2" ref={typingContainerRef}>
+        <form onSubmit={handleFormSubmit} className="relative">
           <input
-            onKeyUp={handleKeyUp}
             onChange={(e) => setInputValue(e.target.value)}
             value={inputValue}
             type="text"
@@ -155,14 +158,14 @@ const AiChatbot = () => {
             placeholder="Start typing..."
           />
           <button
-            onClick={sendMessage}
+            type="submit"
             className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer group"
             disabled={inputValue.length <= 1}
             title="Send message"
           >
             <SendIcon iconClasses="fill-gray-medium-lvl/70 size-10 group-hover:scale-110 transition-all" />
           </button>
-        </div>
+        </form>
         <button
           onClick={resetChat}
           className="self-end w-fit px-3 py-1 rounded-2xl text-typo-medium-lvl"
