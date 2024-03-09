@@ -5,11 +5,11 @@ import { LottieIcon } from "../components/icons/lottieIcon"
 import { GithubIcon } from "../components/icons/githubIcon"
 
 const PortfolioCategories = {
-    WEB: "WEB",
-    APP: "APP",
-    SHOP: "SHOP",
-    OTHER: "OTHER",
-  }
+  WEB: "WEB",
+  APP: "APP",
+  SHOP: "SHOP",
+  OTHER: "OTHER",
+}
 
 const allPortfolioBoxes = [
   {

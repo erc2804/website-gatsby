@@ -5,6 +5,7 @@ title: "How to listen to your users and make better products"
 imageUrl: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80"
 verticalImgPosInPercent: 85
 ---
+
 <br />
 <br />
 <br />
@@ -15,6 +16,7 @@ On a macro there are just three ways to do this - some work better than others.
 In this short article I'll dig a bit deeper into these three approaches.
 
 ### Approach 1: Knowing better without actually knowing better
+
 <br />
 I'm sure that some of you guys out there have had experiences working with somebody who thinks he knows very well what the product should look like to be the perfect solution for the users without actually having any kind of evidence. 
 <br />
@@ -26,6 +28,7 @@ If you in fact ARE one of those guys then I would strongly recommend to try the 
 <br /><br />
 
 ### Approach 2: Collecting data from actual users to get general ideas
+
 <br />
 It's no secret that websites and apps are tracking our behaviour and interaction. Nevertheless there is a transparent and an intransparent way of doing so. 
 <br /><br />
@@ -35,6 +38,7 @@ Another option would be to directly ask users while they actually use the produc
 <br /><br />
 
 ### Approach 3: Talking to actual users to get qualitative insights
+
 <br />
 The richest way is to actually ask your users or your target group what they want. 
 <br /><br />
@@ -49,11 +53,10 @@ Another important aspect is HOW you ask. Users perfectly know what they want, bu
 
 <figcaption>I wanted to add this because I just like that image. <a href="https://uxmag.com/articles/how-we-listened-to-our-users-and-made-a-better-product">Source</a></figcaption>
 
-
 The only way to handle this is by asking specific and segregated questions. If you ask the right questions, you’ll get rich information that will help you get valuable insights on how to develop your product further.
 
 <br /><br /><br /><br /><br /><br />
 
 #### Sources
 
-* [Antonio Rotolo @Ludwig](https://ludwig.guru/blog/the-story-of-how-we-listened-to-our-users-and-made-a-better-product/)
+- [Antonio Rotolo @Ludwig](https://ludwig.guru/blog/the-story-of-how-we-listened-to-our-users-and-made-a-better-product/)

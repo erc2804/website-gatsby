@@ -13,7 +13,8 @@
   @font-face {
     font-family: "an-regular";
     src: url("../fonts/an-regular.eot");
-    src: url("../fonts/an-regular.eot?#iefix") format("embedded-opentype"),
+    src:
+      url("../fonts/an-regular.eot?#iefix") format("embedded-opentype"),
       url("../fonts/an-regular.woff2") format("woff2"),
       url("../fonts/an-regular.woff") format("woff"),
       url("../fonts/an-regular.ttf") format("truetype");
@@ -82,9 +83,10 @@
     }
   }
   /* focus */
-  a:focus-visible, button:focus-visible {
+  a:focus-visible,
+  button:focus-visible {
     @apply outline outline-4 outline-offset-4 outline-brand-green-high-lvl rounded-lg;
-  } 
+  }
   /* utilities */
   .hide-scrollbar {
     scrollbar-width: none;

@@ -5,6 +5,7 @@ title: "Navigating Modern Team Dynamics: Leaders vs. Managers"
 imageUrl: "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=924&q=80"
 verticalImgPosInPercent: 20
 ---
+
 <br />
 <br />
 <br />
@@ -34,5 +35,5 @@ Navigating the complexities of modern team dynamics underscores the importance o
 
 #### Sources
 
-* [Abraham Zaleznik @Harvard Business Review](https://hbr.org/2004/01/managers-and-leaders-are-they-different)
-* [Anna Wood @Startups Magazine](https://startupsmagazine.co.uk/article-looking-future-leadership-styles-gen-z-brings-workplace)
+- [Abraham Zaleznik @Harvard Business Review](https://hbr.org/2004/01/managers-and-leaders-are-they-different)
+- [Anna Wood @Startups Magazine](https://startupsmagazine.co.uk/article-looking-future-leadership-styles-gen-z-brings-workplace)

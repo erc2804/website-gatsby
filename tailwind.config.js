@@ -57,12 +57,12 @@ module.exports = {
           "high-lvl": "#332A2A",
           "medium-lvl": "#645454",
           "low-lvl": "#B6A0A0",
-          "min-lvl": "#ECDBDB"
+          "min-lvl": "#ECDBDB",
         },
       },
       animation: {
         blink: "blink 1s step-end infinite",
-        typing: 'typing 1.8s infinite ease-in-out',
+        typing: "typing 1.8s infinite ease-in-out",
       },
       keyframes: {
         blink: {
@@ -70,9 +70,9 @@ module.exports = {
           "50%": { opacity: 1 },
         },
         typing: {
-          '0%': { transform: 'translateY(0px)', backgroundColor: '#6CAD96' },
-          '28%': { transform: 'translateY(-7px)', backgroundColor: '#9ECAB9' },
-          '44%': { transform: 'translateY(0px)', backgroundColor: '#B5D9CB' },
+          "0%": { transform: "translateY(0px)", backgroundColor: "#6CAD96" },
+          "28%": { transform: "translateY(-7px)", backgroundColor: "#9ECAB9" },
+          "44%": { transform: "translateY(0px)", backgroundColor: "#B5D9CB" },
         },
       },
     },

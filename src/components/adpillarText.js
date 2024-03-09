@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from "react"
 
-export default function AdpillarText({ adpillarTexts: rawAdpillarTexts, textClasses = "", timePerType = 150}) {
+export default function AdpillarText({
+  adpillarTexts: rawAdpillarTexts,
+  textClasses = "",
+  timePerType = 150,
+}) {
   const [currentAdpillarText, setCurrentAdpillarText] = useState("")
   const adpillarWordIdx = useRef(0)
   const adpillarIntval = useRef(null)
@@ -33,18 +37,27 @@ export default function AdpillarText({ adpillarTexts: rawAdpillarTexts, textClas
     }
   }, [adpillarTexts, clearAdpillar])
 
-  const startAdpillarAnim = useCallback((idx, finalAdpillarIdx = 0) => {
-    if (!adpillarTexts[idx] || adpillarTexts[idx][finalAdpillarIdx] === undefined) {
-      nextAdpillarWord()
-      return
-    }
+  const startAdpillarAnim = useCallback(
+    (idx, finalAdpillarIdx = 0) => {
+      if (
+        !adpillarTexts[idx] ||
+        adpillarTexts[idx][finalAdpillarIdx] === undefined
+      ) {
+        nextAdpillarWord()
+        return
+      }
 
-    setCurrentAdpillarText(
-      (currentText) => currentText + adpillarTexts[idx][finalAdpillarIdx]
-    )
+      setCurrentAdpillarText(
+        (currentText) => currentText + adpillarTexts[idx][finalAdpillarIdx]
+      )
 
-    setTimeout(() => startAdpillarAnim(idx, finalAdpillarIdx + 1), timePerType)
-  }, [adpillarTexts, timePerType, nextAdpillarWord])
+      setTimeout(
+        () => startAdpillarAnim(idx, finalAdpillarIdx + 1),
+        timePerType
+      )
+    },
+    [adpillarTexts, timePerType, nextAdpillarWord]
+  )
 
   useEffect(() => {
     startAdpillarAnimRef.current = startAdpillarAnim

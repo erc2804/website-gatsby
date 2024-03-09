@@ -14,4 +14,3 @@ const NotFoundPage = () => {
 export default NotFoundPage
 
 export const Head = () => <Seo title="Page not found" />
-

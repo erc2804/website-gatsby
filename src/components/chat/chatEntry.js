@@ -2,7 +2,12 @@ import React from "react"
 import TypingAnimation from "./typingAnimation"
 import AvatarBubble from "./avatarBubble"
 
-const ChatEntry = ({ role, message, messageLoading, additionalClasses = "" }) => {
+const ChatEntry = ({
+  role,
+  message,
+  messageLoading,
+  additionalClasses = "",
+}) => {
   const isAssistant = role === "assistant"
   const baseClasses = "flex flex-row items-center px-6 py-4 min-h-16 relative"
   const triangleBaseClasses =

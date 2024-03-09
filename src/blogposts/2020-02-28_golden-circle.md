@@ -5,6 +5,7 @@ title: "People don't buy WHAT you do, they buy WHY you do it"
 imageUrl: "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=924&q=80"
 verticalImgPosInPercent: 55
 ---
+
 <br />
 <br />
 <br />
@@ -44,6 +45,6 @@ The latter works way better as potential buyers get the intention they are suppo
 
 #### Sources
 
-* [Simon Sinek @TED](https://www.youtube.com/watch?v=qp0HIF3SfI4)
-* [Babak Mohammadi @LinkedIn](https://www.linkedin.com/pulse/concept-golden-circle-by-simon-sinek-babak-mohammadi/)
-* [Tejas Kinger @freshworks.com](https://www.freshworks.com/freshsales-crm/resources/summary-of-start-with-why-blog/)
+- [Simon Sinek @TED](https://www.youtube.com/watch?v=qp0HIF3SfI4)
+- [Babak Mohammadi @LinkedIn](https://www.linkedin.com/pulse/concept-golden-circle-by-simon-sinek-babak-mohammadi/)
+- [Tejas Kinger @freshworks.com](https://www.freshworks.com/freshsales-crm/resources/summary-of-start-with-why-blog/)

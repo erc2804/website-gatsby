@@ -8,7 +8,7 @@ const AiChatbot = () => {
   const [showInitialTyping, setShowInitialTyping] = useState(false)
   const [newUserMessage, setNewUserMessage] = useState(null)
   const [error, setError] = useState(null)
-  const typingContainerRef = useRef(null);
+  const typingContainerRef = useRef(null)
 
   const showInitialTypingEffect = () => {
     setShowInitialTyping(true)
@@ -101,8 +101,8 @@ const AiChatbot = () => {
   }
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
-    sendMessage();
+    event.preventDefault()
+    sendMessage()
   }
 
   useEffect(() => {
@@ -110,9 +110,9 @@ const AiChatbot = () => {
       fetchMessage()
     }
     if (typingContainerRef.current) {
-        setTimeout(() => {
-            typingContainerRef.current.scrollIntoView({ behavior: 'smooth' });
-        });
+      setTimeout(() => {
+        typingContainerRef.current.scrollIntoView({ behavior: "smooth" })
+      })
     }
   }, [messages, newUserMessage])
 

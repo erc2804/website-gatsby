@@ -68,7 +68,10 @@ export default function Aboutme() {
             <h3 className="ec-font-heading-2">Contact</h3>
             <div className="flex flex-col items-center md:items-start gap-6">
               {allSocialMediaBoxes.map((socialMediaBox) => (
-                <SocialMediaLink key={socialMediaBox.label} {...socialMediaBox} />
+                <SocialMediaLink
+                  key={socialMediaBox.label}
+                  {...socialMediaBox}
+                />
               ))}
             </div>
           </div>

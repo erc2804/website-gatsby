@@ -5,6 +5,7 @@ title: "Everything is hard before it gets easy"
 imageUrl: "https://images.unsplash.com/photo-1507250177462-a39de76ad68f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"
 verticalImgPosInPercent: 55
 ---
+
 <br />
 <br />
 <br />
@@ -13,6 +14,7 @@ We all know the situation when we want to change something in our lives. It can 
 **We forget that everything is hard before it gets easy.**
 
 ### To learn = to lose at first
+
 <br/>
 
 As a child you learned many different things. You learned to walk, to speak, to write and even to do math. These things were hard at first too, why is it that you did not give up back then?<br /><br />
@@ -37,4 +39,4 @@ We forget that it's normal for a new thing to be hard before it gets easy.<br />
 
 #### Sources
 
-* [Gary Vee @YouTube](https://www.youtube.com/watch?v=P2wpyKOBTDM)
+- [Gary Vee @YouTube](https://www.youtube.com/watch?v=P2wpyKOBTDM)

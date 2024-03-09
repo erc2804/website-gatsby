@@ -5,12 +5,14 @@ title: "How to present your product (or yourself)"
 imageUrl: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80"
 verticalImgPosInPercent: 70
 ---
+
 <br />
 <br />
 <br />
 As I've seen many approaches of people trying to pitch their products to potential partners or customers or just to present themselves or their products online I thought it is a great idea to nail down some tips on what to think of when it comes to presenting yourself and your products.
 
 ### Patterns
+
 <br/>
 
 When presenting keep in mind that even if there is no finelined pattern on your website, flyer or whatever medium you are using to present your product, the audience's brain will try to find one, visually and contentwise.<br /><br />
@@ -22,6 +24,7 @@ Brains can handle information only in blocks. Too much information coming in at 
 <figcaption>In webdesign there is for example the so called Z-layout or Z-pattern. <a href="https://webdesign.tutsplus.com/articles/understanding-the-z-layout-in-web-design--webdesign-28">Source</a></figcaption>
 
 ### Stories
+
 <br />
 
 To tweak your presentation try to either fit some stories into your presentation or your presentation into a story. Stories can get people to identify with your product more by activating their mirror neurons.<br /><br />
@@ -35,11 +38,13 @@ Taking this information to - let's say our webshop - it is very important for it
 This can lead the potential buyer to become a lost opportunity for you, maybe one of many. **So be sure there are no deficiencies in your presentation** - that means no technical leaks on your website, no typos in your menu, etc.<br /><br />
 
 ### Choices
+
 <br />
 
 People like having a choice. Choices are giving us the feeling of being in control and nothing let's us be more positive then the feeling of being in control. Be sure give choices as often as possible, but **not too many** as it quickly gets overchallenging. The magic number 4 from above is a good amount here too.<br />
 
 ### flow state
+
 <br />
 
 We are in the flow state when an activity engages us so much that we lose track of time. Our immersion and focus level is so high that it seems like there is nothing else of relevance for us.<br /><br />
@@ -54,7 +59,7 @@ As you see it is mainly about invoking positive emotions when it comes to your p
 
 #### Sources
 
-* [Kendra Cherry @yerywellmind](https://www.verywellmind.com/what-is-short-term-memory-2795348)
-* [Brandon Jones @webdesign.tutsplus.com](https://webdesign.tutsplus.com/articles/understanding-the-z-layout-in-web-design--webdesign-28)
-* [Aaron Agius @business.com](https://www.business.com/articles/the-psychology-of-choice-and-how-your-startup-can-leverage-it/)
-* [Flow (psychology) @Wikipedia](https://en.wikipedia.org/wiki/Flow_(psychology))
+- [Kendra Cherry @yerywellmind](https://www.verywellmind.com/what-is-short-term-memory-2795348)
+- [Brandon Jones @webdesign.tutsplus.com](https://webdesign.tutsplus.com/articles/understanding-the-z-layout-in-web-design--webdesign-28)
+- [Aaron Agius @business.com](https://www.business.com/articles/the-psychology-of-choice-and-how-your-startup-can-leverage-it/)
+- [Flow (psychology) @Wikipedia](<https://en.wikipedia.org/wiki/Flow_(psychology)>)

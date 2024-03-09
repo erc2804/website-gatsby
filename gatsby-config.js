@@ -2,7 +2,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 require("dotenv").config({
-  path: '.env',
+  path: ".env",
 })
 module.exports = {
   siteMetadata: {

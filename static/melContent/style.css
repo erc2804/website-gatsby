@@ -1,12 +1,14 @@
 @font-face {
-    font-family: 'super_mario_256';
-    src: url('../melFonts/supermario256-webfont.woff2') format('woff2'),
-         url('../melFonts/supermario256-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "super_mario_256";
+  src:
+    url("../melFonts/supermario256-webfont.woff2") format("woff2"),
+    url("../melFonts/supermario256-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-html, body {
+html,
+body {
   position: relative;
   width: 100%;
   height: 100%;
@@ -49,15 +51,15 @@ html, body {
 }
 
 #instr_overlay {
-  font-family: 'super_mario_256';
+  font-family: "super_mario_256";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   text-align: center;
   font-size: 1.5em;
   z-index: 99;
@@ -71,7 +73,7 @@ html, body {
   position: absolute;
   right: 1em;
   bottom: 1em;
-  font-size: .7em;
+  font-size: 0.7em;
 }
 
 /* --- world elements --- */
@@ -81,7 +83,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 10%;
-  background-image: url('img/world_block.png');
+  background-image: url("img/world_block.png");
   background-repeat: repeat;
   background-size: 5%;
 }
@@ -123,13 +125,19 @@ html, body {
   z-index: 3;
 }
 
-#block_1, #block_1_inactive, #coin_1 {
+#block_1,
+#block_1_inactive,
+#coin_1 {
   left: 25%;
 }
-#block_2, #block_2_inactive, #coin_2 {
+#block_2,
+#block_2_inactive,
+#coin_2 {
   left: 50%;
 }
-#block_3, #block_3_inactive, #coin_3 {
+#block_3,
+#block_3_inactive,
+#coin_3 {
   left: 75%;
 }
 
