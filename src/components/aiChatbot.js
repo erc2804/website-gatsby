@@ -59,23 +59,25 @@ const AiChatbot = () => {
   }
 
   const fetchMessage = async () => {
-    try {
-      setAnswerIsLoading(true)
-      const data = await callOpenAIAPi()
-      setAnswerIsLoading(false)
-      const assistantMessage = {
-        role: "assistant",
-        content: data.choices[0].message.content,
+    if(messages.length) {
+      try {
+        setAnswerIsLoading(true)
+        const data = await callOpenAIAPi()
+        setAnswerIsLoading(false)
+        const assistantMessage = {
+          role: "assistant",
+          content: data.choices[0].message.content,
+        }
+        setMessages((prevMessages) => [...prevMessages, assistantMessage])
+        setNewUserMessage(null)
+        setError(null)
+      } catch (error) {
+        console.error("error: ", error.message)
+        setError(
+          "Oops! Something went wrong. Please try again later. If the error keeps occurring, please contact me."
+        )
+        setAnswerIsLoading(false)
       }
-      setMessages((prevMessages) => [...prevMessages, assistantMessage])
-      setNewUserMessage(null)
-      setError(null)
-    } catch (error) {
-      console.error("error: ", error.message)
-      setError(
-        "Oops! Something went wrong. Please try again later. If the error keeps occurring, please contact me."
-      )
-      setAnswerIsLoading(false)
     }
   }
 
@@ -102,7 +104,6 @@ const AiChatbot = () => {
       setMessages([])
       sessionStorage.removeItem("messages")
       setError(null)
-      showInitialTypingEffect()
     }
   }
 

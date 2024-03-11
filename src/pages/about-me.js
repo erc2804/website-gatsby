@@ -66,7 +66,7 @@ export default function Aboutme() {
           </div>
           <div className="md:sticky md:top-28 md:h-full flex-none flex flex-col gap-6">
             <h3 className="ec-font-heading-2">Contact</h3>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 min-[500px]:items-center md:items-stretch">
               {allSocialMediaBoxes.map((socialMediaBox) => (
                 <SocialMediaLink
                   key={socialMediaBox.label}

@@ -15,7 +15,7 @@ const fetchGist = async () => {
   }
 
   const gistData = await gistResponse.json()
-  const gistFile = gistData.files["ercan-gpt-system-message.txt"]
+  const gistFile = gistData.files[process.env.GITHUB_GIST_FILENAME]
   if (!gistFile) {
     throw new Error("Could not find gist file.")
   }
