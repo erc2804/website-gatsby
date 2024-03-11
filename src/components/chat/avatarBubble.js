@@ -3,7 +3,8 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const AvatarBubble = (role) => {
   const isAssistant = role === "assistant"
-  const baseClasses = "flex-none size-10 md:size-16 rounded-full overflow-hidden"
+  const baseClasses =
+    "flex-none size-10 md:size-16 rounded-full overflow-hidden"
   const avatarClasses = `${baseClasses} ${
     isAssistant
       ? "bg-gray-low-lvl shadow-sm"

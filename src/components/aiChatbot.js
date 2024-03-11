@@ -10,7 +10,7 @@ const AiChatbot = () => {
   const [error, setError] = useState(null)
 
   const typingContainerRef = useRef(null)
-  const initialRender = useRef(true);
+  const initialRender = useRef(true)
 
   const showInitialTypingEffect = () => {
     setShowInitialTyping(true)
@@ -19,7 +19,7 @@ const AiChatbot = () => {
     }, 1000)
   }
 
-  const [messages, setMessages] = useState(() => {
+  const initMessages = () => {
     if (typeof window !== "undefined") {
       const savedMessages = sessionStorage.getItem("messages")
       if (savedMessages) {
@@ -28,7 +28,9 @@ const AiChatbot = () => {
     }
     showInitialTypingEffect()
     return []
-  })
+  }
+
+  const [messages, setMessages] = useState(initMessages)
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -59,14 +61,14 @@ const AiChatbot = () => {
   }
 
   const fetchMessage = async () => {
-    if(messages.length) {
+    if (messages.length) {
       try {
         setAnswerIsLoading(true)
-        const data = await callOpenAIAPi()
+        const aiData = await callOpenAIAPi()
         setAnswerIsLoading(false)
         const assistantMessage = {
           role: "assistant",
-          content: data.choices[0].message.content,
+          content: aiData.choices[0].message.content,
         }
         setMessages((prevMessages) => [...prevMessages, assistantMessage])
         setNewUserMessage(null)
@@ -94,17 +96,12 @@ const AiChatbot = () => {
   }
 
   const resetChat = () => {
-    if(answerIsLoading) {
-      return;
+    if (answerIsLoading) {
+      return
     }
-    const nonSystemMessages = messages.filter(
-      (message) => message.role !== "system"
-    )
-    if (nonSystemMessages.length) {
-      setMessages([])
-      sessionStorage.removeItem("messages")
-      setError(null)
-    }
+    setMessages([])
+    sessionStorage.removeItem("messages")
+    setError(null)
   }
 
   const handleFormSubmit = (event) => {
@@ -113,23 +110,26 @@ const AiChatbot = () => {
   }
 
   const handleInputTyping = (event) => {
-    if(answerIsLoading) {
-      return;
+    if (answerIsLoading) {
+      return
     }
     setInputValue(event.target.value)
   }
 
- useEffect(() => {
+  useEffect(() => {
     if (newUserMessage && !initialRender.current) {
       fetchMessage()
     }
     if (typingContainerRef.current && !initialRender.current) {
       setTimeout(() => {
-        typingContainerRef.current.scrollIntoView({ behavior: "smooth", block: "end" })
+        typingContainerRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+        })
       })
     }
     if (initialRender.current) {
-      initialRender.current = false;
+      initialRender.current = false
     }
   }, [messages, newUserMessage])
 
@@ -172,7 +172,11 @@ const AiChatbot = () => {
             value={inputValue}
             type="text"
             className="w-full pl-6 pr-16 py-2 min-h-16 rounded-xl shadow-sm sm:ec-font-subheading outline-none focus:ring-1 focus:ring-brand-blue transition-all"
-            placeholder={answerIsLoading ? "The AI is answering. Please wait...": "Start typing..."}
+            placeholder={
+              answerIsLoading
+                ? "The AI is answering. Please wait..."
+                : "Start typing..."
+            }
           />
           <button
             type="submit"
