@@ -26,7 +26,7 @@ export default function Aboutme() {
     <Layout>
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="ABOUT ME" />
-        <div className="flex flex-col lg:flex-row gap-10">
+        <div className="flex flex-col-reverse lg:flex-row gap-10">
           <div className="flex-1 flex flex-col gap-6">
             <h2 className="ec-font-heading-2 leading-[1.2] font-bold text-6xl text-brand-green-medium-lvl">
               <span className="hidden">Ercan Cicek</span>
@@ -37,7 +37,7 @@ export default function Aboutme() {
               </span>
             </h2>
             <p className="ec-font-subheading">
-              I am a UX Developer with more than seven years of work experience
+              I'm Ercan, a UX Developer with more than seven years of work experience
               in conceptualizing and implementing web applications.
               <br />
               Mainly I am working with <strong>Angular</strong>,{" "}
@@ -48,7 +48,7 @@ export default function Aboutme() {
               education regularly.
             </p>
           </div>
-          <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-96 size-fit rounded-full overflow-hidden relative">
+          <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-80 size-fit rounded-full overflow-hidden relative">
             <StaticImage
               src="../images/about-me/ercancicek.jpg"
               alt="Ercan Cicek profile"
@@ -66,7 +66,7 @@ export default function Aboutme() {
           </div>
           <div className="md:sticky md:top-28 md:h-full flex-none flex flex-col gap-6">
             <h3 className="ec-font-heading-2">Contact</h3>
-            <div className="flex flex-col items-center md:items-start gap-6">
+            <div className="flex flex-col gap-6">
               {allSocialMediaBoxes.map((socialMediaBox) => (
                 <SocialMediaLink
                   key={socialMediaBox.label}

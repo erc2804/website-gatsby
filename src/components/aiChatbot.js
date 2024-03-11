@@ -8,7 +8,9 @@ const AiChatbot = () => {
   const [showInitialTyping, setShowInitialTyping] = useState(false)
   const [newUserMessage, setNewUserMessage] = useState(null)
   const [error, setError] = useState(null)
+
   const typingContainerRef = useRef(null)
+  const initialRender = useRef(true);
 
   const showInitialTypingEffect = () => {
     setShowInitialTyping(true)
@@ -71,14 +73,14 @@ const AiChatbot = () => {
     } catch (error) {
       console.error("error: ", error.message)
       setError(
-        "Oops! Something went wrong. Please try again later. If the error keep occurring, please contact me."
+        "Oops! Something went wrong. Please try again later. If the error keeps occurring, please contact me."
       )
       setAnswerIsLoading(false)
     }
   }
 
   const sendMessage = () => {
-    if (inputValue && inputValue.length > 1) {
+    if (!answerIsLoading && inputValue && inputValue.length) {
       const newMessage = {
         role: "user",
         content: inputValue,
@@ -90,13 +92,17 @@ const AiChatbot = () => {
   }
 
   const resetChat = () => {
+    if(answerIsLoading) {
+      return;
+    }
     const nonSystemMessages = messages.filter(
       (message) => message.role !== "system"
     )
-    if (nonSystemMessages.length > 0) {
-      showInitialTypingEffect()
+    if (nonSystemMessages.length) {
       setMessages([])
       sessionStorage.removeItem("messages")
+      setError(null)
+      showInitialTypingEffect()
     }
   }
 
@@ -105,14 +111,24 @@ const AiChatbot = () => {
     sendMessage()
   }
 
-  useEffect(() => {
-    if (newUserMessage) {
+  const handleInputTyping = (event) => {
+    if(answerIsLoading) {
+      return;
+    }
+    setInputValue(event.target.value)
+  }
+
+ useEffect(() => {
+    if (newUserMessage && !initialRender.current) {
       fetchMessage()
     }
-    if (typingContainerRef.current) {
+    if (typingContainerRef.current && !initialRender.current) {
       setTimeout(() => {
-        typingContainerRef.current.scrollIntoView({ behavior: "smooth" })
+        typingContainerRef.current.scrollIntoView({ behavior: "smooth", block: "end" })
       })
+    }
+    if (initialRender.current) {
+      initialRender.current = false;
     }
   }, [messages, newUserMessage])
 
@@ -124,7 +140,7 @@ const AiChatbot = () => {
       ) : (
         <ChatEntry
           role={"assistant"}
-          message="I am a GPT trained to answer questions on behalf of Ercan Cicek. Feel free to ask me anything. For specific inquiries, please consider direct contact."
+          message="I am a GPT trained to answer questions on behalf of Ercan. Feel free to ask me anything. For specific inquiries, please consider direct contact."
         />
       )}
       {/* --- messages --- */}
@@ -151,24 +167,25 @@ const AiChatbot = () => {
       <div className="flex flex-col gap-2" ref={typingContainerRef}>
         <form onSubmit={handleFormSubmit} className="relative">
           <input
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={(e) => handleInputTyping(e)}
             value={inputValue}
             type="text"
-            className="w-full pl-6 pr-16 py-2 min-h-16 rounded-3xl shadow-sm sm:ec-font-subheading outline-none focus:ring-1 focus:ring-brand-blue transition-all"
-            placeholder="Start typing..."
+            className="w-full pl-6 pr-16 py-2 min-h-16 rounded-xl shadow-sm sm:ec-font-subheading outline-none focus:ring-1 focus:ring-brand-blue transition-all"
+            placeholder={answerIsLoading ? "The AI is answering. Please wait...": "Start typing..."}
           />
           <button
             type="submit"
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer group"
-            disabled={inputValue.length <= 1}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer disabled:cursor-default group"
+            disabled={answerIsLoading || !inputValue.length}
             title="Send message"
           >
-            <SendIcon iconClasses="fill-gray-medium-lvl/70 size-10 group-hover:scale-110 transition-all" />
+            <SendIcon iconClasses="fill-gray-medium-lvl/70 size-10 group-hover:scale-110 transition-all group-disabled:scale-100 group-disabled:fill-gray-medium-lvl/30" />
           </button>
         </form>
         <button
           onClick={resetChat}
-          className="self-end w-fit px-3 py-1 rounded-2xl text-typo-medium-lvl"
+          disabled={answerIsLoading}
+          className="self-end w-fit px-3 py-1 rounded-2xl text-typo-medium-lvl disabled:text-typo-low-lvl disabled:cursor-wait"
         >
           Reset Chat
         </button>
