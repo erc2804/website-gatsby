@@ -75,9 +75,13 @@ const AiChatbot = () => {
         setError(null)
       } catch (error) {
         console.error("error: ", error.message)
-        setError(
-          "Oops! Something went wrong. Please try again later. If the error keeps occurring, please contact me."
-        )
+        let userErrorMessage;
+        if (error.message.includes("Rate limit exceeded")) {
+          userErrorMessage = "Whoa, it's crowded in here! So many people are chatting that we've hit the traffic limit. I'm doing my best to keep costs down and unfortunately, you've caught the short end of the stick. Hang tight and try again later, okay?";
+        } else {
+          userErrorMessage = "An unexpected error occurred. Please try again later.";
+        }
+        setError(userErrorMessage)
         setAnswerIsLoading(false)
       }
     }
