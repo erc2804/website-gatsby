@@ -37,7 +37,7 @@ export default function Aboutme() {
               </span>
             </h2>
             <p className="ec-font-subheading">
-              I'm Ercan, a UX Developer with more than seven years of work
+              I'm Ercan, a UX Developer & UX Designer with more than eight years of work
               experience in conceptualizing and implementing web applications.
               <br />
               Mainly I am working with <strong>Angular</strong>,{" "}
