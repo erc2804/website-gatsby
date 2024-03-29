@@ -5,6 +5,7 @@ import PageHeadline from "../components/pageHeadline"
 import { StaticImage } from "gatsby-plugin-image"
 import allSocialMediaBoxes from "../constants/socialMediaBoxes"
 import AiChatbot from "../components/aiChatbot"
+import ecAvatar from "../images/about-me/ercancicek.jpg"
 
 const SocialMediaLink = ({ label, url, icon, address }) => (
   <a
@@ -33,19 +34,22 @@ export default function Aboutme() {
               <span>
                 Developer. Designer.&nbsp;
                 <br />
-                Animation expert.
+                People Lead.
               </span>
             </h2>
             <p className="ec-font-subheading">
-              I'm Ercan, a UX Developer & UX Designer with more than eight years of work
-              experience in conceptualizing and implementing web applications.
+              I'm Ercan, a UX Developer & UX Designer with more than eight years
+              of work experience in conceptualizing and implementing web
+              applications.
               <br />
-              Mainly I am working with <strong>Angular</strong>,{" "}
-              <strong>Figma</strong> and <strong>Adobe CC</strong>.<br />
+              Mainly I am working with <strong>Vue</strong>,{" "}
+              <strong>React</strong>, <strong>Figma</strong> and{" "}
+              <strong>Rive</strong>.<br />
               Due to my previous studies of Communication and Multimedia Design
               at Fachhochschule Aachen I have an affinity for{" "}
               <strong>Frontend design & development</strong> and getting further
-              education regularly.
+              education regularly. My main goal is to{" "}
+              <strong>build the bridge</strong> between design and development.
             </p>
           </div>
           <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-80 size-fit rounded-full overflow-hidden relative">
@@ -81,4 +85,11 @@ export default function Aboutme() {
   )
 }
 
-export const Head = () => <Seo title="About Me" pathname="/about-me" />
+export const Head = () => (
+  <Seo
+    title="About Ercan Cicek | Experienced UX Developer & UX Designer in Dusseldorf"
+    description="Learn more about Ercan Cicek, an experienced UX Developer and Designer based in Dusseldorf with over eight years of experience in conceptualizing and implementing web applications. Specializing in Vue, Figma and building the bridge between design and development"
+    pathname="/about-me"
+    image={ecAvatar}
+  />
+)

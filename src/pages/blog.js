@@ -5,6 +5,7 @@ import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { CalendarIcon } from "../components/icons/calendarIcon"
 import { ChevronDownIcon } from "../components/icons/chevronDownIcon"
+import ecLogoWithBg from "../images/logo_original_with_bg.png"
 
 const transformPosts = (edges) =>
   edges.map((edge) => ({
@@ -123,4 +124,11 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = () => <Seo title="Blog" pathname="/blog" />
+export const Head = () => (
+  <Seo 
+    title="Ercan Cicek's Blog | Web Development, Design Principles, and More" 
+    description="Explore Ercan Cicek's blog for insightful articles and resources on web development, design principles, and more"
+    pathname="/blog"
+    image={ecLogoWithBg}
+  />
+)

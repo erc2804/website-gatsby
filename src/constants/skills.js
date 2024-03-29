@@ -12,8 +12,8 @@ const allSkills = [
     url: "https://www.figma.com/",
   },
   {
-    label: "Adobe CC",
-    url: "https://www.adobe.com/creativecloud.html",
+    label: "Rive",
+    url: "https://rive.app/",
   },
 ]
 

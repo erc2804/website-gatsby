@@ -5,8 +5,9 @@ import bgLandscapeImg from "../images/index/bg-landscape.jpg"
 import bgPortraitImg from "../images/index/bg-portrait.jpg"
 import AdpillarText from "../components/adpillarText"
 import allSkills from "../constants/skills"
+import ecPhoto from "../images/index/bg-portrait.jpg"
 
-const adpillarTexts = ["Designer", "Developer"]
+const adpillarTexts = ["Designer", "Developer", "Lead"]
 
 export default function Home() {
   return (
@@ -62,4 +63,9 @@ export default function Home() {
   )
 }
 
-export const Head = () => <Seo title="Home" />
+<Seo 
+  title="Ercan Cicek | Experienced UX Developer & Designer in Dusseldorf | Portfolio & Blog" 
+  description="Welcome to the website of Ercan Cicek, a UX Developer and Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work." 
+  pathname="/" 
+  image={ecPhoto}
+/>

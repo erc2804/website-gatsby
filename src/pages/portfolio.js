@@ -6,6 +6,7 @@ import LinkBox from "../components/linkBox"
 import PageHeadline from "../components/pageHeadline"
 import { GatsbyImage } from "gatsby-plugin-image"
 import allPortfolioBoxes from "../constants/portfolioBoxes"
+import ecLogoWithBg from "../images/logo_original_with_bg.png"
 
 const transformImages = (edges) =>
   Object.fromEntries(
@@ -81,4 +82,11 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = () => <Seo title="Portfolio" pathname="/portfolio" />
+export const Head = () => (
+  <Seo 
+    title="Ercan Cicek's Portfolio | Web & Mobile Projects" 
+    description="Explore Ercan Cicek's portfolio showcasing a variety of web and mobile development projects. Discover the technologies used, project details, and more" 
+    pathname="/portfolio" 
+    image={ecLogoWithBg}
+  />
+)
