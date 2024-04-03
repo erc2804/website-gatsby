@@ -63,9 +63,11 @@ export default function Home() {
   )
 }
 
-<Seo 
-  title="Ercan Cicek | Experienced UX Developer & Designer in Dusseldorf | Portfolio & Blog" 
-  description="Welcome to the website of Ercan Cicek, a UX Developer and Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work." 
-  pathname="/" 
-  image={ecPhoto}
-/>
+export const Head = () => (
+  <Seo
+    title="Ercan Cicek | Experienced UX Developer & Designer in Dusseldorf | Portfolio & Blog"
+    description="Welcome to the website of Ercan Cicek, a UX Developer and Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work."
+    pathname="/"
+    image={ecPhoto}
+  />
+)
