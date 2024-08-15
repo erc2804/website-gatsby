@@ -54,6 +54,14 @@ const allPortfolioBoxes = [
   },
   {
     type: PortfolioCategories.WEB,
+    label: "Curanto",
+    url: "https://www.curanto.de/",
+    categoryDesc: "Website",
+    image: "curanto",
+    techs: ["Vue.js", "Statamic", "Figma"],
+  },
+  {
+    type: PortfolioCategories.WEB,
     label: "tech demo",
     url: "https://ercancicek.com/mel-menu.html",
     categoryDesc: "Website",
