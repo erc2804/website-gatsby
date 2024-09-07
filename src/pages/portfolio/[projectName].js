@@ -1,4 +1,4 @@
-import React, { useMemo } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import { Seo } from "../../components/seo"
@@ -27,15 +27,13 @@ export default function ProjectPage({ params, data }) {
   const projectData = allPortfolioBoxes.find(
     (box) => decodeURIComponent(box.label) === decodedProjectName
   )
-
-  const images = useMemo(
-    () => transformImages(data.allFile.edges),
-    [data.allFile.edges]
-  )
+  console.log("projectData: ", projectData)
 
   if (!projectData) {
     return <p>Project not found</p>
   }
+
+  const images = transformImages(data.allFile.edges)
 
   return (
     <Layout>
@@ -123,6 +121,10 @@ export const Head = ({ params, data }) => {
   const projectData = allPortfolioBoxes.find(
     (box) => decodeURIComponent(box.label) === decodedProjectName
   )
+
+  if (!projectData) {
+    return <p>Project not found</p>
+  }
 
   const images = transformImages(data.allFile.edges)
   const imageData = images[projectData.image]
