@@ -28,7 +28,7 @@ const ColorClassesPerCategory = {
   },
 }
 
-const LinkBox = ({ label, url, descText, type, categoryDesc, children }) => {
+const LinkBox = ({ label, url, descText, type, target = '_blank', categoryDesc, children }) => {
   const childrenArray = React.Children.toArray(children)
   const firstChild = childrenArray[0]
   let boxVisualClasses = "size-full transition-transform"
@@ -48,7 +48,7 @@ const LinkBox = ({ label, url, descText, type, categoryDesc, children }) => {
     <a
       href={url}
       className={`aspect-[3/4] rounded-3xl shadow-sm lg:hover:shadow-lg overflow-hidden ${ColorClassesPerCategory[type].bg} transition-all relative group`}
-      target="_blank"
+      target={target}
       rel="noopener noreferrer"
     >
       <div className={boxVisualClasses}>{children}</div>

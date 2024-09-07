@@ -7,7 +7,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Ercan Cicek - UX Developer & Designer`,
-    description: `Ercan Cicek is a UX Developer and UX Designer based in Dusseldorf with more than eight years of work experience in conceptualizing and implementing web applications in the frontend.`,
+    description: `Ercan Cicek is a UX Developer and UX Designer based in Dusseldorf with more than nine years of work experience in conceptualizing and implementing web applications in the frontend.`,
     siteUrl: `https://www.ercancicek.com`,    
     siteName: `Ercan Cicek's Portfolio & Blog`,
   },

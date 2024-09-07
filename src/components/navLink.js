@@ -18,6 +18,7 @@ const NavLink = ({ to, onDark, children }) => {
       to={to}
       className={navLinkClasses}
       activeClassName={activeClasses}
+      partiallyActive={true}
       aria-label={children}
     >
       {children}

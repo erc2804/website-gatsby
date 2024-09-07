@@ -38,7 +38,7 @@ export default function Aboutme() {
               </span>
             </h2>
             <p className="ec-font-subheading">
-              I'm Ercan, a UX Developer & UX Designer with more than eight years
+              I'm Ercan, a UX Developer & UX Designer with more than nine years
               of work experience in conceptualizing and implementing web
               applications.
               <br />
@@ -88,7 +88,7 @@ export default function Aboutme() {
 export const Head = () => (
   <Seo
     title="About Ercan Cicek | Experienced UX Developer & UX Designer in Dusseldorf"
-    description="Learn more about Ercan Cicek, an experienced UX Developer and Designer based in Dusseldorf with over eight years of experience in conceptualizing and implementing web applications. Specializing in Vue, Figma and building the bridge between design and development"
+    description="Learn more about Ercan Cicek, an experienced UX Developer and Designer based in Dusseldorf with over nine years of experience in conceptualizing and implementing web applications. Specializing in Vue, Figma and building the bridge between design and development"
     pathname="/about-me"
     image={ecAvatar}
   />

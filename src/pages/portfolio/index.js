@@ -1,12 +1,12 @@
 import React, { useMemo } from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import { Seo } from "../components/seo"
-import LinkBox from "../components/linkBox"
-import PageHeadline from "../components/pageHeadline"
+import Layout from "../../components/layout"
+import { Seo } from "../../components/seo"
+import LinkBox from "../../components/linkBox"
+import PageHeadline from "../../components/pageHeadline"
 import { GatsbyImage } from "gatsby-plugin-image"
-import allPortfolioBoxes from "../constants/portfolioBoxes"
-import ecLogoWithBg from "../images/logo_original_with_bg.png"
+import allPortfolioBoxes from "../../constants/portfolioBoxes"
+import ecLogoWithBg from "../../images/logo_original_with_bg.png"
 
 const transformImages = (edges) =>
   Object.fromEntries(
@@ -34,9 +34,14 @@ export default function Portfolio({
           {allPortfolioBoxes.map((portfolioBox) => (
             <LinkBox
               key={portfolioBox.label}
+              target={portfolioBox.content ? "_self" : "_blank"}
               type={portfolioBox.type}
               label={portfolioBox.label}
-              url={portfolioBox.url}
+              url={
+                portfolioBox.content
+                  ? `/portfolio/${encodeURIComponent(portfolioBox.label)}`
+                  : portfolioBox.url
+              }
               categoryDesc={portfolioBox.categoryDesc}
               descText={portfolioBox.techs?.join(", ")}
               isSmall={portfolioBox.isSmall}
@@ -83,10 +88,10 @@ export const pageQuery = graphql`
 `
 
 export const Head = () => (
-  <Seo 
-    title="Ercan Cicek's Portfolio | Web & Mobile Projects" 
-    description="Explore Ercan Cicek's portfolio showcasing a variety of web and mobile development projects. Discover the technologies used, project details, and more" 
-    pathname="/portfolio" 
+  <Seo
+    title="Ercan Cicek's Portfolio | Web & Mobile Projects"
+    description="Explore Ercan Cicek's portfolio showcasing a variety of web and mobile development projects. Discover the technologies used, project details, and more"
+    pathname="/portfolio"
     image={ecLogoWithBg}
   />
 )
