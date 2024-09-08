@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
           type
           label
           url
+          urlDesc
           categoryDesc
           image
           techs
