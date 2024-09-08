@@ -107,20 +107,20 @@ export default function Blog({ data }) {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___id] }) {
-      edges {
-        node {
-          frontmatter {
-            id
-            date(formatString: "MMMM DD, YYYY")
-            title
-            imageUrl
-            verticalImgPosInPercent
+    allMarkdownRemark(sort: {frontmatter: {id: DESC}}) {
+        edges {
+          node {
+            frontmatter {
+              id
+              date(formatString: "MMMM DD, YYYY")
+              title
+              imageUrl
+              verticalImgPosInPercent
+            }
+            html
           }
-          html
         }
       }
-    }
   }
 `
 

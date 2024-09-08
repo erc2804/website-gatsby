@@ -1,12 +1,12 @@
-import React from "react"
+import React, { useMemo } from "react"
+import slugify from "slugify"
 import { graphql, Link } from "gatsby"
-import Layout from "../../components/layout"
-import { Seo } from "../../components/seo"
-import PageHeadline from "../../components/pageHeadline"
+import Layout from "../components/layout"
+import { Seo } from "../components/seo"
+import PageHeadline from "../components/pageHeadline"
 import { GatsbyImage } from "gatsby-plugin-image"
-import allPortfolioBoxes from "../../constants/portfolioBoxes"
-import { ExternalLinkIcon } from "../../components/icons/externalLinkIcon"
-import { ArrowLeftIcon } from "../../components/icons/arrowLeftIcon"
+import { ExternalLinkIcon } from "../components/icons/externalLinkIcon"
+import { ArrowLeftIcon } from "../components/icons/arrowLeftIcon"
 
 const transformImages = (edges) =>
   Object.fromEntries(
@@ -20,20 +20,12 @@ const transformImages = (edges) =>
     )
   )
 
-export default function ProjectPage({ params, data }) {
-  const { projectName } = params
-  const decodedProjectName = decodeURIComponent(projectName)
-
-  const projectData = allPortfolioBoxes.find(
-    (box) => decodeURIComponent(box.label) === decodedProjectName
+const PortfolioTemplate = ({ data, pageContext }) => {
+  const { label, url, urlDesc, image, content } = pageContext
+  const images = useMemo(
+    () => transformImages(data.allFile.edges),
+    [data.allFile.edges]
   )
-  console.log("projectData: ", projectData)
-
-  if (!projectData) {
-    return <p>Project not found</p>
-  }
-
-  const images = transformImages(data.allFile.edges)
 
   return (
     <Layout>
@@ -50,18 +42,16 @@ export default function ProjectPage({ params, data }) {
               Back
             </span>
           </Link>
-          <PageHeadline text={projectData.label} />
+          <PageHeadline text={label} />
         </div>
         <div className="flex flex-col md:flex-row gap-10">
           <div className="flex-1 flex flex-col gap-6">
             <h2 className="ec-font-heading-2 leading-[1.2] font-bold text-4xl text-brand-green-medium-lvl">
-              {projectData.content.title}
+              {content.title}
             </h2>
-            <p className="ec-font-subheading">
-              {projectData.content.description}
-            </p>
+            <p className="ec-font-subheading">{content.description}</p>
             <a
-              href={projectData.url}
+              href={url}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-3xl shadow-sm lg:hover:shadow-lg bg-gray-min-lvl px-6 py-4 w-fit flex-none flex flex-row gap-4 items-center text-typo-medium-lvl/70 transition-all"
@@ -70,17 +60,15 @@ export default function ProjectPage({ params, data }) {
                 <ExternalLinkIcon />
               </div>
               <div className="flex flex-col">
-                <span className="ec-font-base">
-                  {projectData.urlDescription ?? projectData.url}
-                </span>
-                <span className="ec-font-subheading font-bold">{`See ${projectData.label} in action`}</span>
+                <span className="ec-font-base">{urlDesc ?? url}</span>
+                <span className="ec-font-subheading font-bold">{`See ${label} in action`}</span>
               </div>
             </a>
           </div>
           <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-80 size-fit overflow-hidden relative">
             <GatsbyImage
-              image={images[projectData.image]}
-              alt={`smartphone screen of the portfolio entry: ${projectData.label}`}
+              image={images[image]}
+              alt={`smartphone screen of the portfolio entry: ${label}`}
               imgStyle={{ objectFit: `contain` }}
             />
           </div>
@@ -90,7 +78,7 @@ export default function ProjectPage({ params, data }) {
   )
 }
 
-export const pageQuery = graphql`
+export const query = graphql`
   query {
     allFile(
       filter: {
@@ -114,29 +102,22 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = ({ params, data }) => {
-  const { projectName } = params
-  const decodedProjectName = decodeURIComponent(projectName)
-
-  const projectData = allPortfolioBoxes.find(
-    (box) => decodeURIComponent(box.label) === decodedProjectName
-  )
-
-  if (!projectData) {
-    return <p>Project not found</p>
+export const Head = ({ data, pageContext }) => {
+    const { label, image } = pageContext
+    const slug = slugify(label, { lower: true, strict: true })
+    const images = useMemo(
+        () => transformImages(data.allFile.edges),
+        [data.allFile.edges]
+      )
+  
+    return (
+      <Seo
+        title={`${label} | Ercan Cicek's Portfolio`}
+        description={`Discover the ${label} project in Ercan Cicek's portfolio. Learn about the technologies used, challenges faced, and the solutions implemented.`}
+        pathname={`/portfolio/${slug}`}
+        image={images[image]}
+      />
+    )
   }
 
-  const images = transformImages(data.allFile.edges)
-  const imageData = images[projectData.image]
-
-  const imageUrl = imageData ? imageData.images.fallback.src : null
-
-  return (
-    <Seo
-      title={`${projectData.label} | Ercan Cicek's Portfolio`}
-      description={`Discover the ${projectData.label} project in Ercan Cicek's portfolio. Learn about the technologies used, challenges faced, and the solutions implemented.`}
-      pathname={`/portfolio/${projectName}`}
-      image={imageUrl}
-    />
-  )
-}
+export default PortfolioTemplate

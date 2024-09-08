@@ -3,9 +3,18 @@ import Layout from "../components/layout"
 import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { StaticImage } from "gatsby-plugin-image"
-import allSocialMediaBoxes from "../constants/socialMediaBoxes"
+import allSocialMediaBoxes from "../data/socialMediaData"
 import AiChatbot from "../components/aiChatbot"
 import ecAvatar from "../images/about-me/ercancicek.jpg"
+import { LinkedInIcon } from "../components/icons/linkedInIcon"
+import { XingIcon } from "../components/icons/xingIcon"
+import { EnvelopeIcon } from "../components/icons/envelopeIcon"
+
+const mappedIcons = {
+  LinkedInIcon: <LinkedInIcon />,
+  XingIcon: <XingIcon />,
+  EnvelopeIcon: <EnvelopeIcon />,
+}
 
 const SocialMediaLink = ({ label, url, icon, address }) => (
   <a
@@ -13,7 +22,7 @@ const SocialMediaLink = ({ label, url, icon, address }) => (
     className="rounded-3xl shadow-sm lg:hover:shadow-lg bg-gray-min-lvl px-6 py-4 flex-none flex flex-row gap-4 items-center text-typo-medium-lvl/70 transition-all"
   >
     <div className="flex justify-center items-center size-10 [&>svg]:size-full [&>svg]:fill-brand-green-medium-lvl">
-      {icon}
+      {mappedIcons[icon]}
     </div>
     <div className="flex flex-col">
       <span className="ec-font-base">{label}</span>

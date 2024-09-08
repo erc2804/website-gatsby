@@ -4,7 +4,7 @@ import { Seo } from "../components/seo"
 import bgLandscapeImg from "../images/index/bg-landscape.jpg"
 import bgPortraitImg from "../images/index/bg-portrait.jpg"
 import AdpillarText from "../components/adpillarText"
-import allSkills from "../constants/skills"
+import allSkills from "../data/skillsData.json"
 import ecPhoto from "../images/index/bg-portrait.jpg"
 
 const adpillarTexts = ["Designer", "Developer", "Lead"]

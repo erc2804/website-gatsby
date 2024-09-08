@@ -1,12 +1,24 @@
 import React, { useMemo } from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout"
-import { Seo } from "../../components/seo"
-import LinkBox from "../../components/linkBox"
-import PageHeadline from "../../components/pageHeadline"
+import slugify from "slugify"
+import Layout from "../components/layout"
+import { Seo } from "../components/seo"
+import LinkBox from "../components/linkBox"
+import PageHeadline from "../components/pageHeadline"
 import { GatsbyImage } from "gatsby-plugin-image"
-import allPortfolioBoxes from "../../constants/portfolioBoxes"
-import ecLogoWithBg from "../../images/logo_original_with_bg.png"
+import portfolioData from "../data/portfolioData.json"
+import ecLogoWithBg from "../images/logo_original_with_bg.png"
+import { JsFiddleIcon } from "../components/icons/jsFiddleIcon"
+import { CodepenIcon } from "../components/icons/codepenIcon"
+import { LottieIcon } from "../components/icons/lottieIcon"
+import { GithubIcon } from "../components/icons/githubIcon"
+
+const mappedIcons = {
+  JsFiddleIcon: <JsFiddleIcon />,
+  CodepenIcon: <CodepenIcon />,
+  LottieIcon: <LottieIcon />,
+  GithubIcon: <GithubIcon />,
+}
 
 const transformImages = (edges) =>
   Object.fromEntries(
@@ -31,7 +43,7 @@ export default function Portfolio({
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="PORTFOLIO" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {allPortfolioBoxes.map((portfolioBox) => (
+          {portfolioData.map((portfolioBox) => (
             <LinkBox
               key={portfolioBox.label}
               target={portfolioBox.content ? "_self" : "_blank"}
@@ -39,7 +51,10 @@ export default function Portfolio({
               label={portfolioBox.label}
               url={
                 portfolioBox.content
-                  ? `/portfolio/${encodeURIComponent(portfolioBox.label)}`
+                  ? `/portfolio/${slugify(portfolioBox.label, {
+                      lower: true,
+                      strict: true,
+                    })}`
                   : portfolioBox.url
               }
               categoryDesc={portfolioBox.categoryDesc}
@@ -53,7 +68,7 @@ export default function Portfolio({
                   imgStyle={{ objectFit: `contain` }}
                 />
               ) : portfolioBox.icon ? (
-                portfolioBox.icon
+                mappedIcons[portfolioBox.icon]
               ) : null}
             </LinkBox>
           ))}
