@@ -4,7 +4,9 @@ import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { StaticImage } from "gatsby-plugin-image"
 import allSocialMediaBoxes from "../data/socialMediaData"
+import allSkills from "../data/skillsData.json"
 import AiChatbot from "../components/aiChatbot"
+import TextLink from "../components/textLink"
 import ecAvatar from "../images/about-me/ercancicek.jpg"
 import { LinkedInIcon } from "../components/icons/linkedInIcon"
 import { XingIcon } from "../components/icons/xingIcon"
@@ -47,18 +49,39 @@ export default function Aboutme() {
               </span>
             </h2>
             <p className="ec-font-subheading">
-              I'm Ercan, a UX Developer & UX Designer with more than nine years
-              of work experience in conceptualizing and implementing web
-              applications.
-              <br />
-              Mainly I am working with <strong>Vue</strong>,{" "}
-              <strong>React</strong>, <strong>Figma</strong> and{" "}
-              <strong>Rive</strong>.<br />
-              Due to my previous studies of Communication and Multimedia Design
-              at Fachhochschule Aachen I have an affinity for{" "}
-              <strong>Frontend design & development</strong> and getting further
-              education regularly. My main goal is to{" "}
-              <strong>build the bridge</strong> between design and development.
+              With over nine years of experience in frontend development and
+              UI/UX design, I specialize in
+              {" "}
+              {allSkills.map((skill, idx) => (
+                <span>
+                  <TextLink href={skill.url}>{skill.label}</TextLink>
+                  {idx < allSkills.length - 2 && (
+                    <span>
+                      ,{" "}
+                    </span>
+                  )}
+                  {idx === allSkills.length - 2 && (
+                    <span>
+                      {" "}and{" "}
+                    </span>
+                  )}
+                </span>
+              ))}
+              {" "}
+              as my preferred tools. My passion lies in creating intuitive and
+              attractive interfaces that provide real added value to users.
+              Continuously seeking out new trends and technologies, I strive to
+              enhance user experience and project performance. My expertise in
+              accessibility ensures that I help companies design websites in
+              compliance with the{" "}
+              <TextLink href="https://ec.europa.eu/social/main.jsp?catId=1202&intPageId=5581&langId=en">
+                European Accessibility Act (EAA)
+              </TextLink>{" "}
+              legislation. Holding an{" "}
+              <TextLink href="https://ielts.org/">IELTS</TextLink> C1
+              certificate and possessing multilingual communication skills, I
+              effectively collaborate with international teams and stakeholders
+              to implement their requirements and feedback.
             </p>
           </div>
           <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-80 size-fit rounded-full overflow-hidden relative">

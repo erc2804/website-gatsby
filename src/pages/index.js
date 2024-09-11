@@ -36,6 +36,7 @@ export default function Home() {
                   href={skill.url}
                   className="text-brand-sand hover:text-gray-min-lvl"
                   rel="noopener noreferrer"
+                  target="_blank"
                 >
                   {skill.label}
                 </a>
