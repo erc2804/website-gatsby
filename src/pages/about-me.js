@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useMemo } from "react"
 import Layout from "../components/layout"
 import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
@@ -34,6 +34,11 @@ const SocialMediaLink = ({ label, url, icon, address }) => (
 )
 
 export default function Aboutme() {
+  const filteredSkills = useMemo(
+    () => allSkills.filter((skill) => skill["show-in-aboutme"]),
+    []
+  )
+
   return (
     <Layout>
       <main className="ec-layout-visual-content py-24">
@@ -50,24 +55,14 @@ export default function Aboutme() {
             </h2>
             <p className="ec-font-subheading">
               With over nine years of experience in frontend development and
-              UI/UX design, I specialize in
-              {" "}
-              {allSkills.map((skill, idx) => (
+              UI/UX design, I specialize in{" "}
+              {filteredSkills.map((skill, idx) => (
                 <span>
                   <TextLink href={skill.url}>{skill.label}</TextLink>
-                  {idx < allSkills.length - 2 && (
-                    <span>
-                      ,{" "}
-                    </span>
-                  )}
-                  {idx === allSkills.length - 2 && (
-                    <span>
-                      {" "}and{" "}
-                    </span>
-                  )}
+                  {idx < filteredSkills.length - 2 && <span>, </span>}
+                  {idx === filteredSkills.length - 2 && <span> and </span>}
                 </span>
-              ))}
-              {" "}
+              ))}{" "}
               as my preferred tools. My passion lies in creating intuitive and
               attractive interfaces that provide real added value to users.
               Continuously seeking out new trends and technologies, I strive to
