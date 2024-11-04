@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState, useCallback } from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby-plugin-intl"
 import NavLink from "./navLink"
 import EcLogo from "./ecLogo"
 import BurgerMenu from "./burgerMenu"
+import LanguageSwitcher from "./languageSwitcher"
 
 const navElements = [
   {
@@ -79,7 +80,9 @@ const Header = ({ onDark }) => {
     <header
       className={`fixed top-0 left-0 w-full flex flex-col ${
         isOpen ? "h-dvh bg-gray-subtle-lvl" : ""
-      } ${!onDark ? "bg-gray-subtle-lvl" : ""} ${isScrolled && !onDark ? "shadow-md" : ""} transition-all z-50`}
+      } ${!onDark ? "bg-gray-subtle-lvl" : ""} ${
+        isScrolled && !onDark ? "shadow-md" : ""
+      } transition-all z-50`}
     >
       <nav className="flex-none px-6 py-5 flex flex-row items-center justify-between md:justify-start md:gap-12 h-24">
         <Link to="/" aria-label="Home">
@@ -92,6 +95,9 @@ const Header = ({ onDark }) => {
             </NavLink>
           ))}
         </div>
+        <div className="flex-1 hidden md:flex flex-row justify-end">
+          <LanguageSwitcher onDark={onDark} />
+        </div>
         <button
           className="flex md:hidden justify-center items-center size-10"
           aria-label="Toggle menu"
@@ -101,12 +107,15 @@ const Header = ({ onDark }) => {
         </button>
       </nav>
       {isOpen && (
-        <div className="pt-20 flex-1 flex flex-col">
+        <div className="pt-20 pb-6 flex-1 flex flex-col">
           {navElements.map((navElement) => (
             <NavLink key={navElement.to} to={navElement.to}>
               {navElement.label}
             </NavLink>
           ))}
+          <div className="px-6 flex-1 flex flex-col justify-end">
+            <LanguageSwitcher />
+          </div>
         </div>
       )}
     </header>

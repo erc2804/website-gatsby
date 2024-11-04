@@ -6,6 +6,9 @@
   * {
     @apply box-border;
   }
+  html, body {
+    overscroll-behavior: none;
+  }
   body {
     @apply bg-gray-subtle-lvl text-typo-high-lvl;
   }

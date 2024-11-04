@@ -1,27 +1,33 @@
 [
   {
+    "id": 1,
     "show-in-aboutme": true,
     "label": "Vue",
     "url": "https://vuejs.org/"
   },
   {
+    "id": 2,
     "show-in-aboutme": true,
     "label": "React",
     "url": "https://react.dev/"
   },
   {
+    "id": 3,
     "show-in-aboutme": true,
     "label": "Tailwind",
     "url": "https://tailwindcss.com/"
   },
   {
+    "id": 4,
     "show-in-aboutme": true,
     "label": "Figma",
     "url": "https://www.figma.com/"
   },
   {
+    "id": 5,
     "show-in-aboutme": false,
     "label": "Accessibility (WCAG, BFSG)",
+    "labelDe": "Barrierefreiheit (WCAG, BFSG)",
     "url": "https://www.w3.org/WAI/standards-guidelines/wcag/"
   }
 ]

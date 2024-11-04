@@ -57,7 +57,7 @@ export default function Aboutme() {
               With over nine years of experience in frontend development and
               UI/UX design, I specialize in{" "}
               {filteredSkills.map((skill, idx) => (
-                <span>
+                <span key={skill.label}>
                   <TextLink href={skill.url}>{skill.label}</TextLink>
                   {idx < filteredSkills.length - 2 && <span>, </span>}
                   {idx === filteredSkills.length - 2 && <span> and </span>}

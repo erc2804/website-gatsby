@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
           content {
             title
             description
+            descriptionDe
           }
           icon
         }

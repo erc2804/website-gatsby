@@ -1,4 +1,5 @@
 import React from "react"
+import { injectIntl } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import { Seo } from "../components/seo"
 import bgLandscapeImg from "../images/index/bg-landscape.jpg"
@@ -9,7 +10,7 @@ import ecPhoto from "../images/index/bg-portrait.jpg"
 
 const adpillarTexts = ["Designer", "Developer", "Lead"]
 
-export default function Home() {
+const HomePage = ({ intl }) => {
   return (
     <Layout onDark>
       <div className="min-h-dvh relative">
@@ -31,14 +32,14 @@ export default function Home() {
           </h1>
           <div className="pt-40 md:pt-52 xl:pt-40 2xl:pt-52 pb-8 flex flex-col xl:flex-row ec-font-subheading">
             {allSkills.map((skill, idx) => (
-              <div key={skill.label}>
+              <div key={skill.id}>
                 <a
                   href={skill.url}
                   className="text-brand-sand hover:text-gray-min-lvl"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  {skill.label}
+                  {intl.locale === 'de' && skill.labelDe ? skill.labelDe : skill.label}
                 </a>
                 {idx < allSkills.length - 1 && (
                   <span className="text-brand-green-medium-lvl">
@@ -55,7 +56,7 @@ export default function Home() {
           <source media="(min-width: 1280px)" srcSet={bgLandscapeImg} />
           <img
             src={bgPortraitImg}
-            alt="Decorative background"
+            alt=""
             className="absolute inset-0 size-full object-cover object-right z-10"
           />
         </picture>
@@ -63,6 +64,8 @@ export default function Home() {
     </Layout>
   )
 }
+
+export default injectIntl(HomePage)
 
 export const Head = () => (
   <Seo

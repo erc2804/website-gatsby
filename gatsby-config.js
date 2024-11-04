@@ -82,5 +82,14 @@ module.exports = {
         icon: `src/images/logo_original.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `de`],
+        defaultLanguage: `en`,
+        redirect: true,
+      },
+    },
   ],
 }

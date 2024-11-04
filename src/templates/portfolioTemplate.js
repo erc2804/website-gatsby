@@ -1,6 +1,8 @@
 import React, { useMemo } from "react"
+import { injectIntl } from "gatsby-plugin-intl"
 import slugify from "slugify"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
+import { Link } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
@@ -20,7 +22,7 @@ const transformImages = (edges) =>
     )
   )
 
-const PortfolioTemplate = ({ data, pageContext }) => {
+const PortfolioTemplate = ({ data, intl, pageContext }) => {
   const { label, url, urlDesc, image, content } = pageContext
   const images = useMemo(
     () => transformImages(data.allFile.edges),
@@ -49,7 +51,7 @@ const PortfolioTemplate = ({ data, pageContext }) => {
             <h2 className="ec-font-heading-2 leading-[1.2] font-bold text-4xl text-brand-green-medium-lvl">
               {content.title}
             </h2>
-            <p className="ec-font-subheading">{content.description}</p>
+            <p className="ec-font-subheading">{intl.locale === 'de' && content.descriptionDe ? content.descriptionDe : content.description}</p>
             <a
               href={url}
               target="_blank"
@@ -120,4 +122,4 @@ export const Head = ({ data, pageContext }) => {
     )
   }
 
-export default PortfolioTemplate
+export default injectIntl(PortfolioTemplate)
