@@ -1,8 +1,9 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import ecLogo from "../images/logo_original.png"
 
-export const Seo = ({ title, description, pathname, image, children }) => {
+export const Seo = ({ title, description, pathname, image, currentLocale, children }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -18,8 +19,8 @@ export const Seo = ({ title, description, pathname, image, children }) => {
   }
 
   return (
-    <>
-      <html lang="en" />
+    <Helmet>
+      <html lang={currentLocale} />
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -32,6 +33,6 @@ export const Seo = ({ title, description, pathname, image, children }) => {
       <link rel="icon" href={ecLogo} />
       <link rel="canonical" href={seo.url} />
       {children}
-    </>
+    </Helmet>
   )
 }

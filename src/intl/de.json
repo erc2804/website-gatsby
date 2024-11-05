@@ -5,21 +5,24 @@
   },
   "index": {
     "meta": {
-      "title": "Ercan Cicek | Erfahrener Frontend-Entwickler & UX Designer in Düsseldorf | Portfolio & Blog",
-      "description": "Willkommen auf der Webseite von Ercan Cicek, einem Frontend-Entwickler und UX Designer aus Düsseldorf. Erkunden Sie das Portfolio mit innovativen Webanwendungen, lesen Sie aufschlussreiche Artikel in meinem Blog und erfahren Sie mehr über mich und meine Arbeit."
+      "title": "Ercan Cicek | Erfahrener Frontend-Entwickler & UX-Designer in Düsseldorf | Portfolio & Blog",
+      "description": "Willkommen auf der Webseite von Ercan Cicek, einem Frontend-Entwickler und UX-Designer aus Düsseldorf. Erkunde das Portfolio mit innovativen Webanwendungen, lese aufschlussreiche Artikel in meinem Blog und erfahre mehr über mich und meine Arbeit."
     }
   },
   "portfolio": {
     "meta": {
-      "title": "X",
-      "description": "Y"
+      "title": "Ercan Cicek's Portfolio | Web- & App-Projekte",
+      "description": "Entdecke das Portfolio von Ercan Cicek, das eine Vielzahl von Web- und App-Entwicklungsprojekte beinhaltet. Erfahre mehr über die verwendeten Technologien, Projektdetails und weiteres."
     },
     "box-image-alt": "Smartphone Ansicht des Portfolio-Eintrages"
   },
   "portfolio-template": {
     "meta": {
-      "title": "X",
-      "description": "Y"
+      "title": " | Ercan Cicek's Portfolio",
+      "description": {
+        "part-before-label": "Erkunde das ",
+        "part-after-label": " Projekt in Ercan Cicek's Portfolio. Erfahre mehr über die genutzten Technologien, Herausforderungen und implementierten Lösungen."
+      }
     },
     "back": "Zurück",
     "main-button": {
@@ -27,7 +30,17 @@
       "part-after-label": "ansehen"
     }
   },
+  "blog": {
+    "meta": {
+      "title": "Ercan Cicek's Blog | Webentwicklung, Designprinzipien und mehr",
+      "description": "Entdecke den Blog von Ercan Cicek für aufschlussreiche Artikel und Ressourcen über Webentwicklung, Designprinzipien und mehr."
+    }
+  },
   "about-me": {
+    "meta": {
+      "title": "Über Ercan Cicek | Erfahrener Frontend-Entwickler & UX-Designer in Düsseldorf",
+      "description": "Erfahre mehr über Ercan Cicek, einen erfahrenen Frontend-Entwickler und UX-Designer mit Sitz in Düsseldorf, der über mehr als neun Jahre Erfahrung in der Konzeption und Implementierung von Webanwendungen verfügt. Er ist spezialisiert auf Vue, React & Figma und schlägt die Brücke zwischen Design und Entwicklung."
+    },
     "ec-title": {
       "part-before-linebreak": "Entwickler. Designer.",
       "part-after-linebreak": "Teamleiter."

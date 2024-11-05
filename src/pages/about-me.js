@@ -39,9 +39,15 @@ const AboutmePage = ({ intl }) => {
     () => allSkills.filter((skill) => skill["show-in-aboutme"]),
     []
   )
+  const seoInfo = {
+    title: intl.formatMessage({ id: 'about-me.meta.title' }),
+    description: intl.formatMessage({ id: 'about-me.meta.description' }),
+    pathname: `/about-me`,
+    image: ecAvatar
+  }
 
   return (
-    <Layout>
+    <Layout seo={seoInfo} currentLocale={intl.locale}>
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text={intl.locale === 'de' ? 'ÜBER MICH' : 'ABOUT ME'} />
         <div className="flex flex-col-reverse lg:flex-row gap-10">

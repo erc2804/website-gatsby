@@ -1,7 +1,6 @@
 import React from "react"
 import { injectIntl } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
-import { Seo } from "../components/seo"
 import bgLandscapeImg from "../images/index/bg-landscape.jpg"
 import bgPortraitImg from "../images/index/bg-portrait.jpg"
 import AdpillarText from "../components/adpillarText"
@@ -11,8 +10,14 @@ import ecPhoto from "../images/index/bg-portrait.jpg"
 const adpillarTexts = ["Designer", "Developer"]
 
 const HomePage = ({ intl }) => {
+  const seoInfo = {
+    title: intl.formatMessage({ id: 'index.meta.title' }),
+    description: intl.formatMessage({ id: 'index.meta.description' }),
+    pathname: '/',
+    image: ecPhoto
+  }
   return (
-    <Layout onDark>
+    <Layout seo={seoInfo} currentLocale={intl.locale} onDark>
       <div className="min-h-dvh relative">
         <main className="z-30 relative pt-24 ps-8 md:ps-14 xl:ps-32 2xl:ps-52">
           <h1 className="pt-36 md:pt-52 xl:pt-40 2xl:pt-52 flex flex-col gap-2 text-4xl md:text-7xl xl:text-8xl tracking-[0.125rem] uppercase overflow-hidden">
@@ -66,12 +71,3 @@ const HomePage = ({ intl }) => {
 }
 
 export default injectIntl(HomePage)
-
-export const Head = () => (
-  <Seo
-    title="Ercan Cicek | Experienced UX Developer & Designer in Dusseldorf | Portfolio & Blog"
-    description="Welcome to the website of Ercan Cicek, a UX Developer and Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work."
-    pathname="/"
-    image={ecPhoto}
-  />
-)

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { CalendarIcon } from "../components/icons/calendarIcon"
 import { ChevronDownIcon } from "../components/icons/chevronDownIcon"
@@ -27,6 +26,13 @@ const transformPosts = (edges, currentLocale) =>
 const BlogPage = ({ data, intl }) => {
   const [blogPosts, setBlogPosts] = useState([])
 
+  const seoInfo = {
+    title: intl.formatMessage({ id: 'blog.meta.title' }),
+    description: intl.formatMessage({ id: 'blog.meta.description' }),
+    pathname: `/blog`,
+    image: ecLogoWithBg
+  }
+
   useEffect(() => {
     setBlogPosts(transformPosts(data.allMarkdownRemark.edges, intl.locale))
   }, [data, intl.locale])
@@ -40,7 +46,7 @@ const BlogPage = ({ data, intl }) => {
   }
 
   return (
-    <Layout>
+    <Layout seo={seoInfo} currentLocale={intl.locale}>
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="BLOG" />
         <div className="flex flex-col gap-10">
@@ -134,12 +140,3 @@ export const pageQuery = graphql`
       }
   }
 `
-
-export const Head = () => (
-  <Seo 
-    title="Ercan Cicek's Blog | Web Development, Design Principles, and More" 
-    description="Explore Ercan Cicek's blog for insightful articles and resources on web development, design principles, and more"
-    pathname="/blog"
-    image={ecLogoWithBg}
-  />
-)

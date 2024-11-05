@@ -112,7 +112,7 @@ const Header = ({ onDark, intl }) => {
         <div className="pt-20 pb-6 flex-1 flex flex-col">
           {navElements.map((navElement) => (
             <NavLink key={navElement.to} to={navElement.to}>
-              {navElement.label}
+              {intl.locale === 'de' && navElement.labelDe ? navElement.labelDe : navElement.label}
             </NavLink>
           ))}
           <div className="px-6 flex-1 flex flex-col justify-end">

@@ -4,7 +4,6 @@ import slugify from "slugify"
 import { graphql } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
-import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { ExternalLinkIcon } from "../components/icons/externalLinkIcon"
@@ -24,13 +23,20 @@ const transformImages = (edges) =>
 
 const PortfolioTemplate = ({ data, intl, pageContext }) => {
   const { label, url, urlDesc, image, content } = pageContext
+  const slug = slugify(label, { lower: true, strict: true })
   const images = useMemo(
     () => transformImages(data.allFile.edges),
     [data.allFile.edges]
   )
+  const seoInfo = {
+    title: label + intl.formatMessage({ id: 'portfolio-template.meta.title' }),
+    description: intl.formatMessage({ id: 'portfolio-template.meta.description.part-before-label' }) + label + intl.formatMessage({ id: 'portfolio-template.meta.description.part-after-label' }),
+    pathname: `/portfolio/${slug}`,
+    image: images[image].images.fallback.src
+  }
 
   return (
-    <Layout>
+    <Layout seo={seoInfo} currentLocale={intl.locale}>
       <main className="ec-layout-visual-content py-24">
         <div className="flex flex-row items-center gap-6">
           <Link
@@ -108,23 +114,5 @@ export const query = graphql`
     }
   }
 `
-
-export const Head = ({ data, pageContext }) => {
-    const { label, image } = pageContext
-    const slug = slugify(label, { lower: true, strict: true })
-    const images = useMemo(
-        () => transformImages(data.allFile.edges),
-        [data.allFile.edges]
-      )
-  
-    return (
-      <Seo
-        title={`${label} | Ercan Cicek's Portfolio`}
-        description={`Discover the ${label} project in Ercan Cicek's portfolio. Learn about the technologies used, challenges faced, and the solutions implemented.`}
-        pathname={`/portfolio/${slug}`}
-        image={images[image]}
-      />
-    )
-  }
 
 export default injectIntl(PortfolioTemplate)

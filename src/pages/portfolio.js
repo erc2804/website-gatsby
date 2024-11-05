@@ -2,7 +2,6 @@ import React, { useMemo } from "react"
 import { graphql } from "gatsby"
 import slugify from "slugify"
 import Layout from "../components/layout"
-import { Seo } from "../components/seo"
 import LinkBox from "../components/linkBox"
 import PageHeadline from "../components/pageHeadline"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -37,11 +36,17 @@ const PortfolioPage = ({
   data: {
     allFile: { edges },
   },
-  intl
+  intl,
 }) => {
   const images = useMemo(() => transformImages(edges), [edges])
+  const seoInfo = {
+    title: intl.formatMessage({ id: "portfolio.meta.title" }),
+    description: intl.formatMessage({ id: "portfolio.meta.description" }),
+    pathname: "/portfolio",
+    image: ecLogoWithBg,
+  }
   return (
-    <Layout>
+    <Layout seo={seoInfo} currentLocale={intl.locale}>
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="PORTFOLIO" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -50,13 +55,20 @@ const PortfolioPage = ({
               key={portfolioBox.label}
               target={portfolioBox.content ? "_self" : "_blank"}
               type={portfolioBox.type}
-              label={intl.locale === 'de' && portfolioBox.labelDe ? portfolioBox.labelDe : portfolioBox.label}
+              label={
+                intl.locale === "de" && portfolioBox.labelDe
+                  ? portfolioBox.labelDe
+                  : portfolioBox.label
+              }
               url={
                 portfolioBox.content
-                  ? `/${intl.locale ?? 'en'}/portfolio/${slugify(portfolioBox.label, {
-                      lower: true,
-                      strict: true,
-                    })}`
+                  ? `/${intl.locale ?? "en"}/portfolio/${slugify(
+                      portfolioBox.label,
+                      {
+                        lower: true,
+                        strict: true,
+                      }
+                    )}`
                   : portfolioBox.url
               }
               categoryDesc={portfolioBox.categoryDesc}
@@ -66,7 +78,9 @@ const PortfolioPage = ({
               {portfolioBox.image ? (
                 <GatsbyImage
                   image={images[portfolioBox.image]}
-                  alt={`${intl.formatMessage({ id: 'portfolio.box-image-alt' })}: ${portfolioBox.label}`}
+                  alt={`${intl.formatMessage({
+                    id: "portfolio.box-image-alt",
+                  })}: ${portfolioBox.label}`}
                   imgStyle={{ objectFit: `contain` }}
                 />
               ) : portfolioBox.icon ? (
@@ -105,12 +119,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-export const Head = () => (
-  <Seo
-    title="Ercan Cicek's Portfolio | Web & Mobile Projects"
-    description="Explore Ercan Cicek's portfolio showcasing a variety of web and mobile development projects. Discover the technologies used, project details, and more"
-    pathname="/portfolio"
-    image={ecLogoWithBg}
-  />
-)

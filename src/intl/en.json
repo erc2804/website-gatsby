@@ -5,21 +5,24 @@
   },
   "index": {
     "meta": {
-      "title": "Ercan Cicek | Experienced UX Developer & Designer in Dusseldorf | Portfolio & Blog",
-      "description": "Welcome to the website of Ercan Cicek, a UX Developer and Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work."
+      "title": "Ercan Cicek | Experienced Frontend Developer & UX Designer in Dusseldorf | Portfolio & Blog",
+      "description": "Welcome to the website of Ercan Cicek, a Frontend Developer and UX Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work."
     }
   },
   "portfolio": {
     "meta": {
-      "title": "X",
-      "description": "Y"
+      "title": "Ercan Cicek's Portfolio | Web & App Projects",
+      "description": "Explore Ercan Cicek's portfolio showcasing a variety of web and mobile development projects. Discover the technologies used, project details, and more."
     },
     "box-image-alt": "smartphone screen of the portfolio entry"
   },
   "portfolio-template": {
     "meta": {
-      "title": "X",
-      "description": "Y"
+      "title": " | Ercan Cicek's Portfolio",
+      "description": {
+        "part-before-label": "Discover the ",
+        "part-after-label": " project in Ercan Cicek's portfolio. Learn about the technologies used, challenges faced, and the solutions implemented."
+      }
     },
     "back": "Back",
     "main-button": {
@@ -27,7 +30,17 @@
       "part-after-label": "in action"
     }
   },
+  "blog": {
+    "meta": {
+      "title": "Ercan Cicek's Blog | Web Development, Design Principles, and More",
+      "description": "Explore Ercan Cicek's blog for insightful articles and resources on web development, design principles, and more."
+    }
+  },
   "about-me": {
+    "meta": {
+      "title": "About Ercan Cicek | Experienced Frontend Developer & UX Designer in Dusseldorf",
+      "description": "Learn more about Ercan Cicek, an experienced Frontend Developer and UX Designer based in Dusseldorf with over nine years of experience in conceptualizing and implementing web applications. Specializing in Vue, React, Figma and building the bridge between design and development."
+    },
     "ec-title": {
       "part-before-linebreak": "Developer. Designer.",
       "part-after-linebreak": "People Lead."
