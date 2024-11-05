@@ -1,16 +1,16 @@
 import * as React from "react"
-import { Link } from "gatsby-plugin-intl"
+import { injectIntl, Link } from "gatsby-plugin-intl"
 import { Seo } from "../components/seo"
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ intl }) => {
   return (
     <main>
-      <h1>Page not found</h1>
-      <Link to="/">Go home</Link>
+      <h1>{intl.formatMessage({ id: 'error.page-not-found' })}</h1>
+      <Link to="/">{intl.formatMessage({ id: 'error.main-action' })}</Link>
     </main>
   )
 }
 
-export default NotFoundPage
+export default injectIntl(NotFoundPage)
 
 export const Head = () => <Seo title="Page not found" />

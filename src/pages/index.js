@@ -8,7 +8,7 @@ import AdpillarText from "../components/adpillarText"
 import allSkills from "../data/skillsData.json"
 import ecPhoto from "../images/index/bg-portrait.jpg"
 
-const adpillarTexts = ["Designer", "Developer", "Lead"]
+const adpillarTexts = ["Designer", "Developer"]
 
 const HomePage = ({ intl }) => {
   return (

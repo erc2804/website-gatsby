@@ -12,6 +12,7 @@ import { JsFiddleIcon } from "../components/icons/jsFiddleIcon"
 import { CodepenIcon } from "../components/icons/codepenIcon"
 import { LottieIcon } from "../components/icons/lottieIcon"
 import { GithubIcon } from "../components/icons/githubIcon"
+import { injectIntl } from "gatsby-plugin-intl"
 
 const mappedIcons = {
   JsFiddleIcon: <JsFiddleIcon />,
@@ -32,11 +33,12 @@ const transformImages = (edges) =>
     )
   )
 
-export default function Portfolio({
+const PortfolioPage = ({
   data: {
     allFile: { edges },
   },
-}) {
+  intl
+}) => {
   const images = useMemo(() => transformImages(edges), [edges])
   return (
     <Layout>
@@ -48,10 +50,10 @@ export default function Portfolio({
               key={portfolioBox.label}
               target={portfolioBox.content ? "_self" : "_blank"}
               type={portfolioBox.type}
-              label={portfolioBox.label}
+              label={intl.locale === 'de' && portfolioBox.labelDe ? portfolioBox.labelDe : portfolioBox.label}
               url={
                 portfolioBox.content
-                  ? `/portfolio/${slugify(portfolioBox.label, {
+                  ? `/${intl.locale ?? 'en'}/portfolio/${slugify(portfolioBox.label, {
                       lower: true,
                       strict: true,
                     })}`
@@ -64,7 +66,7 @@ export default function Portfolio({
               {portfolioBox.image ? (
                 <GatsbyImage
                   image={images[portfolioBox.image]}
-                  alt={`smartphone screen of the portfolio entry: ${portfolioBox.label}`}
+                  alt={`${intl.formatMessage({ id: 'portfolio.box-image-alt' })}: ${portfolioBox.label}`}
                   imgStyle={{ objectFit: `contain` }}
                 />
               ) : portfolioBox.icon ? (
@@ -77,6 +79,8 @@ export default function Portfolio({
     </Layout>
   )
 }
+
+export default injectIntl(PortfolioPage)
 
 export const pageQuery = graphql`
   query {

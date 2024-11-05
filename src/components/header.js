@@ -4,6 +4,7 @@ import NavLink from "./navLink"
 import EcLogo from "./ecLogo"
 import BurgerMenu from "./burgerMenu"
 import LanguageSwitcher from "./languageSwitcher"
+import { injectIntl } from "gatsby-plugin-intl"
 
 const navElements = [
   {
@@ -16,11 +17,12 @@ const navElements = [
   },
   {
     label: "About Me",
+    labelDe: "Über Mich",
     to: "/about-me",
   },
 ]
 
-const Header = ({ onDark }) => {
+const Header = ({ onDark, intl }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -85,13 +87,13 @@ const Header = ({ onDark }) => {
       } transition-all z-50`}
     >
       <nav className="flex-none px-6 py-5 flex flex-row items-center justify-between md:justify-start md:gap-12 h-24">
-        <Link to="/" aria-label="Home">
+        <Link to="/" aria-label={ intl.formatMessage({ id: 'header.to-home' }) }>
           <EcLogo onDark={onDark} isOpen={isOpen} />
         </Link>
         <div className="hidden md:flex flex-row gap-6">
           {navElements.map((navElement) => (
             <NavLink key={navElement.to} to={navElement.to} onDark={onDark}>
-              {navElement.label}
+              {intl.locale === 'de' && navElement.labelDe ? navElement.labelDe : navElement.label}
             </NavLink>
           ))}
         </div>
@@ -100,7 +102,7 @@ const Header = ({ onDark }) => {
         </div>
         <button
           className="flex md:hidden justify-center items-center size-10"
-          aria-label="Toggle menu"
+          aria-label={ intl.formatMessage({ id: 'header.toggle-menu' }) }
           onClick={toggleMenu}
         >
           <BurgerMenu onDark={onDark} isOpen={isOpen} />
@@ -122,4 +124,4 @@ const Header = ({ onDark }) => {
   )
 }
 
-export default Header
+export default injectIntl(Header)

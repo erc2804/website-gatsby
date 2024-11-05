@@ -6,11 +6,17 @@ import PageHeadline from "../components/pageHeadline"
 import { CalendarIcon } from "../components/icons/calendarIcon"
 import { ChevronDownIcon } from "../components/icons/chevronDownIcon"
 import ecLogoWithBg from "../images/logo_original_with_bg.png"
+import { injectIntl } from "gatsby-plugin-intl"
 
-const transformPosts = (edges) =>
+const formatDate = (dateString, currentLocale) => {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  return new Date(dateString).toLocaleDateString(currentLocale, options)
+}
+
+const transformPosts = (edges, currentLocale) =>
   edges.map((edge) => ({
     id: edge.node.frontmatter.id,
-    date: edge.node.frontmatter.date,
+    date: formatDate(edge.node.frontmatter.date, currentLocale),
     title: edge.node.frontmatter.title,
     imageUrl: edge.node.frontmatter.imageUrl,
     verticalImgPosInPercent: edge.node.frontmatter.verticalImgPosInPercent,
@@ -18,12 +24,12 @@ const transformPosts = (edges) =>
     isOpen: false,
   }))
 
-export default function Blog({ data }) {
+const BlogPage = ({ data, intl }) => {
   const [blogPosts, setBlogPosts] = useState([])
 
   useEffect(() => {
-    setBlogPosts(transformPosts(data.allMarkdownRemark.edges))
-  }, [data])
+    setBlogPosts(transformPosts(data.allMarkdownRemark.edges, intl.locale))
+  }, [data, intl.locale])
 
   const toggleBlogEntry = (id) => {
     setBlogPosts((prevBlogPosts) =>
@@ -38,6 +44,9 @@ export default function Blog({ data }) {
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="BLOG" />
         <div className="flex flex-col gap-10">
+          {intl.locale === 'de' &&
+            <p>Der Blog ist zurzeit leider nur auf Englisch verfügbar. Zukünftige Posts werde ich zusätzlich auf Deutsch schreiben. Bitte gedulde Dich diesbezüglich etwas.</p>
+          }
           {blogPosts.map((blogPost, idx) => (
             <article key={idx} className="w-full">
               <button
@@ -105,6 +114,8 @@ export default function Blog({ data }) {
   )
 }
 
+export default injectIntl(BlogPage)
+
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(sort: {frontmatter: {id: DESC}}) {
@@ -112,7 +123,7 @@ export const pageQuery = graphql`
           node {
             frontmatter {
               id
-              date(formatString: "MMMM DD, YYYY")
+              date
               title
               imageUrl
               verticalImgPosInPercent

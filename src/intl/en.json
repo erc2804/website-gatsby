@@ -1,7 +1,63 @@
 {
-  "index": {
-    "title": "Ercan Cicek | Experienced UX Developer & Designer in Dusseldorf | Portfolio & Blog",
-    "description": "Welcome to the website of Ercan Cicek, a UX Developer and Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work."
+  "header": {
+    "to-home": "To home page",
+    "toggle-menu": "Toggle menu"
   },
-  "questions": "Questions"
+  "index": {
+    "meta": {
+      "title": "Ercan Cicek | Experienced UX Developer & Designer in Dusseldorf | Portfolio & Blog",
+      "description": "Welcome to the website of Ercan Cicek, a UX Developer and Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work."
+    }
+  },
+  "portfolio": {
+    "meta": {
+      "title": "X",
+      "description": "Y"
+    },
+    "box-image-alt": "smartphone screen of the portfolio entry"
+  },
+  "portfolio-template": {
+    "meta": {
+      "title": "X",
+      "description": "Y"
+    },
+    "back": "Back",
+    "main-button": {
+      "part-before-label": "See",
+      "part-after-label": "in action"
+    }
+  },
+  "about-me": {
+    "ec-title": {
+      "part-before-linebreak": "Developer. Designer.",
+      "part-after-linebreak": "People Lead."
+    },
+    "profile-image-alt": "Ercan Cicek profile image",
+    "ec-description": {
+      "part-before-skills-list": "With over nine years of experience in frontend development and UI/UX design, I specialize in ",
+      "and": "and",
+      "part-after-skills-list": " as my preferred tools. My passion lies in creating intuitive and attractive interfaces that provide real added value to users. Continuously seeking out new trends and technologies, I strive to enhance user experience and project performance. My expertise in accessibility ensures that I help companies design websites in compliance with the ",
+      "a11y": {
+        "label": "European Accessibility Act (EAA)",
+        "url": "https://ec.europa.eu/social/main.jsp?catId=1202&intPageId=5581&langId=en"
+      },
+      "part-after-a11y": " legislation. Holding an ",
+      "part-after-ielts": " C1 certificate and possessing multilingual communication skills, I effectively collaborate with international teams and stakeholders to implement their requirements and feedback."
+    },
+    "ai-chatbot": {
+      "first-message": "I am a GPT trained to answer questions on behalf of Ercan. Feel free to ask me anything. For specific inquiries, please consider direct contact.",
+      "loading-answer": "The AI is thinking. Please wait...",
+      "placeholder": "Start typing...",
+      "send-message-title": "Send message",
+      "reset-chat": "Reset Chat"
+    },
+    "questions": "Questions",
+    "contact": "Contact"
+  },
+  "error": {
+    "rate-limit-exceeded": "So many people used this chatbot that we've reached the cost limit for now. Thank you for your interest and please try again later or contact me directly.",
+    "generic": "An unexpected error occurred. Please try again later.",
+    "page-not-found": "Page not found.",
+    "main-action": "Go home"
+  }
 }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from "react"
 import { SendIcon } from "./icons/sendIcon"
 import ChatEntry from "./chat/chatEntry"
+import { injectIntl } from "gatsby-plugin-intl"
 
-const AiChatbot = () => {
+const AiChatbot = ({ intl }) => {
   const [answerIsLoading, setAnswerIsLoading] = useState(null)
   const [inputValue, setInputValue] = useState("")
   const [showInitialTyping, setShowInitialTyping] = useState(false)
@@ -77,9 +78,9 @@ const AiChatbot = () => {
         console.error("error: ", error.message)
         let userErrorMessage;
         if (error.message.includes("Rate limit exceeded")) {
-          userErrorMessage = "So many people used this chatbot that we've reached the cost limit for now. Thank you for your interest and please try again later or contact me directly.";       
+          userErrorMessage = intl.formatMessage({ id: 'error.rate-limit-exceeded' })     
         } else {
-          userErrorMessage = "An unexpected error occurred. Please try again later.";
+          userErrorMessage = intl.formatMessage({ id: 'error.generic' })
         }
         setError(userErrorMessage)
         setAnswerIsLoading(false)
@@ -145,7 +146,7 @@ const AiChatbot = () => {
       ) : (
         <ChatEntry
           role={"assistant"}
-          message="I am a GPT trained to answer questions on behalf of Ercan. Feel free to ask me anything. For specific inquiries, please consider direct contact."
+          message={intl.formatMessage({ id: 'about-me.ai-chatbot.first-message' })}
         />
       )}
       {/* --- messages --- */}
@@ -178,15 +179,15 @@ const AiChatbot = () => {
             className="w-full pl-6 pr-16 py-2 min-h-16 rounded-xl shadow-sm sm:ec-font-subheading outline-none focus:ring-1 focus:ring-brand-blue transition-all"
             placeholder={
               answerIsLoading
-                ? "The AI is answering. Please wait..."
-                : "Start typing..."
+                ? intl.formatMessage({ id: 'about-me.ai-chatbot.loading-answer' })
+                : intl.formatMessage({ id: 'about-me.ai-chatbot.placeholder' })
             }
           />
           <button
             type="submit"
             className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer disabled:cursor-default group"
             disabled={answerIsLoading || !inputValue.length}
-            title="Send message"
+            title={intl.formatMessage({ id: 'about-me.ai-chatbot.send-message-title' })}
           >
             <SendIcon iconClasses="fill-gray-medium-lvl/70 size-10 group-hover:scale-110 transition-all group-disabled:scale-100 group-disabled:fill-gray-medium-lvl/30" />
           </button>
@@ -196,11 +197,11 @@ const AiChatbot = () => {
           disabled={answerIsLoading}
           className="self-end w-fit px-3 py-1 rounded-2xl text-typo-medium-lvl disabled:text-typo-low-lvl disabled:cursor-wait"
         >
-          Reset Chat
+          {intl.formatMessage({ id: 'about-me.ai-chatbot.reset-chat' })}
         </button>
       </div>
     </div>
   )
 }
 
-export default AiChatbot
+export default injectIntl(AiChatbot)

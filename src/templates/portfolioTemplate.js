@@ -41,7 +41,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
               <ArrowLeftIcon />
             </div>
             <span className="ec-font-base font-bold transform translate-y-px text-typo-medium-lvl/70 group-hover:text-brand-green-medium-lvl transition-colors">
-              Back
+              {intl.formatMessage({ id: 'portfolio-template.back' })}
             </span>
           </Link>
           <PageHeadline text={label} />
@@ -49,7 +49,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
         <div className="flex flex-col md:flex-row gap-10">
           <div className="flex-1 flex flex-col gap-6">
             <h2 className="ec-font-heading-2 leading-[1.2] font-bold text-4xl text-brand-green-medium-lvl">
-              {content.title}
+              {intl.locale === 'de' && content.titleDe ? content.titleDe : content.title}
             </h2>
             <p className="ec-font-subheading">{intl.locale === 'de' && content.descriptionDe ? content.descriptionDe : content.description}</p>
             <a
@@ -63,14 +63,19 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
               </div>
               <div className="flex flex-col">
                 <span className="ec-font-base">{urlDesc ?? url}</span>
-                <span className="ec-font-subheading font-bold">{`See ${label} in action`}</span>
+                <span className="ec-font-subheading font-bold">{intl.formatMessage({ id: 'portfolio-template.main-button.part-before-label' })}
+                  {" "}
+                  {label}
+                  {" "}
+                  {intl.formatMessage({ id: 'portfolio-template.main-button.part-after-label' })}
+                </span>
               </div>
             </a>
           </div>
           <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-80 size-fit overflow-hidden relative">
             <GatsbyImage
               image={images[image]}
-              alt={`smartphone screen of the portfolio entry: ${label}`}
+              alt={`${intl.formatMessage({ id: 'portfolio.box-image-alt' })}: ${label}`}
               imgStyle={{ objectFit: `contain` }}
             />
           </div>

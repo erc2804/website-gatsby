@@ -1,6 +1,7 @@
 [
   {
     "label": "Email",
+    "labelDe": "E-Mail",
     "address": "erc2804@outlook.de",
     "url": "mailto:erc2804@outlook.de",
     "icon": "EnvelopeIcon"

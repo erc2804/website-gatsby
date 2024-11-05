@@ -17,8 +17,9 @@
       ],
       "content": {
         "title": "Custom E-Commerce Development and UI/UX",
+        "titleDe": "Webshop Eigenentwicklung und UI/UX für Curanto",
         "description": "For the Curanto project, I worked while employed full-time at ORT Interactive. As the Head of UI/UX and Frontend, I was responsible for the comprehensive development in these areas. This included creating a scalable design system that featured both static components based on Tailwind and flexible CMS modules for the client. I actively contributed to both UI/UX design and frontend development. The client was very pleased with the outcome. I focused particularly on performance, SEO, and scalability. The project involved not only the e-commerce site but also a white-label solution and a self-service terminal, making the Statamic CMS-based system highly complex.",
-        "descriptionDe": "DE: For the Curanto project, I worked while employed full-time at ORT Interactive. As the Head of UI/UX and Frontend, I was responsible for the comprehensive development in these areas. This included creating a scalable design system that featured both static components based on Tailwind and flexible CMS modules for the client. I actively contributed to both UI/UX design and frontend development. The client was very pleased with the outcome. I focused particularly on performance, SEO, and scalability. The project involved not only the e-commerce site but also a white-label solution and a self-service terminal, making the Statamic CMS-based system highly complex."
+        "descriptionDe": "Für das Curanto-Projekt habe ich während meiner Festanstellung bei ORT Interactive gearbeitet. Als Head of UI/UX und Frontend war ich für die umfassende Entwicklung in diesen Bereichen verantwortlich. Dazu gehörte der Aufbau eines skalierbaren Design-Systems, das neben statischen Komponenten auf Basis von Tailwind auch flexible CMS-Module für den Kunden beinhaltete. Ich habe sowohl im UI/UX-Design als auch in der Frontend-Entwicklung aktiv mitgewirkt. Der Kunde ist mit der Entwicklung sehr zufrieden. Besonders Augenmerk legte ich auf Performance, SEO und Skalierbarkeit. Das Projekt umfasste nicht nur den Webshop, sondern auch eine Whitelabel-Lösung und einen Selbstbedienungsterminal, was das auf Statamic CMS aufgebaute System äußerst komplex machte."
       }
     },
     {
@@ -39,7 +40,9 @@
       ],
       "content": {
         "title": "UI/UX and Frontend for Hit: Design System and CMS Integration",
-        "description": "For the Hit project, I worked while employed full-time at ORT Interactive. As a UI/UX Designer and Frontend Developer, I was responsible for guiding team members and overseeing the comprehensive development in these areas. This included creating a design system in Figma based on Hit's CI/CD. In collaboration with the client, we developed flexible CMS components that could be freely utilized and placed within the Pimcore backend. The client was extremely satisfied with the outcome. I paid particular attention to performance, responsiveness, and scalability."
+        "titleDe": "UI/UX und Frontend für Hit: Design-System und CMS-Integration",
+        "description": "For the Hit project, I worked while employed full-time at ORT Interactive. As a UI/UX Designer and Frontend Developer, I was responsible for guiding team members and overseeing the comprehensive development in these areas. This included creating a design system in Figma based on Hit's CI/CD. In collaboration with the client, we developed flexible CMS components that could be freely utilized and placed within the Pimcore backend. The client was extremely satisfied with the outcome. I paid particular attention to performance, responsiveness, and scalability.",
+        "descriptionDe": "Für das Hit-Projekt habe ich während meiner Festanstellung bei ORT Interactive gearbeitet. Als UI/UX-Designer und Frontend-Entwickler war ich für das Guiding der Teammitglieder und die umfassende Entwicklung in diesen Bereichen verantwortlich. Dazu gehörte unter anderem der Aufbau eines Design-Systems in Figma basierend auf dem CI/CD von Hit. Neben statischen Komponenten wurden in Absprache mit den Kunden auch flexible CMS-Komponenten erstellt, die im Pimcore-Backend frei genutzt und platziert werden konnten. Der Kunde ist mit der Entwicklung äußerst zufrieden. Besonderes Augenmerk legte ich auf Performance, Responsivität und Skalierbarkeit."
       }
     },
     {
@@ -51,7 +54,9 @@
       "techs": ["Liquid", "JavaScript", "Figma", "HTML", "CSS"],
       "content": {
         "title": "Building a Shared Shopify Store for Two Wineries",
-        "description": "I acquired the Müller Oswald project while working full-time at infraView GmbH, a subsidiary of Deutsche Bahn. The project involved consulting, designing, and implementing an online store to offer wines from two different wineries. Throughout the project, I placed a strong emphasis on advising and training the clients so they could handle recurring changes independently. In addition to ensuring high-quality frontend work regarding accessibility and SEO, I also maintained a keen focus on cost-effectiveness."
+        "titleDe": "Erstellen eines gemeinsamen Shopify-Shops für zwei Weingüter",
+        "description": "I acquired the Müller Oswald project while working full-time at infraView GmbH, a subsidiary of Deutsche Bahn. The project involved consulting, designing, and implementing an online store to offer wines from two different wineries. Throughout the project, I placed a strong emphasis on advising and training the clients so they could handle recurring changes independently. In addition to ensuring high-quality frontend work regarding accessibility and SEO, I also maintained a keen focus on cost-effectiveness.",
+        "descriptionDe": "Müller Oswald habe ich neben meiner Vollzeitstelle bei infraView GmbH, einer Tochter der Deutschen Bahn, akquiriert. Das Projekt umfasste die Beratung, Gestaltung und Umsetzung eines Webshops, der Weine von zwei unterschiedlichen Weingütern anbieten sollte. Während des Projekts legte ich besonderen Wert auf die Beratung und Schulung der Kunden, damit sie wiederkehrende Änderungen eigenständig vornehmen konnten. Neben der Qualität im Frontend in Bezug auf Barrierefreiheit und SEO behielt ich stets auch das Preis-Leistungs-Verhältnis im Auge."
       }
     },
     {
@@ -63,7 +68,9 @@
       "techs": ["Liquid", "JavaScript", "Figma", "HTML", "CSS"],
       "content": {
         "title": "Migration of an Outdated E-Commerce System to Shopify",
-        "description": "I acquired the Kindeskinder project while working full-time at infraView GmbH, a subsidiary of Deutsche Bahn. The project involved migrating an existing, outdated e-commerce system to Shopify. I focused on optimizing responsiveness, user flow, and making enhancements to improve both performance and accessibility. I paid special attention to providing the client with a strong cost-benefit ratio. Instead of relying on paid plugins, I implemented workarounds and custom solutions where appropriate. This approach was highly appreciated by the client."
+        "titleDe": "Migration eines veralteten Shop-Systems nach Shopify",
+        "description": "I acquired the Kindeskinder project while working full-time at infraView GmbH, a subsidiary of Deutsche Bahn. The project involved migrating an existing, outdated e-commerce system to Shopify. I focused on optimizing responsiveness, user flow, and making enhancements to improve both performance and accessibility. I paid special attention to providing the client with a strong cost-benefit ratio. Instead of relying on paid plugins, I implemented workarounds and custom solutions where appropriate. This approach was highly appreciated by the client.",
+        "descriptionDe": "Kindeskinder habe ich neben meiner Vollzeitstelle bei der infraView GmbH, einer Tochter der Deutschen Bahn, akquiriert. Das Projekt umfasste die Migration eines bestehenden, jedoch veralteten Shop-Systems zu Shopify, die Optimierung der Responsivität und des Nutzerflows sowie Anpassungen, die der Performance und Barrierefreiheit des Shops zugutekommen sollten. Ein besonderes Augenmerk legte ich darauf, für den Kunden ein gutes Preis-Leistungs-Verhältnis zu wahren. Anstatt kostenpflichtige Plugins zu verwenden, setzte ich, wo sinnvoll, auf Workarounds und Eigenlösungen. Dies wurde vom Kunden sehr geschätzt."
       }
     },
     {
@@ -84,7 +91,9 @@
       ],
       "content": {
         "title": "Building Welliba's Product Platform: UI/UX Design and Developer Guidance",
-        "description": "Welliba was a startup founded by executives from my former employer, AON Assessment Solutions in Hamburg. As a UI/UX Engineer, I was hired to design and build a complete product platform from scratch, including a Flutter app and several web apps. My responsibilities included designing user interfaces, establishing UX understanding, implementing CI/CD, and creating responsive designs in Figma. I guided the developers through the implementation process as they brought the designs to life. All products were scalable and based on a design system I developed. My focus was on creating a flexible and highly scalable foundation. Welliba has since established itself in the market, and the products are actively in use."
+        "titleDe": "Aufbau der Produktplattform für Welliba: UI/UX-Design und Entwickler-Guiding",
+        "description": "Welliba was a startup founded by executives from my former employer, AON Assessment Solutions in Hamburg. As a UI/UX Engineer, I was hired to design and build a complete product platform from scratch, including a Flutter app and several web apps. My responsibilities included designing user interfaces, establishing UX understanding, implementing CI/CD, and creating responsive designs in Figma. I guided the developers through the implementation process as they brought the designs to life. All products were scalable and based on a design system I developed. My focus was on creating a flexible and highly scalable foundation. Welliba has since established itself in the market, and the products are actively in use.",
+        "descriptionDe": "Welliba war ein Startup, das von Führungskräften meiner ehemaligen Arbeitsstelle bei AON Assessment Solutions in Hamburg gegründet wurde. Als UI/UX Engineer wurde ich eingestellt, um eine komplette Produktplattform von Grund auf zu gestalten, einschließlich einer Flutter-App und mehrerer Web-Apps. Meine Aufgaben umfassten das Designen der Benutzeroberflächen, den Aufbau eines UX-Verständnisses, die Implementierung von CI/CD und die Erstellung von responsiven Designs in Figma. Ich führte die Entwickler durch den Implementierungsprozess, während sie die Designs umsetzten. Alle Produkte waren skalierbar und basierten auf einem von mir entwickelten Design-System. Mein besonderes Augenmerk lag auf der Schaffung einer flexiblen und weit skalierbaren Basis. Welliba hat sich mittlerweile auf dem Markt etabliert, und die Produkte sind aktiv in Nutzung."
       }
     },
     {
@@ -97,7 +106,9 @@
       "techs": ["Swift", "SwiftUI", "Xcode", "Figma", "Lottie"],
       "content": {
         "title": "CasualVocab Widget - Japanese: iOS App for Vocabulary Training with Swift and Firebase",
-        "description": "CasualVocab Widget - Japanese is a native iOS app that I designed and developed using Swift and SwiftUI during my early days of learning Japanese. The concept was to create an app that displays relevant vocabulary, including translations, as a widget on the smartphone's home screen, allowing learners to constantly engage with the words they need to study. I created all the content for the app, including the vocabulary sets, which was time-consuming but also served as a useful part of my Japanese learning process. The app was developed using Firebase, allowing for flexible content updates and adjustments in the backend. It has been available on the App Store for some time now."
+        "titleDe": "CasualVocab Widget - Japanese: iOS-App für Vokabeltraining mit Swift und Firebase",
+        "description": "CasualVocab Widget - Japanese is a native iOS app that I designed and developed using Swift and SwiftUI during my early days of learning Japanese. The concept was to create an app that displays relevant vocabulary, including translations, as a widget on the smartphone's home screen, allowing learners to constantly engage with the words they need to study. I created all the content for the app, including the vocabulary sets, which was time-consuming but also served as a useful part of my Japanese learning process. The app was developed using Firebase, allowing for flexible content updates and adjustments in the backend. It has been available on the App Store for some time now.",
+        "descriptionDe": "CasualVocab Widget - Japanese ist eine native iOS-App, welches ich auf Basis von Swift und SwiftUI während meiner Anfänge im Japanisch lernen gestaltet und entwickelt habe. Die Idee war es eine App aufzubauen, die relevante Vokabeln inkl. Übersetzungen als Widget auf dem Homescreen des Smartphones anzeigt, damit Vokabellernende sich stets mit den zu lernenden Worten umgeben. Für die App habe ich alle Inhalte selbst erstellt, auch die Vokabelsets, was viel Zeit beanspruchte, jedoch zeitgleich zum Japanisch lernen selbst wieder nützlich war. Die App wurde auf Basis von Firebase so entwickelt, dass Inhalte flexibel im Backend gewechselt und angepasst werden können. Sie ist seit einiger Zeit im Appstore verfügbar."
       }
     },
     {
@@ -132,6 +143,7 @@
     {
       "type": "OTHER",
       "label": "Website source code",
+      "labelDe": "Webseiten-Quellcode",
       "url": "https://github.com/erc2804/website-gatsby",
       "icon": "GithubIcon",
       "techs": ["React", "Gatsby", "PWA", "Figma"]

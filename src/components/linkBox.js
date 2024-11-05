@@ -17,13 +17,13 @@ const ColorClassesPerCategory = {
   SHOP: {
     bg: "bg-brand-green-low-lvl",
     bgAlt: "bg-brand-green-low-lvl/10",
-    text: "text-brand-green-low-lvl",
+    text: "text-brand-green-high-lvl",
     icon: "[&>svg]:fill-gray-high-lvl",
   },
   WEB: {
     bg: "bg-brand-green-medium-lvl",
     bgAlt: "bg-brand-green-medium-lvl/10",
-    text: "text-brand-green-medium-lvl",
+    text: "text-brand-green-high-lvl",
     icon: "[&>svg]:fill-gray-high-lvl",
   },
 }

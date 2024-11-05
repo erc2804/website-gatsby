@@ -17,6 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
           techs
           content {
             title
+            titleDe
             description
             descriptionDe
           }
