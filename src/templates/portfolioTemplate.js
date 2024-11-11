@@ -9,6 +9,12 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { ExternalLinkIcon } from "../components/icons/externalLinkIcon"
 import { ArrowLeftIcon } from "../components/icons/arrowLeftIcon"
 
+const Chip = ({ children }) => (
+  <div className="px-1.5 pt-0.5 grid place-content-center rounded-[4px] bg-gray-low-lvl">
+    {children}
+  </div>
+)
+
 const transformImages = (edges) =>
   Object.fromEntries(
     edges.map(
@@ -22,18 +28,39 @@ const transformImages = (edges) =>
   )
 
 const PortfolioTemplate = ({ data, intl, pageContext }) => {
-  const { label, url, urlDesc, image, content } = pageContext
+  const {
+    label,
+    url,
+    urlDesc,
+    image,
+    imageIsPurelyDecorative,
+    content,
+    techs,
+  } = pageContext
   const slug = slugify(label, { lower: true, strict: true })
   const images = useMemo(
     () => transformImages(data.allFile.edges),
     [data.allFile.edges]
   )
   const seoInfo = {
-    title: label + intl.formatMessage({ id: 'portfolio-template.meta.title' }),
-    description: intl.formatMessage({ id: 'portfolio-template.meta.description.part-before-label' }) + label + intl.formatMessage({ id: 'portfolio-template.meta.description.part-after-label' }),
+    title: label + intl.formatMessage({ id: "portfolio-template.meta.title" }),
+    description:
+      intl.formatMessage({
+        id: "portfolio-template.meta.description.part-before-label",
+      }) +
+      label +
+      intl.formatMessage({
+        id: "portfolio-template.meta.description.part-after-label",
+      }),
     pathname: `/portfolio/${slug}`,
-    image: images[image].images.fallback.src
+    image: image ? images[image].images.fallback.src : "",
   }
+
+  const respDescText =
+    intl.locale === "de" && content.descriptionDe
+      ? content.descriptionDe
+      : content.description
+  const splitDescTexts = respDescText.split("\n")
 
   return (
     <Layout seo={seoInfo} currentLocale={intl.locale}>
@@ -47,7 +74,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
               <ArrowLeftIcon />
             </div>
             <span className="ec-font-base font-bold transform translate-y-px text-typo-medium-lvl/70 group-hover:text-brand-green-medium-lvl transition-colors">
-              {intl.formatMessage({ id: 'portfolio-template.back' })}
+              {intl.formatMessage({ id: "portfolio-template.back" })}
             </span>
           </Link>
           <PageHeadline text={label} />
@@ -55,9 +82,31 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
         <div className="flex flex-col md:flex-row gap-10">
           <div className="flex-1 flex flex-col gap-6">
             <h2 className="ec-font-heading-2 leading-[1.2] font-bold text-4xl text-brand-green-medium-lvl">
-              {intl.locale === 'de' && content.titleDe ? content.titleDe : content.title}
+              {intl.locale === "de" && content.titleDe
+                ? content.titleDe
+                : content.title}
             </h2>
-            <p className="ec-font-subheading">{intl.locale === 'de' && content.descriptionDe ? content.descriptionDe : content.description}</p>
+            {respDescText && (
+              <div className="flex flex-col gap-4 ec-font-subheading">
+                {splitDescTexts.map((descTextPart, idx) => (
+                  <p key={idx}>{descTextPart}</p>
+                ))}
+              </div>
+            )}
+            {techs && (
+              <div className="flex flex-wrap gap-2">
+                {techs.map((tech) => {
+                  if (tech.mainListing) {
+                    const respLabel =
+                      intl.locale === "de" && tech.labelDe
+                        ? tech.labelDe
+                        : tech.label
+                    return <Chip key={respLabel}>{respLabel}</Chip>
+                  }
+                  return <></>
+                })}
+              </div>
+            )}
             <a
               href={url}
               target="_blank"
@@ -69,22 +118,29 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
               </div>
               <div className="flex flex-col">
                 <span className="ec-font-base">{urlDesc ?? url}</span>
-                <span className="ec-font-subheading font-bold">{intl.formatMessage({ id: 'portfolio-template.main-button.part-before-label' })}
-                  {" "}
-                  {label}
-                  {" "}
-                  {intl.formatMessage({ id: 'portfolio-template.main-button.part-after-label' })}
+                <span className="ec-font-subheading font-bold">
+                  {intl.formatMessage({
+                    id: "portfolio-template.main-button.part-before-label",
+                  })}{" "}
+                  {label}{" "}
+                  {intl.formatMessage({
+                    id: "portfolio-template.main-button.part-after-label",
+                  })}
                 </span>
               </div>
             </a>
           </div>
-          <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-80 size-fit overflow-hidden relative">
-            <GatsbyImage
-              image={images[image]}
-              alt={`${intl.formatMessage({ id: 'portfolio.box-image-alt' })}: ${label}`}
-              imgStyle={{ objectFit: `contain` }}
-            />
-          </div>
+          {image && !imageIsPurelyDecorative && (
+            <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-80 size-fit overflow-hidden relative">
+              <GatsbyImage
+                image={images[image]}
+                alt={`${intl.formatMessage({
+                  id: "portfolio.box-image-alt",
+                })}: ${label}`}
+                imgStyle={{ objectFit: `contain` }}
+              />
+            </div>
+          )}
         </div>
       </main>
     </Layout>

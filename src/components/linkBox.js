@@ -67,7 +67,7 @@ const LinkBox = ({ label, url, descText, type, target = '_blank', categoryDesc, 
             </div>
           )}
         </div>
-        <span className="text-typo-medium-lvl">{descText ?? "/"}</span>
+        <span className="text-typo-medium-lvl line-clamp-2">{descText ?? "/"}</span>
       </div>
     </a>
   )

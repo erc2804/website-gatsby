@@ -14,7 +14,12 @@ exports.createPages = async ({ graphql, actions }) => {
           urlDesc
           categoryDesc
           image
-          techs
+          imageIsPurelyDecorative
+          techs {
+            label
+            labelDe
+            mainListing
+          }
           content {
             title
             titleDe
@@ -41,6 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
             urlDesc: node.urlDesc,
             categoryDesc: node.categoryDesc,
             image: node.image,
+            imageIsPurelyDecorative: node.imageIsPurelyDecorative,
             techs: node.techs,
             content: node.content,
             icon: node.icon,

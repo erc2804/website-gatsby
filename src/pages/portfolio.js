@@ -17,7 +17,7 @@ const mappedIcons = {
   JsFiddleIcon: <JsFiddleIcon />,
   CodepenIcon: <CodepenIcon />,
   LottieIcon: <LottieIcon />,
-  GithubIcon: <GithubIcon />,
+  GithubIcon: <GithubIcon />
 }
 
 const transformImages = (edges) =>
@@ -50,44 +50,53 @@ const PortfolioPage = ({
       <main className="ec-layout-visual-content py-24">
         <PageHeadline text="PORTFOLIO" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {portfolioData.map((portfolioBox) => (
-            <LinkBox
-              key={portfolioBox.label}
-              target={portfolioBox.content ? "_self" : "_blank"}
-              type={portfolioBox.type}
-              label={
-                intl.locale === "de" && portfolioBox.labelDe
-                  ? portfolioBox.labelDe
-                  : portfolioBox.label
+          {portfolioData.map((portfolioBox) => {
+            const mainTechLabels = portfolioBox.techs?.reduce((acc, techObj) => {
+              if (techObj.mainListing === 'true') {
+                acc.push(intl.locale === 'de' && techObj.labelDe ? techObj.labelDe : techObj.label)
               }
-              url={
-                portfolioBox.content
-                  ? `/${intl.locale ?? "en"}/portfolio/${slugify(
-                      portfolioBox.label,
-                      {
-                        lower: true,
-                        strict: true,
-                      }
-                    )}`
-                  : portfolioBox.url
-              }
-              categoryDesc={portfolioBox.categoryDesc}
-              descText={portfolioBox.techs?.join(", ")}
-              isSmall={portfolioBox.isSmall}
-            >
-              {portfolioBox.image ? (
-                <GatsbyImage
-                  image={images[portfolioBox.image]}
-                  alt={`${intl.formatMessage({
-                    id: "portfolio.box-image-alt",
-                  })}: ${portfolioBox.label}`}
-                  imgStyle={{ objectFit: `contain` }}
-                />
-              ) : portfolioBox.icon ? (
-                mappedIcons[portfolioBox.icon]
-              ) : null}
-            </LinkBox>
-          ))}
+              return acc
+            }, [])
+
+            return (
+              <LinkBox
+                key={portfolioBox.label}
+                target={portfolioBox.content ? "_self" : "_blank"}
+                type={portfolioBox.type}
+                label={
+                  intl.locale === "de" && portfolioBox.labelDe
+                    ? portfolioBox.labelDe
+                    : portfolioBox.label
+                }
+                url={
+                  portfolioBox.content
+                    ? `/${intl.locale ?? "en"}/portfolio/${slugify(
+                        portfolioBox.label,
+                        {
+                          lower: true,
+                          strict: true,
+                        }
+                      )}`
+                    : portfolioBox.url
+                }
+                categoryDesc={portfolioBox.categoryDesc}
+                descText={mainTechLabels.join(", ")}
+                isSmall={portfolioBox.isSmall}
+              >
+                {portfolioBox.image ? (
+                  <GatsbyImage
+                    image={images[portfolioBox.image]}
+                    alt={`${intl.formatMessage({
+                      id: "portfolio.box-image-alt",
+                    })}: ${portfolioBox.label}`}
+                    imgStyle={{ objectFit: `contain` }}
+                  />
+                ) : portfolioBox.icon ? (
+                  mappedIcons[portfolioBox.icon]
+                ) : null}
+              </LinkBox>
+            )
+          })}
         </div>
       </main>
     </Layout>

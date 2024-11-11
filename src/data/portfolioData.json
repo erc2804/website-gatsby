@@ -6,20 +6,57 @@
       "categoryDesc": "Website",
       "image": "curanto",
       "techs": [
-        "Vue",
-        "Nuxt",
-        "Tailwind",
-        "Figma",
-        "Lottie",
-        "HTML",
-        "S/CSS",
-        "JavaScript"
+        { 
+          "label": "Vue",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Nuxt",
+          "mainListing": "false"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "false"
+        },
+        { 
+          "label": "S/CSS",
+          "mainListing": "false"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Statamic",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Tailwind",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Lottie",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Jira",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Accessibility (WCAG, BFSG)",
+          "labelDe": "Barrierefreiheit (WCAG, BFSG)",
+          "mainListing": "true"
+        }
       ],
       "content": {
-        "title": "Custom E-Commerce Development and UI/UX",
-        "titleDe": "Webshop Eigenentwicklung und UI/UX für Curanto",
-        "description": "For the Curanto project, I worked while employed full-time at ORT Interactive. As the Head of UI/UX and Frontend, I was responsible for the comprehensive development in these areas. This included creating a scalable design system that featured both static components based on Tailwind and flexible CMS modules for the client. I actively contributed to both UI/UX design and frontend development. The client was very pleased with the outcome. I focused particularly on performance, SEO, and scalability. The project involved not only the e-commerce site but also a white-label solution and a self-service terminal, making the Statamic CMS-based system highly complex.",
-        "descriptionDe": "Für das Curanto-Projekt habe ich während meiner Festanstellung bei ORT Interactive gearbeitet. Als Head of UI/UX und Frontend war ich für die umfassende Entwicklung in diesen Bereichen verantwortlich. Dazu gehörte der Aufbau eines skalierbaren Design-Systems, das neben statischen Komponenten auf Basis von Tailwind auch flexible CMS-Module für den Kunden beinhaltete. Ich habe sowohl im UI/UX-Design als auch in der Frontend-Entwicklung aktiv mitgewirkt. Der Kunde ist mit der Entwicklung sehr zufrieden. Besonders Augenmerk legte ich auf Performance, SEO und Skalierbarkeit. Das Projekt umfasste nicht nur den Webshop, sondern auch eine Whitelabel-Lösung und einen Selbstbedienungsterminal, was das auf Statamic CMS aufgebaute System äußerst komplex machte."
+        "title": "Custom webshop as a white-label solution and UI/UX design system for Curanto",
+        "titleDe": "Webshop Eigenentwicklung als Whitelabel-Lösung und UI/UX-Designsystem für Curanto",
+        "description": "As Head of UI/UX and Frontend, I was responsible for the comprehensive development in both areas. This included building a scalable design system with Tailwind, encompassing static components and flexible, self-explanatory CMS modules for the client, enabling quick adjustments to changing requirements without compromising user experience. I was actively involved in both UI/UX design and frontend development, guiding the teams both disciplinarily and technically. \nThe client is extremely satisfied with the development, and the product plays a significant role in continuously increasing sales through our SSR solution and improved SEO. During concept and development, I paid particular attention to performance, scalability, and SEO. I built the system as a Vue/Nuxt project. The Statamic CMS-based webshop is designed as a comprehensive white-label solution, also allowing the entire shop to be embedded via iFrame or in self-service terminals.",
+        "descriptionDe": "Als Head of UI/UX und Frontend war ich für die umfassende Entwicklung in beiden Bereichen verantwortlich. Dazu gehörte der Aufbau eines skalierbaren Design-Systems mit Tailwind, das statische Komponenten und flexible, selbsterklärende CMS-Module für den Kunden umfasst und schnelle Anpassungen an sich ändernde Anforderungen ermöglicht, ohne die User Experience zu beeinträchtigen. Ich war aktiv in UI/UX-Design und Frontend-Entwicklung involviert und habe die Teams sowohl disziplinarisch als auch fachlich angeleitet. \nDer Kunde ist mit der Entwicklung äußerst zufrieden, und das Produkt trägt wesentlich dazu bei, die Absatzzahlen durch unsere SSR-Lösung und verbessertes SEO kontinuierlich zu steigern. Bei Konzept und Entwicklung legte ich besonderes Augenmerk auf Performance, Skalierbarkeit und SEO. Aufgebaut habe ich das System als Vue/Nuxt Projekt. Der auf Statamic CMS basierende Webshop ist als umfassende Whitelabel-Lösung konzipiert, die zusätzlich den gesamten Shop per iFrame oder in Self-Service-Terminals einbettbar macht."
       }
     },
     {
@@ -29,48 +66,57 @@
       "categoryDesc": "Website",
       "image": "hit",
       "techs": [
-        "Vue",
-        "Twig",
-        "Tailwind",
-        "Figma",
-        "Lottie",
-        "HTML",
-        "S/CSS",
-        "JavaScript"
+        { 
+          "label": "Vue",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Twig",
+          "mainListing": "false"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "false"
+        },
+        { 
+          "label": "S/CSS",
+          "mainListing": "false"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Pimcore",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Tailwind",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Lottie",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Jira",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Accessibility (WCAG, BFSG)",
+          "labelDe": "Barrierefreiheit (WCAG, BFSG)",
+          "mainListing": "true"
+        }
       ],
       "content": {
-        "title": "UI/UX and Frontend for Hit: Design System and CMS Integration",
-        "titleDe": "UI/UX und Frontend für Hit: Design-System und CMS-Integration",
-        "description": "For the Hit project, I worked while employed full-time at ORT Interactive. As a UI/UX Designer and Frontend Developer, I was responsible for guiding team members and overseeing the comprehensive development in these areas. This included creating a design system in Figma based on Hit's CI/CD. In collaboration with the client, we developed flexible CMS components that could be freely utilized and placed within the Pimcore backend. The client was extremely satisfied with the outcome. I paid particular attention to performance, responsiveness, and scalability.",
-        "descriptionDe": "Für das Hit-Projekt habe ich während meiner Festanstellung bei ORT Interactive gearbeitet. Als UI/UX-Designer und Frontend-Entwickler war ich für das Guiding der Teammitglieder und die umfassende Entwicklung in diesen Bereichen verantwortlich. Dazu gehörte unter anderem der Aufbau eines Design-Systems in Figma basierend auf dem CI/CD von Hit. Neben statischen Komponenten wurden in Absprache mit den Kunden auch flexible CMS-Komponenten erstellt, die im Pimcore-Backend frei genutzt und platziert werden konnten. Der Kunde ist mit der Entwicklung äußerst zufrieden. Besonderes Augenmerk legte ich auf Performance, Responsivität und Skalierbarkeit."
-      }
-    },
-    {
-      "type": "SHOP",
-      "label": "Müller Oswald",
-      "url": "https://mueller-oswald.shop/",
-      "categoryDesc": "Webshop",
-      "image": "pvoswald",
-      "techs": ["Liquid", "JavaScript", "Figma", "HTML", "CSS"],
-      "content": {
-        "title": "Building a Shared Shopify Store for Two Wineries",
-        "titleDe": "Erstellen eines gemeinsamen Shopify-Shops für zwei Weingüter",
-        "description": "I acquired the Müller Oswald project while working full-time at infraView GmbH, a subsidiary of Deutsche Bahn. The project involved consulting, designing, and implementing an online store to offer wines from two different wineries. Throughout the project, I placed a strong emphasis on advising and training the clients so they could handle recurring changes independently. In addition to ensuring high-quality frontend work regarding accessibility and SEO, I also maintained a keen focus on cost-effectiveness.",
-        "descriptionDe": "Müller Oswald habe ich neben meiner Vollzeitstelle bei infraView GmbH, einer Tochter der Deutschen Bahn, akquiriert. Das Projekt umfasste die Beratung, Gestaltung und Umsetzung eines Webshops, der Weine von zwei unterschiedlichen Weingütern anbieten sollte. Während des Projekts legte ich besonderen Wert auf die Beratung und Schulung der Kunden, damit sie wiederkehrende Änderungen eigenständig vornehmen konnten. Neben der Qualität im Frontend in Bezug auf Barrierefreiheit und SEO behielt ich stets auch das Preis-Leistungs-Verhältnis im Auge."
-      }
-    },
-    {
-      "type": "SHOP",
-      "label": "kindeskinder",
-      "url": "https://kindeskinder.biz/",
-      "categoryDesc": "Webshop",
-      "image": "kindeskinder",
-      "techs": ["Liquid", "JavaScript", "Figma", "HTML", "CSS"],
-      "content": {
-        "title": "Migration of an Outdated E-Commerce System to Shopify",
-        "titleDe": "Migration eines veralteten Shop-Systems nach Shopify",
-        "description": "I acquired the Kindeskinder project while working full-time at infraView GmbH, a subsidiary of Deutsche Bahn. The project involved migrating an existing, outdated e-commerce system to Shopify. I focused on optimizing responsiveness, user flow, and making enhancements to improve both performance and accessibility. I paid special attention to providing the client with a strong cost-benefit ratio. Instead of relying on paid plugins, I implemented workarounds and custom solutions where appropriate. This approach was highly appreciated by the client.",
-        "descriptionDe": "Kindeskinder habe ich neben meiner Vollzeitstelle bei der infraView GmbH, einer Tochter der Deutschen Bahn, akquiriert. Das Projekt umfasste die Migration eines bestehenden, jedoch veralteten Shop-Systems zu Shopify, die Optimierung der Responsivität und des Nutzerflows sowie Anpassungen, die der Performance und Barrierefreiheit des Shops zugutekommen sollten. Ein besonderes Augenmerk legte ich darauf, für den Kunden ein gutes Preis-Leistungs-Verhältnis zu wahren. Anstatt kostenpflichtige Plugins zu verwenden, setzte ich, wo sinnvoll, auf Workarounds und Eigenlösungen. Dies wurde vom Kunden sehr geschätzt."
+        "title": "Frontend development and UI/UX design for Hit: Design system and CMS integration.",
+        "titleDe": "Frontend-Entwicklung und UI/UX-Design für Hit: Design-System und CMS-Integration",
+        "description": "As a UI/UX designer and frontend developer, I was responsible for the implementation in both areas. This included, among other things, building a design system with Tailwind in Figma, based on the corporate design of Hit. In addition to static components, flexible CMS modules were created in collaboration with the client, which could be freely used and placed in the Pimcore backend.\nDue to the client's satisfaction, the collaboration was further intensified. The Hit website is gradually being expanded into a full-fledged e-commerce solution. I paid special attention to the scalability of the design system, code maintainability, and performance. I developed the system as a native HTML, CSS, and JavaScript project, with dynamically reusable Vue components. The website is integrated with Pimcore.",
+        "descriptionDe": "Als UI/UX-Designer und Frontend-Entwickler war ich für die Umsetzung in beiden Bereichen verantwortlich. Dazu gehörte unter anderem der Aufbau eines Design-Systems mit Tailwind in Figma basierend auf dem Corporate Design von Hit. Neben statischen Komponenten wurden in Absprache mit dem Kunden auch flexible CMS-Module erstellt, die im Pimcore-Backend frei genutzt und platziert werden konnten. \nAufgrund der Zufriedenheit des Kunden wurde die Zusammenarbeit im Anschluss weiter intensiviert. Die Hit-Webseite wird nach und nach zu einer vollwertigen Shop-Lösung ausgebaut. Besonderes Augenmerk legte ich daher auf die Skalierbarkeit des Design-Systems, Code-Wartbarkeit und Performance. Aufgebaut habe ich das System als natives HTML, CSS & JavaScript Projekt mit dynamisch einsetzbaren Vue-Komponenten. Angebunden ist die Webseite an Pimcore."
       }
     },
     {
@@ -80,20 +126,49 @@
       "categoryDesc": "flutter app",
       "image": "welliba_app",
       "techs": [
-        "Figma",
-        "Lottie",
-        "React",
-        "JavaScript",
-        "Flutter",
-        "storyblok",
-        "HTML",
-        "S/CSS"
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Lottie",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "false"
+        },
+        { 
+          "label": "S/CSS",
+          "mainListing": "false"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "React",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Flutter",
+          "mainListing": "false"
+        },
+        { 
+          "label": "storyblok",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Accessibility (WCAG, BFSG)",
+          "labelDe": "Barrierefreiheit (WCAG, BFSG)",
+          "mainListing": "true"
+        }
       ],
       "content": {
         "title": "Building Welliba's Product Platform: UI/UX Design and Developer Guidance",
         "titleDe": "Aufbau der Produktplattform für Welliba: UI/UX-Design und Entwickler-Guiding",
-        "description": "Welliba was a startup founded by executives from my former employer, AON Assessment Solutions in Hamburg. As a UI/UX Engineer, I was hired to design and build a complete product platform from scratch, including a Flutter app and several web apps. My responsibilities included designing user interfaces, establishing UX understanding, implementing CI/CD, and creating responsive designs in Figma. I guided the developers through the implementation process as they brought the designs to life. All products were scalable and based on a design system I developed. My focus was on creating a flexible and highly scalable foundation. Welliba has since established itself in the market, and the products are actively in use.",
-        "descriptionDe": "Welliba war ein Startup, das von Führungskräften meiner ehemaligen Arbeitsstelle bei AON Assessment Solutions in Hamburg gegründet wurde. Als UI/UX Engineer wurde ich eingestellt, um eine komplette Produktplattform von Grund auf zu gestalten, einschließlich einer Flutter-App und mehrerer Web-Apps. Meine Aufgaben umfassten das Designen der Benutzeroberflächen, den Aufbau eines UX-Verständnisses, die Implementierung von CI/CD und die Erstellung von responsiven Designs in Figma. Ich führte die Entwickler durch den Implementierungsprozess, während sie die Designs umsetzten. Alle Produkte waren skalierbar und basierten auf einem von mir entwickelten Design-System. Mein besonderes Augenmerk lag auf der Schaffung einer flexiblen und weit skalierbaren Basis. Welliba hat sich mittlerweile auf dem Markt etabliert, und die Produkte sind aktiv in Nutzung."
+        "description": "Welliba is a startup founded by executives from my previous workplace, AON Assessment Solutions in Hamburg. It's the first experience management platform to continuously measure employees' psychological well-being and provide the company with KPIs.\nAs a UI/UX engineer, I was tasked with designing the entire product platform from scratch. This included a Flutter app and multiple web apps based on React for both end-users and clients. My responsibilities involved establishing a UX understanding within the company, creating the CI/CD, and designing all user interfaces with Figma as CMS modules. I focused on scalability and flexibility to enable rapid adjustments without additional effort.\nWith my background as a senior frontend developer, I guided the developers through the implementation process and provided code snippets to support design execution. All products were scalable, accessible, and based on a design system I developed. My goal was to create a flexible foundation that established Welliba on the market, and the products are now actively in use.",
+        "descriptionDe": "Welliba ist ein Startup, das von Führungskräften meiner ehemaligen Arbeitsstelle bei AON Assessment Solutions in Hamburg gegründet wurde. Es handelt sich um die erste Experience Management Plattform, die das psychische Wohlbefinden von Mitarbeitern kontinuierlich erfasst und dem Unternehmen in Form von KPIs zur Verfügung stellt.\nAls UI/UX-Engineer wurde ich beauftragt, die gesamte Produktplattform von Grund auf zu konzipieren und zu gestalten. Dazu gehörten eine Flutter-App und mehrere Web-Apps auf Basis von React für Endnutzer und Kunden. Meine Aufgaben umfassten den Aufbau eines UX-Verständnisses im Unternehmen, die Erstellung der CI/CD und das Design aller Benutzeroberflächen mit Figma als CMS-Module. Besonderes Augenmerk legte ich dabei auf Skalierbarkeit und Flexibilität, um schnelle Anpassungen ohne zusätzlichen Aufwand zu ermöglichen.\nMit meinem Hintergrund als Senior Frontend-Entwickler führte ich die Entwickler durch den Implementierungsprozess und unterstützte sie mit Code-Snippets bei der Umsetzung der Designs. Alle Produkte waren skalierbar, barrierefrei und basierten auf einem von mir entwickelten Design-System. Mein Fokus lag auf der Schaffung einer flexiblen Basis, die Welliba auf dem Markt etabliert hat. Die Produkte sind mittlerweile aktiv in Nutzung."
       }
     },
     {
@@ -103,7 +178,28 @@
       "urlDesc": "Apple App Store",
       "categoryDesc": "iOS app",
       "image": "casualvocab",
-      "techs": ["Swift", "SwiftUI", "Xcode", "Figma", "Lottie"],
+      "techs": [
+        { 
+          "label": "Swift",
+          "mainListing": "true"
+        },
+        { 
+          "label": "SwiftUI",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Xcode",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Lottie",
+          "mainListing": "true"
+        }
+      ],
       "content": {
         "title": "CasualVocab Widget - Japanese: iOS App for Vocabulary Training with Swift and Firebase",
         "titleDe": "CasualVocab Widget - Japanese: iOS-App für Vokabeltraining mit Swift und Firebase",
@@ -112,33 +208,367 @@
       }
     },
     {
+      "type": "SHOP",
+      "label": "Müller Oswald",
+      "url": "https://mueller-oswald.shop/",
+      "categoryDesc": "Webshop",
+      "image": "pvoswald",
+      "techs": [
+        { 
+          "label": "Shopify",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Liquid",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        },
+        { 
+          "label": "CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        }
+      ],
+      "content": {
+        "title": "Consulting and implementation of a Shopify shop for two wineries",
+        "titleDe": "Beratung und Umsetzung eines Shopify-Shops für zwei Weingüter",
+        "description": "For Müller-Oswald, I independently managed the entire project as a consultant, designer, and developer. The goal was to design and develop a webshop that offers wines from two different wineries in a unified platform. After onboarding the clients, I provided comprehensive guidance on potential shop solutions, ultimately recommending Shopify. I selected a suitable theme and manually customized the code to meet the specific needs of the client. Additionally, I created Figma designs and prototypes for various components and pages, enabling the integration of both product lines and brand identities into a single shop.\nThroughout the project, I placed particular emphasis on training the clients to make recurring updates independently. Alongside high frontend quality, with a focus on accessibility and SEO, I maintained a close eye on cost-efficiency. The collaboration with the client remains strong, and I continue to support them with regular enhancements and consultation on the webshop.",
+        "descriptionDe": "Für Müller-Oswald habe ich das gesamte Projekt als Berater, Designer und Entwickler eigenständig durchgeführt. Ziel war es, einen Webshop zu konzipieren und zu entwickeln, der Weine von zwei unterschiedlichen Weingütern gemeinsam anbietet. Nach der Akquise habe ich die Kunden umfassend zu möglichen Shop-Lösungen beraten und sie zu Shopify geführt. Ich wählte ein passendes Theme aus und passte den Code manuell an, um den spezifischen Kundenwünschen gerecht zu werden. Zudem erstellte ich Figma-Designs und Prototypen für verschiedene Komponenten und Seiten, um die Integration beider Produktgruppen und CI/CDs in einen einzigen Shop zu ermöglichen.\nWährend des Projekts legte ich besonderen Wert auf die Schulung der Kunden, damit sie wiederkehrende Änderungen eigenständig vornehmen konnten. Neben der Qualität im Frontend, insbesondere in Bezug auf Barrierefreiheit und SEO, behielt ich stets das Preis-Leistungs-Verhältnis im Blick. Die Zusammenarbeit mit dem Kunden ist weiterhin sehr gut, und ich unterstütze ihn regelmäßig mit Weiterentwicklungen und Beratungen zum Webshop."
+      }
+    },
+    {
+      "type": "SHOP",
+      "label": "kindeskinder",
+      "url": "https://kindeskinder.biz/",
+      "categoryDesc": "Webshop",
+      "image": "kindeskinder",
+      "techs": [
+        { 
+          "label": "Shopify",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Liquid",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        },
+        { 
+          "label": "CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        }
+      ],
+      "content": {
+        "title": "Migration from the Supr shop system to Shopify and redesign of the webshop",
+        "titleDe": "Migration vom Shop-System Supr nach Shopify und Neugestaltung des Webshops",
+        "description": "For Kindeskinder, I independently managed the entire project as a consultant, designer, and developer. The webshop was initially based on the Supr platform, which was abruptly discontinued following Wirecard's acquisition and subsequent dissolution of the company.\nMy task was to ensure a smooth transition to a new shop system to avoid interruptions in the ordering process. I also made UI/UX adjustments, focusing on responsiveness, performance, and accessibility to boost the conversion rate. The project was executed under significant time pressure.\nThe client is highly satisfied with the project and collaboration, and the site remains active to this day. I paid special attention to maintaining good cost-efficiency: instead of relying on paid plugins, I implemented custom solutions and workarounds wherever possible—an approach that the client particularly appreciated.",
+        "descriptionDe": "Für Kindeskinder habe ich das gesamte Projekt eigenständig als Berater, Designer und Entwickler durchgeführt. Der Webshop basierte auf dem Shop-System Supr, das nach der Übernahme durch Wirecard und der späteren Auflösung des Unternehmens kurzfristig eingestellt wurde. \nMeine Aufgabe war es, den Übergang zu einem neuen Shop-System nahtlos zu gestalten, um Unterbrechungen im Bestellprozess zu vermeiden. Dabei nahm ich auch Anpassungen im Bereich UI/UX vor, insbesondere hinsichtlich Responsivität, Performance und Barrierefreiheit, um die Conversion-Rate zu steigern. Das Projekt wurde unter hohem Zeitdruck durchgeführt.\nDer Kunde ist mit dem Projekt und der Zusammenarbeit sehr zufrieden, und die Seite ist bis heute aktiv. Ein besonderes Augenmerk legte ich darauf, ein gutes Preis-Leistungs-Verhältnis zu wahren: Statt kostenpflichtiger Plugins setzte ich, wo sinnvoll, auf Workarounds und Eigenlösungen - eine Entscheidung, die vom Kunden besonders geschätzt wurde."
+      }
+    },
+    {
+      "type": "WEB",
+      "label": "PŸUR",
+      "url": "https://www.pyur.com/",
+      "categoryDesc": "Website",
+      "image": "pyur",
+      "techs": [
+        { 
+          "label": "Adobe Experience Manager",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        },
+        { 
+          "label": "S/CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Lottie",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Jira",
+          "mainListing": "false"
+        }
+      ],
+      "content": {
+        "title": "Figma migration and UX enhancement of the PYUR website",
+        "titleDe": "Figma-Migration und UX-Weiterentwicklung der PYUR-Webseite",
+        "description": "On behalf of PYUR, as Head of UX, I managed the further development and conception of new features for the PYUR website in the design and development team at Acolad Digital. I coordinated the entire process of migrating from Adobe XD to Figma, transferring all existing design elements and setting up a new design system. I also trained the team of designers and developers in the use of Figma and modern design standards.\nMy focus was on the consistency, performance and scalability of the design system. It was particularly important to me to involve everyone involved in the switch to Figma and to ensure that the new tool was understandable and efficient for everyone to use. In the UX area, I presented the client with various solutions for new features and used my expertise to provide close support in the decision-making process. The system was built on Adobe Experience Manager as well as HTML, CSS and JavaScript modules.",
+        "descriptionDe": "Im Auftrag von PYUR habe ich als Head of UX die Weiterentwicklung und Konzeption neuer Features für die PYUR-Webseite im Design- und Entwicklungsteam von Acolad Digital geleitet. Dabei habe ich den gesamten Prozess der Migration von Adobe XD zu Figma koordiniert, alle bestehenden Designelemente übertragen und ein neues Design-System aufgebaut. Zudem habe ich das Team aus Designern und Entwicklern im Umgang mit Figma sowie modernen Design-Standards geschult.\nMein Fokus lag auf der Konsistenz, Performance und Skalierbarkeit des Design-Systems. Besonders wichtig war mir, alle Beteiligten beim Umstieg auf Figma mitzunehmen und sicherzustellen, dass das neue Tool für alle verständlich und effizient zu nutzen war. Im UX-Bereich habe ich dem Kunden verschiedene Lösungsansätze für neue Features präsentiert und ihn mit meiner Expertise bei der Entscheidungsfindung eng begleitet. Das System wurde auf Adobe Experience Manager sowie HTML, CSS und JavaScript-Modulen aufgebaut."
+      }
+    },
+    {
+      "type": "WEB",
+      "label": "Deutsche Bahn",
+      "url": "https://db-engineering-consulting.com/de/news/vorausschauende-instandhaltung/",
+      "urlDesc": "DIANA Information",
+      "categoryDesc": "Website",
+      "image": "db",
+      "imageIsPurelyDecorative": "true",
+      "techs": [
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Lottie",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Angular",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        },
+        { 
+          "label": "S/CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Jira",
+          "mainListing": "true"
+        }
+      ],
+      "content": {
+        "title": "Concept and further development of DIANA: DB's proprietary diagnostic and analysis software",
+        "titleDe": "Konzeption und Weiterentwicklung der DB-eigenen Diagnose und Analysesoftware DIANA",
+        "description": "On behalf of Deutsche Bahn, I worked as a UI/UX designer and frontend developer to expand and co-develop the diagnostic and analysis software DIANA with new features. DIANA is still in use today and has significantly contributed to reducing failures caused by switch malfunctions.\nAs part of my work, the product's performance was greatly improved. Based on Angular, we developed additional feature apps within a monorepo architecture, optimizing and modernizing the system. Additionally, we developed software components for camera bridges that scan and analyze wagons and their parts. Another focus was on interactive 3D elements to enhance usability and functionality.",
+        "descriptionDe": "Im Auftrag der Deutschen Bahn habe ich als UI/UX-Designer und Frontend-Entwickler die Diagnose- und Analysesoftware DIANA durch neue Features erweitert und mitentwickelt. DIANA wird bis heute eingesetzt und hat maßgeblich dazu beigetragen, Ausfälle durch Weichenstörungen erheblich zu reduzieren.\nIm Rahmen meiner Arbeit konnte die Performance des Produkts erheblich verbessert werden. Auf Basis von Angular haben wir in einer Monorepo-Architektur zusätzliche Feature-Apps entwickelt, wodurch das System optimiert und modernisiert wurde. Zusätzlich haben wir Softwarekomponenten für Kamerabrücken entwickelt, die Waggons und deren Bestandteile scannen und analysieren. Ein weiterer Fokus lag auf interaktiven 3D-Elementen zur Verbesserung der Nutzerfreundlichkeit und Funktionalität."
+      }
+    },
+    {
+      "type": "WEB",
+      "label": "Eckelmann",
+      "url": "https://edp.eckelmann.de/edp/maa/object?id=14462",
+      "urlDesc": "LDS Web Information",
+      "categoryDesc": "Website",
+      "image": "eckelmann",
+      "imageIsPurelyDecorative": "true",
+      "techs": [
+        { 
+          "label": "Angular",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        },
+        { 
+          "label": "S/CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Jira",
+          "mainListing": "true"
+        }
+      ],
+      "content": {
+        "title": "Development of a web application for the configuration and commissioning of refrigeration components for supermarkets",
+        "titleDe": "Entwicklung einer Web-Applikation zur Konfiguration und Inbetriebnahme von Kältetechnik Komponenten für Supermärkte",
+        "description": "On behalf of Eckelmann AG, I was part of the team as a frontend developer, working on a software solution to control and monitor refrigeration systems in supermarkets, based on Angular.\nTo optimize the product for scalability, I conducted discussions with maintenance staff and other users of the software to better understand their needs and workflows. These conversations served as the foundation for creating personas and detailed user guides. The insights gained were directly incorporated into the UX design, laying the groundwork for a data-driven approach that significantly improved the efficiency and usability of the application. This thorough methodology enabled us to develop a user-centered solution that greatly simplified the daily work of users.",
+        "descriptionDe": "Im Auftrag der Eckelmann AG war ich als Frontend-Entwickler Teil des Teams, das eine Softwarelösung zur Steuerung und Überwachung von Kälteanlagen in Supermärkten auf Basis von Angular entwickelte.\nUm das Produkt skalierbar zu optimieren, führte ich Gespräche mit Wartungsmitarbeitern und anderen Nutzern der Software, um ihre Bedürfnisse und Arbeitsabläufe besser zu verstehen. Diese Gespräche dienten als Grundlage, um Personas und detaillierte Nutzer-Leitfäden zu erstellen. Die gewonnenen Erkenntnisse flossen direkt in das UX-Design ein und legten den Grundstein für eine datenbasierte Herangehensweise, die die Effizienz und Nutzerfreundlichkeit der Anwendung maßgeblich steigerte. Durch diese fundierte Methodik konnten wir eine benutzerzentrierte Lösung entwickeln, die den Arbeitsalltag der Nutzer deutlich erleichtert."
+      }
+    },
+    {
+      "type": "WEB",
+      "label": "P&G (AON)",
+      "url": "https://www.pgcareers.com/global/en/interactive-assessments",
+      "urlDesc": "Interactive Assessments Information",
+      "categoryDesc": "Website",
+      "image": "p&g",
+      "imageIsPurelyDecorative": "true",
+      "techs": [
+        { 
+          "label": "Angular",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        },
+        { 
+          "label": "CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Three.js",
+          "mainListing": "false"
+        },
+        { 
+          "label": "GSAP",
+          "mainListing": "false"
+        },
+        { 
+          "label": "Accessibility (WCAG, BFSG)",
+          "labelDe": "Barrierefreiheit (WCAG, BFSG)",
+          "mainListing": "true"
+        }
+      ],
+      "content": {
+        "title": "Concept and development of gamified psychometric tests for Procter & Gamble",
+        "titleDe": "Konzeption & Entwicklung von gamifizierten psychometrischen Tests für Procter & Gamble",
+        "description": "As part of my position as a Web Application Developer at AON Assessment Solutions, I conceptualized and developed playful online assessment tests for candidates on behalf of Procter & Gamble. The goal was to make the tests feel less stressful and more like an interactive experience rather than a traditional test.\nDespite the playful approach, it was crucial to collect psychometrically valid and comparable data. I designed the tests in Axure RP, coordinated closely with the client, and then implemented the solution using Angular and Three.js. Special attention was given to the responsiveness of the application, ensuring it was easily usable across different devices and screen sizes. Additionally, I ensured that the solution supported older browsers and met accessibility standards according to WCAG.\nThe goal was to create a user-friendly, engaging, and accessible interface that met both data quality requirements and provided an optimal user experience and accessibility. The online assessment tests are still in use at Procter & Gamble to this day.",
+        "descriptionDe": "Im Rahmen meiner Festanstellung als Web Application Developer bei AON Assessment Solutions konzipierte und entwickelte ich im Auftrag von Procter & Gamble spielerische Online-Assessment-Tests für Bewerber. Diese sollten weniger belastend wirken und mehr wie eine interaktive Erfahrung statt wie ein klassischer Test gestaltet sein.\nTrotz des spielerischen Ansatzes war es entscheidend, psychometrisch valide und vergleichbare Daten zu erheben. Ich entwarf die Tests in Axure RP, stimmte sie eng mit dem Kunden ab und setzte die Lösung anschließend mit Angular und Three.js um. Dabei legte ich besonderen Wert auf die Responsivität der Anwendung, sodass sie auf verschiedenen Endgeräten und Bildschirmgrößen problemlos nutzbar war. Zudem stellte ich sicher, dass die Lösung auch ältere Browser unterstützte und die Barrierefreiheit gemäß den WCAG-Standards erfüllte.\nDas Ziel war es, eine benutzerfreundliche, ansprechende und zugängliche Oberfläche zu schaffen, die sowohl die Anforderungen an die Datenqualität als auch an das Benutzererlebnis und die Barrierefreiheit erfüllt. Die Online-Assessment-Tests sind bis heute bei Procter & Gamble im Einsatz."
+      }
+    },
+    {
+      "type": "WEB",
+      "label": "AON",
+      "url": "https://assessment.aon.com/",
+      "categoryDesc": "Website",
+      "image": "aon",
+      "imageIsPurelyDecorative": "true",
+      "techs": [
+        { 
+          "label": "Angular",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        },
+        { 
+          "label": "CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Accessibility (WCAG, BFSG)",
+          "labelDe": "Barrierefreiheit (WCAG, BFSG)",
+          "mainListing": "true"
+        }
+      ],
+      "content": {
+        "title": "Concept and development of psychometric tests as add-on modules for AON's online assessment battery",
+        "titleDe": "Konzeption & Entwicklung von psychometrischen Tests als Zusatzmodule für AON's Online-Assessment-Batterie",
+        "description": "In my role at AON Assessment Solutions, I designed and developed online assessment tests for clients such as Vodafone, Rolls Royce, Siemens, and Daimler, which were used as a basis for hiring decisions.\nIt was crucial to collect psychometrically valid and comparable data to provide HR departments with a solid foundation for decision-making. I designed the tests in Axure RP, collaborated closely with the clients, and implemented the solutions using Angular. I placed particular emphasis on the responsiveness of the tests, ensuring they were fully functional across various devices and screen sizes. Additionally, I ensured compatibility with older browsers and compliance with WCAG accessibility standards.\nThe goal was to create a user-friendly and accessible solution that met both the high data quality requirements and the need for a positive user experience and inclusivity. The tests I developed are still in use today and represent a significant part of AON's portfolio.",
+        "descriptionDe": "Im Rahmen meiner Festanstellung bei AON Assessment Solutions konzipierte und entwickelte ich im Auftrag von Kunden wie Vodafone, Rolls Royce, Siemens und Daimler Online-Assessment-Tests für Bewerber, die als Entscheidungsgrundlage für die Einstellung dienen sollten.\nDabei war es wichtig, psychometrisch valide und vergleichbare Daten zu erheben, um eine fundierte Entscheidungsbasis für die Personalabteilungen zu schaffen. Ich entwarf die Tests in Axure RP, stimmte sie eng mit den Kunden ab und setzte die Lösungen mit Angular um. Besonderen Wert legte ich auf die Responsivität der Tests, sodass sie auf verschiedenen Endgeräten und Bildschirmgrößen optimal nutzbar waren. Zudem stellte ich sicher, dass die Tests auch mit älteren Browsern kompatibel waren und den WCAG-Standards für Barrierefreiheit entsprachen.\nZiel war es, eine benutzerfreundliche und zugängliche Lösung zu schaffen, die sowohl den hohen Anforderungen an Datenqualität als auch an Benutzererlebnis und Inklusion gerecht wurde. Meine entwickelten Tests sind bis heute im Einsatz und stellen einen signifikanten Teil des Portfolios von AON dar."
+      }
+    },
+    {
       "type": "WEB",
       "label": "tech demo",
       "url": "https://ercancicek.com/mel-menu.html",
       "categoryDesc": "Website",
       "image": "melmenu",
-      "techs": ["jQuery", "JavaScript", "Figma"]
+      "techs": [
+        { 
+          "label": "jQuery",
+          "mainListing": "true"
+        },
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        }
+      ]
     },
     {
       "type": "OTHER",
       "label": "Fiddles",
       "url": "https://jsfiddle.net/u/erc2804/fiddles/",
       "icon": "JsFiddleIcon",
-      "techs": ["JavaScript", "S/CSS", "HTML"]
+      "techs": [
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "S/CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        }
+      ]
     },
     {
       "type": "OTHER",
       "label": "Codepens",
       "url": "https://codepen.io/erc2804",
       "icon": "CodepenIcon",
-      "techs": ["JavaScript", "S/CSS", "HTML"]
+      "techs": [
+        { 
+          "label": "JavaScript",
+          "mainListing": "true"
+        },
+        { 
+          "label": "S/CSS",
+          "mainListing": "true"
+        },
+        { 
+          "label": "HTML",
+          "mainListing": "true"
+        }
+      ]
     },
     {
       "type": "OTHER",
       "label": "Lottiefiles",
       "url": "https://lottiefiles.com/erc2804",
       "icon": "LottieIcon",
-      "techs": ["After Effects", "Figma"]
+      "techs": [
+        { 
+          "label": "Adobe After Effects",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        }
+      ]
     },
     {
       "type": "OTHER",
@@ -146,7 +576,24 @@
       "labelDe": "Webseiten-Quellcode",
       "url": "https://github.com/erc2804/website-gatsby",
       "icon": "GithubIcon",
-      "techs": ["React", "Gatsby", "PWA", "Figma"]
+      "techs": [
+        { 
+          "label": "React",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Gatsby",
+          "mainListing": "true"
+        },
+        { 
+          "label": "PWA",
+          "mainListing": "true"
+        },
+        { 
+          "label": "Figma",
+          "mainListing": "true"
+        }
+      ]
     }
   ]
   
