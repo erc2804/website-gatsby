@@ -1,7 +1,9 @@
 {
   "header": {
     "to-home": "Zur Startseite",
-    "toggle-menu": "Menüansicht umschalten"
+    "toggle-menu": "Menüansicht umschalten",
+    "switch-lang-to-german": "Sprache in Deutsch umschalten",
+    "switch-lang-to-english": "Sprache in Englisch umschalten"
   },
   "index": {
     "meta": {

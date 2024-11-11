@@ -1,7 +1,9 @@
 {
   "header": {
     "to-home": "To home page",
-    "toggle-menu": "Toggle menu"
+    "toggle-menu": "Toggle menu",
+    "switch-lang-to-german": "Switch the language to german",
+    "switch-lang-to-english": "Switch the language to english"
   },
   "index": {
     "meta": {

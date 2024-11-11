@@ -2,13 +2,14 @@ import React from "react"
 import { navigate } from "gatsby"
 import { useIntl } from "gatsby-plugin-intl"
 
-const LangButton = ({ isActive = false, onDark, onClick, children }) => {
+const LangButton = ({ isActive = false, ariaLabel, onDark, onClick, children }) => {
     const textColorClasses = onDark ? 'text-brand-sand hover:text-typo-min-lvl' : 'text-typo-high-lvl hover:text-brand-green-high-lvl'
     const activeClasses = `before:content-[''] before:block before:size-8 before:absolute before:inset-0 before:m-auto before:transform before:-translate-y-0.5 before:rounded-full ${onDark ? 'before:bg-brand-green-high-lvl' : 'before:bg-brand-green-low-lvl'}`
   return (
     <button
       className={`size-11 transition-colors relative ${textColorClasses} ${isActive ? activeClasses : ''}`}
       onClick={onClick}
+      aria-label={ariaLabel}
     >
       <span className="relative">{children}</span>
     </button>
@@ -31,6 +32,7 @@ const LanguageSwitcher = ({ onDark }) => {
         isActive={currentLocale === "en"}
         onDark={onDark}
         onClick={() => switchLanguage("en")}
+        ariaLabel={intl.formatMessage({ id: 'header.switch-lang-to-english' })}
       >
         EN
       </LangButton>
@@ -41,6 +43,7 @@ const LanguageSwitcher = ({ onDark }) => {
         isActive={currentLocale === "de"}
         onDark={onDark}
         onClick={() => switchLanguage("de")}
+        ariaLabel={intl.formatMessage({ id: 'header.switch-lang-to-german' })}
       >
         DE
       </LangButton>
