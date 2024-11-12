@@ -64,7 +64,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
 
   return (
     <Layout seo={seoInfo} currentLocale={intl.locale}>
-      <main className="ec-layout-visual-content py-24">
+      <main className="ec-layout-visual-content py-24 min-h-dvh-minus-footer">
         <div className="flex flex-row items-center gap-6">
           <Link
             to="/portfolio"

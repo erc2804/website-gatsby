@@ -11,6 +11,9 @@ module.exports = {
         "limit-visual-content": "1200px",
         "limit-text-content": "800px",
       },
+      minHeight: {
+        "dvh-minus-footer": "calc(100dvh - var(--footer-height))"
+      },
       fontFamily: {
         sans: ["an-regular", "sans-serif"],
       },

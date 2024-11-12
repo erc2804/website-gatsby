@@ -74,5 +74,91 @@
     "generic": "Ein Fehler ist aufgetreten, der so speziell ist, dass ich ihn nicht vorausgeahnt habe.",
     "page-not-found": "Die Seite konnte nicht gefunden werden.",
     "main-action": "Zurück zur Startseite"
+  },
+  "legal-texts": {
+    "imprint": {
+      "headline": "Impressum",
+      "tmg-reference": "Angaben gemäß § 5 TMG",
+      "contact": "Kontakt",
+      "address": {
+        "first-line": "nextstepweb, Inh. Ercan Cicek",
+        "second-line": "Tußmannstraße 4",
+        "third-line": "40477 Düsseldorf",
+        "email": "E-Mail: ",
+        "phone": "Telefon: ",
+        "vat-id": "Umsatzsteuer-ID: "
+      },
+      "content-liability": {
+        "headline": "Haftung für Inhalte",
+        "desc": "Als Dienstanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt."
+      },
+      "links-liability": {
+        "headline": "Haftung für Links",
+        "desc": "Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich."
+      }
+    },
+    "privacy": {
+      "headline": "Datenschutz-Erklärung",
+      "intro": "Ich nehme den Schutz deiner persönlichen Daten sehr ernst. Auf dieser Website werden keine personenbezogenen Daten erhoben oder verarbeitet. Es werden keine Cookies verwendet, und es erfolgt keine Sammlung oder Auswertung von Nutzerdaten.",
+      "embedded-data": "Die Website enthält möglicherweise externe Inhalte (wie eingebettete Fotos und Videos), die Daten an Dritte übermitteln könnten. Du kannst die Nutzung solcher externen Dienste durch die Einstellungen deines Browsers kontrollieren.",
+      "contact": {
+        "headline": "Kontakt",
+        "desc": "Bei Fragen zu dieser Datenschutzerklärung kannst du dich gerne an mich wenden: "
+      }
+    },
+    "cv-privacy": {
+      "headline": "CasualVocab Datenschutz-Erklärung",
+      "intro": "Ercan Cicek hat die CasualVocab Widget - Japanese App als kostenlosen Service entwickelt. Diese Datenschutzerklärung erklärt, wie personenbezogene Daten gesammelt, verwendet und weitergegeben werden, wenn du dich entscheidest, diese App zu nutzen. Durch die Nutzung dieser App stimmst du den Bedingungen dieser Erklärung zu.",
+      "info-coll": {
+        "headline": "Sammlung und Verwendung von Informationen",
+        "desc": "Die App sammelt keine personenbezogenen Daten direkt. Drittanbieter wie Firebase und AdMob können jedoch personenbezogene Daten sammeln, um ihre Dienste bereitzustellen. Ich teile oder verwende deine Informationen nur wie hier beschrieben."
+      },
+      "third-party-services": {
+        "headline": "Drittanbieter-Dienste",
+        "desc": "Diese App verwendet die folgenden Drittanbieter-Dienste:",
+        "firebase": {
+          "desc": "Firebase: Sammelt Geräteinformationen und App-Nutzungsdaten zur Verbesserung der Leistung und Funktionalität. Referenz: ",
+          "link": {
+            "label": "Firebase Datenschutzrichtlinie",
+            "url": "https://firebase.google.com/support/privacy"
+          }
+        },
+        "admob": {
+          "desc": "AdMob: Verwendet Cookies, um personalisierte Anzeigen bereitzustellen und die Dienste zu verbessern. Referenz: ",
+          "link": {
+            "label": "AdMob Datenschutzrichtlinie",
+            "url": "https://support.google.com/admob/answer/6128543?hl=en"
+          }
+        }
+      },
+      "log-data": {
+        "headline": "Protokolldaten",
+        "desc": "Im Fehlerfall kann ich Protokolldaten sammeln, die die IP-Adresse deines Geräts, den Gerätenamen, die Betriebssystemversion, die App-Konfiguration, Nutzungsstatistiken sowie die Zeit und das Datum der Nutzung umfassen. Diese Daten werden von Drittanbieterdiensten wie Firebase gesammelt."
+      },
+      "cookies": {
+        "headline": "Cookies",
+        "desc": "Diese App verwendet keine Cookies direkt, jedoch können Drittanbieter wie Firebase und AdMob Cookies für Analysen, Werbung und zur Verbesserung der Dienste verwenden. Du kannst über die Einstellungen deines Geräts entscheiden, ob du Cookies akzeptieren oder ablehnen möchtest, jedoch kann die Ablehnung von Cookies die Funktionalität der App beeinträchtigen."
+      },
+      "security": {
+        "headline": "Sicherheit",
+        "desc": "Ich schätze dein Vertrauen, personenbezogene Daten bereitzustellen. Obwohl ich kommerziell akzeptable Mittel einsetze, um deine Daten zu schützen, ist keine Methode der Übertragung oder Speicherung 100% sicher."
+      },
+      "other-sites": {
+        "headline": "Links zu anderen Seiten",
+        "desc": "Die App kann Links zu externen Websites enthalten, die nicht von mir betrieben werden. Ich bin nicht verantwortlich für den Inhalt oder die Datenschutzrichtlinien dieser Drittseiten. Bitte prüfe die Datenschutzrichtlinie jeder Seite, die du besuchst."
+      },
+      "childrens-privacy": {
+        "headline": "Datenschutz von Kindern",
+        "desc": "Diese App ist nicht für Kinder unter 13 Jahren bestimmt, und ich sammle keine personenbezogenen Daten von Kindern. Sollte ich feststellen, dass ein Kind unter 13 Jahren personenbezogene Daten bereitgestellt hat, werde ich diese sofort löschen."
+      },
+      "changes": {
+        "headline": "Änderungen dieser Datenschutzerklärung",
+        "desc": "Ich kann diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Bitte prüfe sie regelmäßig. Änderungen werden hier veröffentlicht, und das Datum der letzten Aktualisierung wird angezeigt. Diese Richtlinie ist ab dem 22.06.2022 gültig."
+      },
+      "contact": {
+        "headline": "Kontaktiere mich",
+        "desc": "Wenn du Fragen oder Vorschläge zu dieser Datenschutzerklärung hast, kannst du mich unter folgender E-Mail-Adresse kontaktieren: "
+      }
+    }
   }
 }

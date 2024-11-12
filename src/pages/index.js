@@ -17,7 +17,7 @@ const HomePage = ({ intl }) => {
     image: ecPhoto
   }
   return (
-    <Layout seo={seoInfo} currentLocale={intl.locale} onDark>
+    <Layout seo={seoInfo} currentLocale={intl.locale} onDark footerIsFixed={true}>
       <div className="min-h-dvh relative">
         <main className="z-30 relative pt-24 ps-8 md:ps-14 xl:ps-32 2xl:ps-52">
           <h1 className="pt-36 md:pt-52 xl:pt-40 2xl:pt-52 flex flex-col gap-2 text-4xl md:text-7xl xl:text-8xl tracking-[0.125rem] uppercase overflow-hidden">

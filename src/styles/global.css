@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --footer-height: 56px;
+}
+
 @layer base {
   * {
     @apply box-border;
@@ -85,6 +89,22 @@
       @apply list-disc list-inside;
     }
   }
+    /* legal-text */
+    .legal-text {
+      @apply ec-font-base text-typo-medium-lvl;
+      p, ul {
+        @apply mb-10;
+      }
+      h2 {
+        @apply mb-4 ec-font-heading-2 text-typo-high-lvl;
+      }
+      a {
+        @apply text-brand-green-high-lvl hover:underline;
+      }
+      ul {
+        @apply list-none;
+      }
+    }
   /* focus */
   a:focus-visible,
   button:focus-visible {

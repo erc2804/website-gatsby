@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import ecLogo from "../images/logo_original.png"
 
-export const Seo = ({ title, description, pathname, image, currentLocale, children }) => {
+export const Seo = ({ title, description, pathname, image, currentLocale, noindex = false, children }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -32,6 +32,7 @@ export const Seo = ({ title, description, pathname, image, currentLocale, childr
       <meta property="og:type" content="website" />
       <link rel="icon" href={ecLogo} />
       <link rel="canonical" href={seo.url} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       {children}
     </Helmet>
   )

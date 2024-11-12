@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from "react"
+import React, { useRef, useEffect, useState, useCallback, useMemo } from "react"
 import { Link } from "gatsby-plugin-intl"
 import NavLink from "./navLink"
 import EcLogo from "./ecLogo"
@@ -20,6 +20,18 @@ const navElements = [
     labelDe: "Über Mich",
     to: "/about-me",
   },
+  {
+    label: "Imprint",
+    labelDe: "Impressum",
+    to: "/imprint",
+    mobileOnly: true
+  },
+  {
+    label: "Privacy Policy",
+    labelDe: "Datenschutzerklärung",
+    to: "/privacy",
+    mobileOnly: true
+  }
 ]
 
 const Header = ({ onDark, intl }) => {
@@ -33,6 +45,11 @@ const Header = ({ onDark, intl }) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+
+  const desktopNavElements = useMemo(
+    () => navElements.filter(navElement => !navElement.mobileOnly),
+    []
+  )
 
   const handleResize = useCallback(() => {
     if (typeof window !== "undefined") {
@@ -91,7 +108,7 @@ const Header = ({ onDark, intl }) => {
           <EcLogo onDark={onDark} isOpen={isOpen} />
         </Link>
         <div className="hidden md:flex flex-row gap-6">
-          {navElements.map((navElement) => (
+          {desktopNavElements.map((navElement) => (
             <NavLink key={navElement.to} to={navElement.to} onDark={onDark}>
               {intl.locale === 'de' && navElement.labelDe ? navElement.labelDe : navElement.label}
             </NavLink>
