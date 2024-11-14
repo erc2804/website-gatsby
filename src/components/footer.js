@@ -15,11 +15,11 @@ const navElements = [
   }
 ]
 
-const Footer = ({ onDark, isFixed, intl }) => {
+const Footer = ({ onDark, intl }) => {
   return (
-    <footer className={`hidden md:flex w-full z-50 h-14 flex-row justify-start items-center ${isFixed ? 'absolute left-0 bottom-0' : ''}`}>
+    <footer className="hidden md:flex z-50 h-14 flex-row gap-5 justify-start items-center px-5 relative">
       {navElements.map((navElement) => (
-        <NavLink key={navElement.to} to={navElement.to} onDark={onDark}>
+        <NavLink key={navElement.to} to={navElement.to} onDark={onDark} smallVersion={true}>
           {intl.locale === 'de' && navElement.labelDe ? navElement.labelDe : navElement.label}
         </NavLink>
       ))}

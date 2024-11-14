@@ -7,7 +7,6 @@ export default function Layout({
   onDark,
   seo = {},
   currentLocale,
-  footerIsFixed = false,
   children,
 }) {
   const { title, description, pathname, image, noindex } = seo
@@ -24,7 +23,9 @@ export default function Layout({
       />
       <Header onDark={onDark} />
       {children}
-      <Footer onDark={onDark} isFixed={footerIsFixed} />
+      {!onDark && 
+        <Footer />
+      }
     </div>
   )
 }
