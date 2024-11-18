@@ -6,6 +6,7 @@ const NavLink = ({
   onDark,
   smallVersion = false,
   additionalClasses = "",
+  attrDataChat = "",
   children,
 }) => {
   const baseClasses = `flex items-center w-fit transition-colors relative ${additionalClasses}`
@@ -21,6 +22,8 @@ const NavLink = ({
   } before:h-1 before:absolute before:left-1/2 before:transform before:-translate-x-1/2 
   before:bg-brand-green-medium-lvl before:rounded-full ${onDark ? "text-gray-min-lvl" : "text-gray-max-lvl"}`
 
+  const attrProps = attrDataChat ? { "data-chat": attrDataChat } : {}
+
   return (
     <Link
       to={to}
@@ -28,6 +31,7 @@ const NavLink = ({
       activeClassName={activeClasses}
       partiallyActive={true}
       aria-label={children}
+      {...attrProps}
     >
       {children}
     </Link>

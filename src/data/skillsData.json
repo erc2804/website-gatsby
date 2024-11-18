@@ -28,6 +28,7 @@
     "show-in-aboutme": false,
     "label": "Accessibility (WCAG, BFSG)",
     "labelDe": "Barrierefreiheit (WCAG, BFSG)",
-    "url": "https://www.w3.org/WAI/standards-guidelines/wcag/"
+    "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+    "chat-message-intl-id": "a11y"
   }
 ]

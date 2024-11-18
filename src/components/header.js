@@ -107,7 +107,7 @@ const Header = ({ onDark, intl }) => {
         <Link to="/" aria-label={ intl.formatMessage({ id: 'header.to-home' }) }>
           <EcLogo onDark={onDark} isOpen={isOpen} />
         </Link>
-        <div className="hidden md:flex flex-row gap-6">
+        <div className="hidden md:flex flex-row gap-6" data-chat={intl.formatMessage({ id: 'chat-bubble.main-links' })}>
           {desktopNavElements.map((navElement) => (
             <NavLink key={navElement.to} to={navElement.to} onDark={onDark}>
               {intl.locale === 'de' && navElement.labelDe ? navElement.labelDe : navElement.label}

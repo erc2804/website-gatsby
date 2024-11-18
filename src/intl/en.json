@@ -5,6 +5,15 @@
     "switch-lang-to-german": "Switch the language to german",
     "switch-lang-to-english": "Switch the language to english"
   },
+  "chat-bubble": {
+    "starter": "How are you doing?",
+    "fallback": "What now?",
+    "language-switcher": "No worries, I can speak both languages.",
+    "legal-links": "Really?",
+    "main-links": "Where are you going?",
+    "a11y": "Good choice!",
+    "first-name": "My name is pronounced Erjan (like in jungle)."
+  },
   "index": {
     "meta": {
       "title": "Ercan Cicek | Experienced Frontend Developer & UX Designer in Dusseldorf | Portfolio & Blog",

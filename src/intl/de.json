@@ -5,6 +5,15 @@
     "switch-lang-to-german": "Sprache in Deutsch umschalten",
     "switch-lang-to-english": "Sprache in Englisch umschalten"
   },
+  "chat-bubble": {
+    "starter": "Wie geht's?",
+    "fallback": "Was nun?",
+    "language-switcher": "Keine Sorge, ich spreche beide Sprachen.",
+    "legal-links": "Wirklich?",
+    "main-links": "Wohin als nächstes?",
+    "a11y": "Gute Wahl!",
+    "first-name": "Mein Name wird Erdschan ausgesprochen (wie bei Dschungel)."
+  },
   "index": {
     "meta": {
       "title": "Ercan Cicek | Erfahrener Frontend-Entwickler & UX-Designer in Düsseldorf | Portfolio & Blog",

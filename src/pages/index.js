@@ -2,6 +2,7 @@ import React from "react"
 import { injectIntl } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
+import MouseChatBubble from "../components/mouseChatBubble"
 import bgLandscapeImg from "../images/index/bg-landscape.jpg"
 import bgPortraitImg from "../images/index/bg-portrait.jpg"
 import AdpillarText from "../components/adpillarText"
@@ -12,10 +13,10 @@ const adpillarTexts = ["Designer", "Developer"]
 
 const HomePage = ({ intl }) => {
   const seoInfo = {
-    title: intl.formatMessage({ id: 'index.meta.title' }),
-    description: intl.formatMessage({ id: 'index.meta.description' }),
-    pathname: '/',
-    image: ecPhoto
+    title: intl.formatMessage({ id: "index.meta.title" }),
+    description: intl.formatMessage({ id: "index.meta.description" }),
+    pathname: "/",
+    image: ecPhoto,
   }
   return (
     <Layout seo={seoInfo} currentLocale={intl.locale} onDark>
@@ -23,7 +24,7 @@ const HomePage = ({ intl }) => {
         <main className="z-30 relative pt-24 pl-8 md:pl-14 xl:pl-32 2xl:pl-52 min-h-dvh-minus-footer">
           <h1 className="pt-36 md:pt-36 2xl:pt-52 flex flex-col gap-2 text-4xl md:text-7xl xl:text-8xl tracking-[0.125rem] uppercase overflow-hidden">
             <span>
-              <span className="text-brand-green-medium-lvl">Ercan</span>
+              <span className="text-brand-green-medium-lvl" data-chat={intl.formatMessage({ id: 'chat-bubble.first-name' })}>Ercan</span>
               &nbsp;
               <span className="text-brand-sand">Cicek</span>
             </span>
@@ -37,23 +38,34 @@ const HomePage = ({ intl }) => {
             </span>
           </h1>
           <div className="pt-40 md:pt-20 2xl:pt-52 pb-8 flex flex-col md:flex-row ec-font-subheading">
-            {allSkills.map((skill, idx) => (
-              <div key={skill.id}>
-                <a
-                  href={skill.url}
-                  className="text-brand-sand hover:text-gray-min-lvl"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {intl.locale === 'de' && skill.labelDe ? skill.labelDe : skill.label}
-                </a>
-                {idx < allSkills.length - 1 && (
-                  <span className="text-brand-green-medium-lvl">
-                    &nbsp;&#47;&nbsp;
-                  </span>
-                )}
-              </div>
-            ))}
+            {allSkills.map((skill, idx) => {
+              const chatMessage = skill["chat-message-intl-id"]
+                ? intl.formatMessage({
+                    id: `chat-bubble.${skill["chat-message-intl-id"]}`,
+                  })
+                : null
+              const chatProps = chatMessage ? { "data-chat": chatMessage } : {}
+
+              return (
+                <div key={skill.id} {...chatProps}>
+                  <a
+                    href={skill.url}
+                    className="text-brand-sand hover:text-gray-min-lvl"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {intl.locale === "de" && skill.labelDe
+                      ? skill.labelDe
+                      : skill.label}
+                  </a>
+                  {idx < allSkills.length - 1 && (
+                    <span className="text-brand-green-medium-lvl">
+                      &nbsp;&#47;&nbsp;
+                    </span>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </main>
         <Footer onDark={true} />
@@ -68,6 +80,7 @@ const HomePage = ({ intl }) => {
           />
         </picture>
       </div>
+      <MouseChatBubble />
     </Layout>
   )
 }
