@@ -99,8 +99,37 @@
     },
     "privacy": {
       "headline": "Datenschutz-Erklärung",
-      "intro": "Ich nehme den Schutz deiner persönlichen Daten sehr ernst. Auf dieser Website werden keine personenbezogenen Daten erhoben oder verarbeitet. Es werden keine Cookies verwendet, und es erfolgt keine Sammlung oder Auswertung von Nutzerdaten.",
-      "embedded-data": "Die Website enthält möglicherweise externe Inhalte (wie eingebettete Fotos und Videos), die Daten an Dritte übermitteln könnten. Du kannst die Nutzung solcher externen Dienste durch die Einstellungen deines Browsers kontrollieren.",
+      "general-info": {
+        "headline": "Allgemeine Informationen",
+        "desc": "Ich nehme den Schutz deiner persönlichen Daten sehr ernst. Auf dieser Website werden keine personenbezogenen Daten erhoben oder verarbeitet, es sei denn, du gibst mir diese aktiv durch die Zustimmung zu den Google Analytics Cookies. Diese Cookies werden ausschließlich verwendet, um die Nutzung der Website zu analysieren und zu verbessern."
+      },
+      "ga-usage": {
+        "headline": "Nutzung von Google Analytics",
+        "desc": "Diese Website nutzt Google Analytics, einen Webanalysedienst von Google LLC. Google Analytics verwendet Cookies, um Informationen darüber zu sammeln, wie du die Website nutzt. Die gesammelten Daten werden an Google übermittelt und dort gespeichert. Google verwendet diese Informationen, um Reports über die Websiteaktivitäten zu erstellen und mir als Webseitenbetreiber zu helfen, die Nutzung zu verstehen und die Inhalte zu optimieren."
+      },
+      "ga-cookies": {
+        "headline": "Google Analytics Cookies",
+        "list-intro": "Die folgenden Cookies werden von Google Analytics gesetzt:",
+        "list-first-entry": "_ga: Dieses Cookie wird verwendet, um Nutzer zu unterscheiden. Die Dauer dieses Cookies beträgt 2 Jahre.",
+        "list-second-entry": "_gid: Dieses Cookie wird verwendet, um Nutzer innerhalb eines Tages zu unterscheiden. Die Dauer beträgt 24 Stunden.",
+        "list-third-entry": "_gat: Dieses Cookie wird verwendet, um die Anfragenrate zu drosseln (für die Analyse von Websites mit hohem Traffic). Es hat eine Dauer von 1 Minute."
+      },
+      "decline-cookies": {
+        "headline": "Wie du Cookies ablehnen kannst",
+        "desc": "Du kannst die Verwendung von Google Analytics-Cookies ablehnen, indem du das Cookie-Banner nutzt, oder indem du den Google Analytics Opt-Out Browser Add-On installierst, um die Erfassung von Daten durch Google Analytics zu verhindern."
+      },
+      "ip-anon": {
+        "headline": "IP-Anonymisierung",
+        "desc": "Auf dieser Website wird die IP-Anonymisierung aktiviert, um sicherzustellen, dass deine IP-Adresse vor der Übertragung an Google anonymisiert wird."
+      },
+      "no-personal-data": {
+        "headline": "Keine Speicherung personenbezogener Daten",
+        "desc": "Die Informationen, die durch die Cookies von Google Analytics gesammelt werden, werden nicht mit anderen personenbezogenen Daten kombiniert. Es werden keine personenbezogenen Daten wie Name, E-Mail-Adresse oder andere Informationen gespeichert, die eine direkte Identifikation der Nutzer ermöglichen."
+      },
+      "external-content": {
+        "headline": "Externe Inhalte",
+        "desc": "Die Website enthält möglicherweise externe Inhalte (wie eingebettete Fotos und Videos), die Daten an Dritte übermitteln könnten. Du kannst die Nutzung solcher externen Dienste durch die Einstellungen deines Browsers kontrollieren."
+      },
       "contact": {
         "headline": "Kontakt",
         "desc": "Bei Fragen zu dieser Datenschutzerklärung kannst du dich gerne an mich wenden: "

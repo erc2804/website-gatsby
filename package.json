@@ -17,7 +17,9 @@
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
     "autoprefixer": "^10.4.16",
+    "focus-trap-react": "^10.3.1",
     "gatsby": "^5.14.0",
+    "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-intl": "^5.10.0",
     "gatsby-plugin-manifest": "^5.13.1",

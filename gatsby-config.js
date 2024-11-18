@@ -91,5 +91,17 @@ module.exports = {
         redirect: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: '{GA_ID}',
+          cookieName: "gatsby-gdpr-google-analytics",
+          anonymize: true,
+          allowAdFeatures: false,
+        },
+        environments: ['production', 'development']
+      },
+    },
   ],
 }

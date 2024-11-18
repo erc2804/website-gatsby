@@ -2,6 +2,7 @@ import * as React from "react"
 import Header from "./header"
 import Footer from "./footer"
 import { Seo } from "../components/seo"
+import CookieConsent from "./cookieConsent"
 
 export default function Layout({
   onDark,
@@ -26,6 +27,7 @@ export default function Layout({
       {!onDark && 
         <Footer />
       }
+      <CookieConsent />
     </div>
   )
 }
