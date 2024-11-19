@@ -1,6 +1,5 @@
 import React, { useMemo } from "react"
 import Layout from "../components/layout"
-import { Seo } from "../components/seo"
 import PageHeadline from "../components/pageHeadline"
 import { StaticImage } from "gatsby-plugin-image"
 import allSocialMediaBoxes from "../data/socialMediaData"

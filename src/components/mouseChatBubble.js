@@ -97,20 +97,20 @@ const MouseChatBubble = ({ intl }) => {
   }
 
   // --- calc distance to the element containing the current message
-  const calcDistanceToElemContainingCurrentMessage = (clientX, clientY) => {
-    const currentElem = dataChatElements.find(
-      (elem) => elem.getAttribute("data-chat") === currentChatMessage
-    )
-    if (currentElem) {
-      const rect = currentElem.getBoundingClientRect()
-      const elemCenterX = rect.left + rect.width / 2
-      const elemCenterY = rect.top + rect.height / 2
-      return Math.sqrt(
-        Math.pow(clientX - elemCenterX, 2) + Math.pow(clientY - elemCenterY, 2)
-      )
-    }
-    return 0
-  }
+//   const calcDistanceToElemContainingCurrentMessage = (clientX, clientY) => {
+//     const currentElem = dataChatElements.find(
+//       (elem) => elem.getAttribute("data-chat") === currentChatMessage
+//     )
+//     if (currentElem) {
+//       const rect = currentElem.getBoundingClientRect()
+//       const elemCenterX = rect.left + rect.width / 2
+//       const elemCenterY = rect.top + rect.height / 2
+//       return Math.sqrt(
+//         Math.pow(clientX - elemCenterX, 2) + Math.pow(clientY - elemCenterY, 2)
+//       )
+//     }
+//     return 0
+//   }
 
   useEffect(() => {
     if (typeof window !== "undefined") {
