@@ -128,14 +128,14 @@ const MouseChatBubble = ({ intl }) => {
       ref={wrapperRef}
     >
       <div
-        className={`flex flex-none transition-transform duration-500 transform ${
+        className={`flex flex-none transition-transform duration-500 transform aspect-square rounded-full size-10 bg-brand-sand ${
           chatBubbleVisible ? "rotate-0 scale-100" : "-rotate-90 scale-0"
         }`}
       >
         <StaticImage
           src="../images/pixelcan.png"
           alt=""
-          className="aspect-square rounded-full size-10"
+          className="size-full"
         />
       </div>
       <div

@@ -114,12 +114,3 @@ const AboutmePage = ({ intl }) => {
 }
 
 export default injectIntl(AboutmePage)
-
-export const Head = () => (
-  <Seo
-    title="About Ercan Cicek | Experienced UX Developer & UX Designer in Dusseldorf"
-    description="Learn more about Ercan Cicek, an experienced UX Developer and Designer based in Dusseldorf with over nine years of experience in conceptualizing and implementing web applications. Specializing in Vue, Figma and building the bridge between design and development"
-    pathname="/about-me"
-    image={ecAvatar}
-  />
-)

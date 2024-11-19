@@ -14,7 +14,7 @@ const AvatarBubble = (role) => {
   return (
     <div className="size-fit relative">
       <StaticImage
-        src="../../images/about-me/ercancicek.jpg"
+        src="../../images/pixelcan.png"
         alt="Ercan Cicek avatar"
         className={avatarClasses}
         objectPosition={"40%"}
