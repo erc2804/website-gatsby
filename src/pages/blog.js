@@ -16,6 +16,7 @@ const transformPosts = (edges, currentLocale) =>
   edges.map((edge) => ({
     id: edge.node.frontmatter.id,
     date: formatDate(edge.node.frontmatter.date, currentLocale),
+    dateISO: edge.node.frontmatter.date,
     title: edge.node.frontmatter.title,
     imageUrl: edge.node.frontmatter.imageUrl,
     verticalImgPosInPercent: edge.node.frontmatter.verticalImgPosInPercent,
@@ -54,10 +55,11 @@ const BlogPage = ({ data, intl }) => {
             <p>Der Blog ist zurzeit leider nur auf Englisch verfügbar. Zukünftige Posts werde ich zusätzlich auf Deutsch schreiben. Bitte gedulde Dich diesbezüglich etwas.</p>
           }
           {blogPosts.map((blogPost, idx) => (
-            <article key={idx} className="w-full">
+            <article key={idx} className="w-full" aria-label={`${blogPost.date} - ${blogPost.title}`}>
               <button
                 className="w-full h-52 rounded-3xl overflow-hidden relative group"
                 onClick={() => toggleBlogEntry(blogPost.id)}
+                aria-expanded={blogPost.isOpen}
               >
                 <div
                   className="size-full bg-no-repeat bg-[length:100%_auto] transform duration-[10000ms] xl:group-hover:scale-125"
@@ -84,7 +86,7 @@ const BlogPage = ({ data, intl }) => {
                     </div>
                     <div className="flex flex-row gap-2 items-center">
                       <CalendarIcon iconClasses="size-6 fill-brand-sand" />
-                      <span className="text-brand-sand">{blogPost.date}</span>
+                      <time className="text-brand-sand" dateTime={blogPost.dateISO}>{blogPost.date}</time>
                     </div>
                   </div>
                   <ChevronDownIcon
@@ -105,7 +107,7 @@ const BlogPage = ({ data, intl }) => {
                   <span className="flex-1 ec-font-heading-2">
                     {blogPost.title}
                   </span>
-                  <span className="mt-1.5">{blogPost.date}</span>
+                  <time className="mt-1.5" dateTime={blogPost.dateISO}>{blogPost.date}</time>
                 </h2>
                 <div
                   className="prose mb-24"

@@ -1,8 +1,8 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-const AvatarBubble = (role) => {
-  const isAssistant = role === "assistant"
+const AvatarBubble = (messagerRole) => {
+  const isAssistant = messagerRole === "assistant"
   const baseClasses =
     "flex-none size-10 md:size-16 rounded-full overflow-hidden"
   const avatarClasses = `${baseClasses} ${
@@ -15,7 +15,7 @@ const AvatarBubble = (role) => {
     <div className="size-fit relative">
       <StaticImage
         src="../../images/pixelcan.png"
-        alt="Ercan Cicek avatar"
+        alt=""
         className={avatarClasses}
         objectPosition={"40%"}
       />

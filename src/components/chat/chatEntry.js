@@ -3,12 +3,12 @@ import TypingAnimation from "./typingAnimation"
 import AvatarBubble from "./avatarBubble"
 
 const ChatEntry = ({
-  role,
+  messagerRole,
   message,
   messageLoading,
   additionalClasses = "",
 }) => {
-  const isAssistant = role === "assistant"
+  const isAssistant = messagerRole === "assistant"
   const baseClasses = "flex flex-row items-center px-6 py-4 min-h-16 relative"
   const triangleBaseClasses =
     "after:content-[''] after:block after:absolute after:top-0 after:size-0 after:border after:border-r-[15px] after:border-transparent"
@@ -25,7 +25,7 @@ const ChatEntry = ({
     <div
       className={`flex flex-row gap-6 ${isAssistant ? "" : "pr-4 justify-end"}`}
     >
-      {isAssistant && <AvatarBubble role={role} />}
+      {isAssistant && <AvatarBubble messagerRole={messagerRole} />}
       <div className={messageClasses}>
         {messageLoading ? (
           <TypingAnimation />

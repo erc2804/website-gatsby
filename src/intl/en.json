@@ -1,9 +1,18 @@
 {
   "header": {
     "to-home": "To home page",
-    "toggle-menu": "Toggle menu",
+    "nav": {
+      "aria-label": "Main navigation"
+    },
+    "show-main-navigation": "Show main navigation",
+    "hide-main-navigation": "Hide main navigation",
     "switch-lang-to-german": "Switch the language to german",
     "switch-lang-to-english": "Switch the language to english"
+  },
+  "footer": {
+    "nav": {
+      "aria-label": "Mandatory navigation"
+    }
   },
   "chat-bubble": {
     "starter": "How are you doing?",
@@ -18,6 +27,14 @@
     "meta": {
       "title": "Ercan Cicek | Experienced Frontend Developer & UX Designer in Dusseldorf | Portfolio & Blog",
       "description": "Welcome to the website of Ercan Cicek, a Frontend Developer and UX Designer based in Dusseldorf. Explore the portfolio showcasing innovative web applications, read insightful articles on my blog, and learn more about me and my work."
+    },
+    "main-content": {
+      "aria-label": "Ercan Cicek, UX Designer and UX Developer"
+    },
+    "skills": {
+      "list": {
+        "aria-label": "Skills"
+      }
     }
   },
   "portfolio": {
@@ -25,7 +42,12 @@
       "title": "Ercan Cicek's Portfolio | Web & App Projects",
       "description": "Explore Ercan Cicek's portfolio showcasing a variety of web and mobile development projects. Discover the technologies used, project details, and more."
     },
-    "box-image-alt": "smartphone screen of the portfolio entry"
+    "link-box": {
+      "aria-label": {
+        "part-before-label": "Go to portfolio project",
+        "part-before-desc": "Used technologies"
+      }
+    }
   },
   "portfolio-template": {
     "meta": {
@@ -39,7 +61,13 @@
     "main-button": {
       "part-before-label": "See",
       "part-after-label": "in action"
-    }
+    },
+    "techs": {
+      "list": {
+        "aria-label": "Used technologies"
+      }
+    },
+    "opens-in-new-tab": "opens in new tab"
   },
   "blog": {
     "meta": {
@@ -73,10 +101,13 @@
       "loading-answer": "The AI is thinking. Please wait...",
       "placeholder": "Start typing...",
       "send-message-title": "Send message",
-      "reset-chat": "Reset Chat"
+      "reset-chat": "Reset Chat",
+      "reset-chat-sr-only": "- this will clear the chat history",
+      "input-label-sr-only": "Your chat message for Ercan"
     },
     "questions": "Questions",
-    "contact": "Contact"
+    "contact": "Contact",
+    "opens-in-new-tab": "opens in new tab"
   },
   "error": {
     "rate-limit-exceeded": "So many people used this chatbot that we've reached the cost limit for now. Thank you for your interest and please try again later or contact me directly.",

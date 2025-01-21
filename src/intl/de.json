@@ -1,9 +1,18 @@
 {
   "header": {
     "to-home": "Zur Startseite",
-    "toggle-menu": "Menüansicht umschalten",
+    "nav": {
+      "aria-label": "Hauptnavigation"
+    },
+    "show-main-navigation": "Hauptnavigation anzeigen",
+    "hide-main-navigation": "Hauptnavigation ausblenden",
     "switch-lang-to-german": "Sprache in Deutsch umschalten",
     "switch-lang-to-english": "Sprache in Englisch umschalten"
+  },
+  "footer": {
+    "nav": {
+      "aria-label": "Pflichtnavigation"
+    }
   },
   "chat-bubble": {
     "starter": "Wie geht's?",
@@ -18,6 +27,14 @@
     "meta": {
       "title": "Ercan Cicek | Erfahrener Frontend-Entwickler & UX-Designer in Düsseldorf | Portfolio & Blog",
       "description": "Willkommen auf der Webseite von Ercan Cicek, einem Frontend-Entwickler und UX-Designer aus Düsseldorf. Erkunde das Portfolio mit innovativen Webanwendungen, lese aufschlussreiche Artikel in meinem Blog und erfahre mehr über mich und meine Arbeit."
+    },
+    "main-content": {
+      "aria-label": "Ercan Cicek, UX Designer und UX Developer"
+    },
+    "skills": {
+      "list": {
+        "aria-label": "Fähigkeitenliste"
+      }
     }
   },
   "portfolio": {
@@ -25,7 +42,12 @@
       "title": "Ercan Cicek's Portfolio | Web- & App-Projekte",
       "description": "Entdecke das Portfolio von Ercan Cicek, das eine Vielzahl von Web- und App-Entwicklungsprojekte beinhaltet. Erfahre mehr über die verwendeten Technologien, Projektdetails und weiteres."
     },
-    "box-image-alt": "Smartphone Ansicht des Portfolio-Eintrages"
+    "link-box": {
+      "aria-label": {
+        "part-before-label": "Zum Portfolioeintrag",
+        "part-before-desc": "Genutzte Technologien"
+      }
+    }
   },
   "portfolio-template": {
     "meta": {
@@ -39,7 +61,13 @@
     "main-button": {
       "part-before-label": "Jetzt",
       "part-after-label": "ansehen"
-    }
+    },
+    "techs": {
+      "list": {
+        "aria-label": "Genutzte Technologien"
+      }
+    },
+    "opens-in-new-tab": "öffnet in neuem Tab"
   },
   "blog": {
     "meta": {
@@ -73,10 +101,13 @@
       "loading-answer": "Die KI denkt nach. Bitte warte...",
       "placeholder": "Tippe drauf los...",
       "send-message-title": "Nachricht senden",
-      "reset-chat": "Gespräch zurücksetzen"
+      "reset-chat": "Gespräch zurücksetzen",
+      "reset-chat-sr-only": "- diese Aktion löscht den gesamten Gesprächsverlauf",
+      "input-label-sr-only": "Deine Chatnachricht für Ercan"
     },
     "questions": "Fragen",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "opens-in-new-tab": "öffnet in neuem Tab"
   },
   "error": {
     "rate-limit-exceeded": "So viele Leute haben diesen Chatbot benutzt, dass wir das Kostenlimit erreicht haben. Vielen Dank für Euer Interesse! Versucht es bitte später noch einmal oder kontaktiert mich direkt.",

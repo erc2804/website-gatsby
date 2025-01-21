@@ -29,6 +29,7 @@ const SocialMediaLink = ({ label, labelDe, url, icon, address, intl }) => (
     <div className="flex flex-col">
       <span className="ec-font-base">{intl.locale === 'de' && labelDe ? labelDe : label}</span>
       <span className="ec-font-subheading font-bold">{address}</span>
+      <span className="sr-only">{`, ${intl.formatMessage({ id: 'about-me.opens-in-new-tab' })}`}</span>
     </div>
   </a>
 )
@@ -88,14 +89,14 @@ const AboutmePage = ({ intl }) => {
             <div className="absolute inset-0 bg-brand-green-high-lvl/20 z-20"></div>
           </div>
         </div>
-        <hr className="border-gray-low-lvl my-8 md:my-12" />
+        <hr className="border-gray-low-lvl my-8 md:my-12" aria-hidden="true" />
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="flex-1 flex flex-col gap-6">
-            <h3 className="ec-font-heading-2">{intl.formatMessage({ id: "about-me.questions" })}</h3>
+            <h2 className="ec-font-heading-2">{intl.formatMessage({ id: "about-me.questions" })}</h2>
             <AiChatbot />
           </div>
           <div className="md:sticky md:top-28 md:h-full flex-none flex flex-col gap-6">
-            <h3 className="ec-font-heading-2">{intl.formatMessage({ id: "about-me.contact" })}</h3>
+            <h2 className="ec-font-heading-2">{intl.formatMessage({ id: "about-me.contact" })}</h2>
             <div className="flex flex-col gap-6 min-[500px]:items-center md:items-stretch">
               {allSocialMediaBoxes.map((socialMediaBox) => (
                 <SocialMediaLink

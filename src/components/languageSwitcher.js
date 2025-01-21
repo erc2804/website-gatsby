@@ -10,6 +10,7 @@ const LangButton = ({ isActive = false, ariaLabel, onDark, onClick, children }) 
       className={`size-11 transition-colors relative ${textColorClasses} ${isActive ? activeClasses : ''}`}
       onClick={onClick}
       aria-label={ariaLabel}
+      aria-current={isActive ? "true" : undefined}
     >
       <span className="relative">{children}</span>
     </button>
@@ -36,7 +37,7 @@ const LanguageSwitcher = ({ onDark }) => {
       >
         EN
       </LangButton>
-      <span className={onDark ? "text-brand-sand" : "text-typo-high-lvl"}>
+      <span className={onDark ? "text-brand-sand" : "text-typo-high-lvl"} aria-hidden="true">
         /
       </span>
       <LangButton

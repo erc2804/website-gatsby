@@ -126,6 +126,7 @@ const MouseChatBubble = ({ intl }) => {
       className="hidden lg:flex flex-col items-end gap-1 absolute z-50 pointer-events-none"
       style={elementPosStyles}
       ref={wrapperRef}
+      aria-hidden="true"
     >
       <div
         className={`flex flex-none transition-transform duration-500 transform aspect-square rounded-full size-10 bg-brand-sand ${

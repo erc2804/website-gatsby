@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import Header from "./header"
 import Footer from "./footer"
 import { Seo } from "../components/seo"
@@ -9,7 +9,12 @@ export default function Layout({
   currentLocale,
   children,
 }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { title, description, pathname, image, noindex } = seo
+
+  const handleMobileMenuToggle = (isOpen) => {
+    setIsMobileMenuOpen(isOpen)
+  }
 
   return (
     <div className="min-h-dvh">
@@ -21,11 +26,13 @@ export default function Layout({
         image={image}
         currentLocale={currentLocale}
       />
-      <Header onDark={onDark} />
-      {children}
-      {!onDark && 
-        <Footer />
-      }
+      <Header onDark={onDark} onMobileMenuToggle={handleMobileMenuToggle} />
+      <div inert={isMobileMenuOpen ? 'true' : undefined}>
+        {children}
+        {!onDark && 
+          <Footer />
+        }
+      </div>
     </div>
   )
 }

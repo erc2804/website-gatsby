@@ -94,7 +94,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
               </div>
             )}
             {techs && (
-              <div className="flex flex-wrap gap-2">
+              <ul className="flex flex-wrap gap-2" aria-label={intl.formatMessage({ id: 'portfolio-template.techs.list.aria-label' })}>
                 {techs.map((tech) => {
                   if (tech.mainListing) {
                     const respLabel =
@@ -105,7 +105,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
                   }
                   return <></>
                 })}
-              </div>
+              </ul>
             )}
             <a
               href={url}
@@ -117,7 +117,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
                 <ExternalLinkIcon />
               </div>
               <div className="flex flex-col">
-                <span className="ec-font-base">{urlDesc ?? url}</span>
+                <span className="ec-font-base" aria-hidden="true">{urlDesc ?? url}</span>
                 <span className="ec-font-subheading font-bold">
                   {intl.formatMessage({
                     id: "portfolio-template.main-button.part-before-label",
@@ -127,6 +127,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
                     id: "portfolio-template.main-button.part-after-label",
                   })}
                 </span>
+                <span className="sr-only">{`, ${intl.formatMessage({ id: 'portfolio-template.opens-in-new-tab' })}`}</span>
               </div>
             </a>
           </div>
@@ -134,9 +135,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
             <div className="max-w-40 md:max-w-64 lg:max-w-none lg:basis-80 size-fit overflow-hidden relative">
               <GatsbyImage
                 image={images[image]}
-                alt={`${intl.formatMessage({
-                  id: "portfolio.box-image-alt",
-                })}: ${label}`}
+                alt=""
                 imgStyle={{ objectFit: `contain` }}
               />
             </div>

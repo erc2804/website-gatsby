@@ -84,7 +84,7 @@ export default function AdpillarText({
   return (
     <span className={textClasses}>
       {currentAdpillarText}
-      <span className={`${textClasses} animate-blink`}>_</span>
+      <span className={`${textClasses} animate-blink`} aria-hidden="true">_</span>
     </span>
   )
 }

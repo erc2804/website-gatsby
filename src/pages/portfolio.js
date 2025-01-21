@@ -72,6 +72,17 @@ const PortfolioPage = ({
     })
   }, [intl.locale])
 
+  const createAriaLabelForPortfolioEntry = (label, categoryDesc, descText) => {
+    return intl.formatMessage({ id: "portfolio.link-box.aria-label.part-before-label" }) +
+      ": " +
+      label +
+      (categoryDesc ? ", " + categoryDesc : "") +
+      "; " +
+      intl.formatMessage({ id: "portfolio.link-box.aria-label.part-before-desc" }) +
+      ": " +
+      descText
+  }
+
   return (
     <Layout seo={seoInfo} currentLocale={intl.locale}>
       <main className="ec-layout-visual-content py-24">
@@ -87,6 +98,11 @@ const PortfolioPage = ({
                   ? portfolioBox.labelDe
                   : portfolioBox.label
               }
+              ariaLabel={createAriaLabelForPortfolioEntry(
+                portfolioBox.label,
+                portfolioBox.categoryDesc,
+                portfolioBox.mainTechLabels.join(", ")
+              )}
               url={
                 portfolioBox.content
                   ? `/${intl.locale ?? "en"}/portfolio/${slugify(
@@ -105,9 +121,7 @@ const PortfolioPage = ({
               {portfolioBox.image ? (
                 <GatsbyImage
                   image={images[portfolioBox.image]}
-                  alt={`${intl.formatMessage({
-                    id: "portfolio.box-image-alt",
-                  })}: ${portfolioBox.label}`}
+                  alt=""
                   imgStyle={{ objectFit: `contain` }}
                 />
               ) : portfolioBox.icon ? (

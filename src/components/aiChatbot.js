@@ -68,7 +68,7 @@ const AiChatbot = ({ intl }) => {
         const aiData = await callOpenAIAPi()
         setAnswerIsLoading(false)
         const assistantMessage = {
-          role: "assistant",
+          messagerRole: "assistant",
           content: aiData.choices[0].message.content,
         }
         setMessages((prevMessages) => [...prevMessages, assistantMessage])
@@ -91,7 +91,7 @@ const AiChatbot = ({ intl }) => {
   const sendMessage = () => {
     if (!answerIsLoading && inputValue && inputValue.length) {
       const newMessage = {
-        role: "user",
+        messagerRole: "user",
         content: inputValue,
       }
       setMessages((prevMessages) => [...prevMessages, newMessage])
@@ -139,40 +139,42 @@ const AiChatbot = ({ intl }) => {
   }, [messages, newUserMessage])
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6" aria-live="polite">
       {/* --- initial info if no messages sent yet --- */}
       {showInitialTyping ? (
-        <ChatEntry role={"assistant"} messageLoading={true} />
+        <ChatEntry messagerRole="assistant" messageLoading={true} />
       ) : (
         <ChatEntry
-          role={"assistant"}
+          messagerRole="assistant"
           message={intl.formatMessage({ id: 'about-me.ai-chatbot.first-message' })}
         />
       )}
       {/* --- messages --- */}
       {messages &&
         messages.map((message, index) => {
-          if (message.role === "system") {
+          if (message.messagerRole === "system") {
             return null
           }
           return (
             <ChatEntry
               key={index}
-              role={message.role}
+              messagerRole={message.messagerRole}
               message={message.content}
             />
           )
         })}
       {/* --- assistant answer loading */}
       {answerIsLoading && (
-        <ChatEntry role={"assistant"} messageLoading={true} />
+        <ChatEntry messagerRole="assistant" messageLoading={true} />
       )}
       {/* --- error --- */}
-      {error && <div className="text-red-500 font-semibold">{error}</div>}
+      {error && <div className="text-red-500 font-semibold" role="alert">{error}</div>}
       {/* --- user message input --- */}
       <div className="flex flex-col gap-2" ref={typingContainerRef}>
         <form onSubmit={handleFormSubmit} className="relative">
+          <label htmlFor="chat-input" className="sr-only">{intl.formatMessage({ id: 'about-me.ai-chatbot.input-label-sr-only' })}</label>
           <input
+            id="chat-input"
             onChange={(e) => handleInputTyping(e)}
             value={inputValue}
             type="text"
@@ -198,6 +200,7 @@ const AiChatbot = ({ intl }) => {
           className="self-end w-fit px-3 py-1 rounded-2xl text-typo-medium-lvl disabled:text-typo-low-lvl disabled:cursor-wait"
         >
           {intl.formatMessage({ id: 'about-me.ai-chatbot.reset-chat' })}
+          <span className="sr-only">. {intl.formatMessage({ id: 'about-me.ai-chatbot.reset-chat-sr-only' })}</span>
         </button>
       </div>
     </div>

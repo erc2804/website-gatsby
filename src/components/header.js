@@ -34,16 +34,21 @@ const navElements = [
   }
 ]
 
-const Header = ({ onDark, intl }) => {
+const Header = ({ onDark, onMobileMenuToggle, intl }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   )
   const [isScrolled, setIsScrolled] = useState(false)
   const prevWindowWidth = useRef(windowWidth)
+  const firstNavElementRef = useRef(null)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
+  }
+
+  const hideMenu = () => {
+    setIsOpen(false)
   }
 
   const desktopNavElements = useMemo(
@@ -55,7 +60,7 @@ const Header = ({ onDark, intl }) => {
     if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth)
       if (prevWindowWidth.current < 768 && window.innerWidth >= 768) {
-        setIsOpen(false)
+        hideMenu()
       }
       prevWindowWidth.current = window.innerWidth
     }
@@ -70,9 +75,14 @@ const Header = ({ onDark, intl }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-hidden")
+      // --- focus on first nav element when opening menu
+      if (firstNavElementRef.current) {
+        firstNavElementRef.current.focus();
+      }
     } else {
       document.body.classList.remove("overflow-hidden")
     }
+    onMobileMenuToggle(isOpen)
   }, [isOpen])
 
   useEffect(() => {
@@ -103,7 +113,7 @@ const Header = ({ onDark, intl }) => {
         isScrolled && !onDark ? "shadow-md" : ""
       } transition-all z-50`}
     >
-      <nav className="flex-none px-6 py-5 flex flex-row items-center justify-between md:justify-start md:gap-12 h-24">
+      <nav className="flex-none px-6 py-5 flex flex-row items-center justify-between md:justify-start md:gap-12 h-24" aria-label={intl.formatMessage({ id: 'header.nav.aria-label' })}>
         <Link to="/" aria-label={ intl.formatMessage({ id: 'header.to-home' }) }>
           <EcLogo onDark={onDark} isOpen={isOpen} />
         </Link>
@@ -119,7 +129,7 @@ const Header = ({ onDark, intl }) => {
         </div>
         <button
           className="flex md:hidden justify-center items-center size-10"
-          aria-label={ intl.formatMessage({ id: 'header.toggle-menu' }) }
+          aria-label={ isOpen ? intl.formatMessage({ id: 'header.hide-main-navigation' }) : intl.formatMessage({ id: 'header.show-main-navigation' }) }
           onClick={toggleMenu}
         >
           <BurgerMenu onDark={onDark} isOpen={isOpen} />
@@ -127,8 +137,12 @@ const Header = ({ onDark, intl }) => {
       </nav>
       {isOpen && (
         <div className="pt-20 pb-6 flex-1 flex flex-col">
-          {navElements.map((navElement) => (
-            <NavLink key={navElement.to} to={navElement.to}>
+          {navElements.map((navElement, index) => (
+            <NavLink 
+              key={navElement.to} 
+              to={navElement.to}
+              ref={index === 0 ? firstNavElementRef : null}
+            >
               {intl.locale === 'de' && navElement.labelDe ? navElement.labelDe : navElement.label}
             </NavLink>
           ))}
