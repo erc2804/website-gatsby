@@ -22,7 +22,7 @@ const HomePage = ({ intl }) => {
     <Layout seo={seoInfo} currentLocale={intl.locale} onDark>
       <div className="min-h-dvh relative">
         <main className="z-30 relative pt-24 pl-8 md:pl-14 xl:pl-32 2xl:pl-52 min-h-dvh-minus-footer">
-          <h1 className="pt-36 md:pt-36 2xl:pt-52 flex flex-col gap-2 text-4xl md:text-7xl xl:text-8xl tracking-[0.125rem] uppercase overflow-hidden" aria-label={intl.formatMessage({ id: 'index.main-content.aria-label' })}>
+          <h1 className="pt-36 md:pt-36 2xl:pt-52 flex flex-col gap-2 text-4xl md:text-7xl xl:text-8xl tracking-[0.125rem] uppercase overflow-hidden [&>span]:break-all" aria-label={intl.formatMessage({ id: 'index.main-content.aria-label' })}>
             <span aria-hidden="true">
               <span className="text-brand-green-medium-lvl" data-chat={intl.formatMessage({ id: 'chat-bubble.first-name' })}>Ercan</span>
               &nbsp;

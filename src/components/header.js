@@ -107,7 +107,7 @@ const Header = ({ onDark, onMobileMenuToggle, intl }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full flex flex-col ${
+      className={`fixed top-0 left-0 w-full flex flex-col overflow-auto ${
         isOpen ? "h-dvh bg-gray-subtle-lvl" : ""
       } ${!onDark ? "bg-gray-subtle-lvl" : ""} ${
         isScrolled && !onDark ? "shadow-md" : ""
