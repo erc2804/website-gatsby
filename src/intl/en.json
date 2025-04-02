@@ -195,6 +195,15 @@
         "headline": "Contact Me",
         "desc": "If you have any questions or suggestions about this Privacy Policy, please contact me at: "
       }
+    },
+    "swwa-privacy": {
+      "headline": "Start with WAI-ARIA Privacy Policy",
+      "intro": "The extension “Start with WAI-ARIA“ does not collect any personal data. All features of the extension operate entirely locally in your browser. The “storage” permission is used solely to save your settings (for example themes or hidden patterns) locally to personalize your user experience.",
+      "data-location": "No data is transmitted to external servers or third parties. Your privacy is fully protected.",
+      "contact": {
+        "headline": "Contact Me",
+        "desc": "If you have any questions or suggestions about this Privacy Policy, please contact me at: "
+      }
     }
   }
 }

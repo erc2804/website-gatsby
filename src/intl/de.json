@@ -199,6 +199,15 @@
         "headline": "Kontaktiere mich",
         "desc": "Wenn du Fragen oder Vorschläge zu dieser Datenschutzerklärung hast, kannst du mich unter folgender E-Mail-Adresse kontaktieren: "
       }
+    },
+    "swwa-privacy": {
+      "headline": "Start with WAI-ARIA Datenschutz-Erklärung",
+      "intro": "Die Erweiterung “Start with WAI-ARIA“ sammelt keine personenbezogenen Daten. Alle Funktionen der Erweiterung laufen vollständig lokal in Ihrem Browser. Die Berechtigung “storage” wird ausschließlich dazu verwendet, Ihre Einstellungen (z. B. Themes oder ausgeblendete Patterns) lokal zu speichern, um Ihre Nutzererfahrung zu personalisieren.",
+      "data-location": "Es erfolgt keine Übertragung von Daten an externe Server oder Drittanbieter. Ihre Privatsphäre ist vollständig geschützt.",
+      "contact": {
+        "headline": "Kontaktiere mich",
+        "desc": "Wenn du Fragen oder Vorschläge zu dieser Datenschutzerklärung hast, kannst du mich unter folgender E-Mail-Adresse kontaktieren: "
+      }
     }
   }
 }
