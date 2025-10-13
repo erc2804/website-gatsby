@@ -3,11 +3,11 @@ import { injectIntl } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import MouseChatBubble from "../components/mouseChatBubble"
-import bgLandscapeImg from "../images/index/bg-landscape.jpg"
-import bgPortraitImg from "../images/index/bg-portrait.jpg"
+import bgLandscapeImg from "../images/index/bg-landscape.png"
+import bgPortraitImg from "../images/index/bg-portrait.png"
 import AdpillarText from "../components/adpillarText"
 import allSkills from "../data/skillsData.json"
-import ecPhoto from "../images/index/bg-portrait.jpg"
+import ecPhoto from "../images/index/bg-portrait.png"
 
 const adpillarTexts = ["Designer", "Developer"]
 
