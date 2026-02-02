@@ -1,6 +1,66 @@
 [
     {
       "type": "WEB",
+      "label": "KONUX",
+      "url": "https://konux.com/",
+      "categoryDesc": "Website",
+      "image": "konux",
+      "imageIsPurelyDecorative": "true",
+      "techs": [
+        {
+          "label": "React",
+          "mainListing": "true"
+        },
+        {
+          "label": "TypeScript",
+          "mainListing": "true"
+        },
+        {
+          "label": "NX",
+          "mainListing": "true"
+        },
+        {
+          "label": "Bulletproof React",
+          "mainListing": "false"
+        },
+        {
+          "label": "AntDesign",
+          "mainListing": "true"
+        },
+        {
+          "label": "Handsontable",
+          "mainListing": "false"
+        },
+        {
+          "label": "AWS",
+          "mainListing": "false"
+        },
+        {
+          "label": "HTML",
+          "mainListing": "false"
+        },
+        {
+          "label": "S/CSS",
+          "mainListing": "false"
+        },
+        {
+          "label": "Figma",
+          "mainListing": "true"
+        },
+        {
+          "label": "Jira",
+          "mainListing": "false"
+        }
+      ],
+      "content": {
+        "title": "Frontend Development and UI/UX Design for KONUX (Railway Infrastructure Technology)",
+        "titleDe": "Frontend-Entwicklung und UI/UX-Design für KONUX (Technologie für Bahninfrastruktur)",
+        "description": "As part of my work at KONUX, I contributed as a frontend developer and UI/UX designer to the further development of the AI-based platform for managing and analyzing railway infrastructure. The focus was on frontend development with React within an NX monorepo architecture, as well as the UX-side elaboration of complex, data-driven use cases.\nI worked closely with data engineers, backend and frontend developers, designers, and stakeholders to conceptually guide and implement new features in the frontend. This included both the enhancement of existing interfaces and the conception of new workflows.\nA central part of my work was the conception and implementation of an AI-powered solution for the automated creation of new assets. I led the UX conception, gathered requirements and feedback from stakeholders, designed the API contracts in close collaboration with the backend developer, and then implemented the frontend myself using React, NX, and a bulletproof-react architecture.",
+        "descriptionDe": "Im Rahmen meiner Tätigkeit bei KONUX war ich als Frontend-Entwickler und UI/UX-Designer an der Weiterentwicklung der KI-basierten Plattform für das Management und die Analyse von Bahninfrastruktur beteiligt. Der Schwerpunkt lag auf der Frontend-Entwicklung mit React innerhalb einer NX-Monorepo-Architektur sowie auf der UX-seitigen Ausarbeitung komplexer, datengetriebener Anwendungsfälle.\nIch arbeitete eng mit Data Engineers, Backend- und Frontend-Entwicklern, Designern und Stakeholdern zusammen, um neue Features konzeptionell zu begleiten und im Frontend umzusetzen. Dazu gehörten sowohl die Weiterentwicklung bestehender Oberflächen als auch die Konzeption neuer Workflows.\nEin zentraler Bestandteil meiner Arbeit war die Konzeption und Umsetzung einer KI-gestützten Lösung zur automatisierten Anlage neuer Assets. Dabei übernahm ich die UX-Konzeption, sammelte Anforderungen und Feedback von Stakeholdern ein, gestaltete die API-Schnittstellen in enger Abstimmung mit dem Backend-Entwickler und setzte das Frontend anschließend selbst mit React, NX und einer Bulletproof-React-Architektur um."
+      }
+    },
+    {
+      "type": "WEB",
       "label": "Curanto",
       "url": "https://www.curanto.de/",
       "categoryDesc": "Website",

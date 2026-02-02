@@ -1,4 +1,4 @@
-import React, { useMemo } from "react"
+import React, { useEffect, useMemo } from "react"
 import { injectIntl } from "gatsby-plugin-intl"
 import slugify from "slugify"
 import { graphql } from "gatsby"
@@ -37,6 +37,7 @@ const PortfolioTemplate = ({ data, intl, pageContext }) => {
     content,
     techs,
   } = pageContext
+  useEffect(() => { window.scrollTo(0, 0) }, [])
   const slug = slugify(label, { lower: true, strict: true })
   const images = useMemo(
     () => transformImages(data.allFile.edges),
