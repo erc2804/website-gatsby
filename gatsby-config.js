@@ -1,9 +1,6 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-require("dotenv").config({
-  path: ".env",
-})
 module.exports = {
   siteMetadata: {
     title: `Ercan Cicek - UX Developer & Designer`,
@@ -64,7 +61,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        name: `data`,
         path: `${__dirname}/src/data/`,
       },
     },
