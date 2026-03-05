@@ -69,7 +69,7 @@ const AiChatbot = ({ intl }) => {
         setAnswerIsLoading(false)
         const assistantMessage = {
           messagerRole: "assistant",
-          content: aiData.choices[0].message.content,
+          content: aiData.content[0].text,
         }
         setMessages((prevMessages) => [...prevMessages, assistantMessage])
         setNewUserMessage(null)

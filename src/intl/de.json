@@ -78,7 +78,7 @@
   "about-me": {
     "meta": {
       "title": "Über Ercan Cicek | Erfahrener Frontend-Entwickler & UX-Designer in Düsseldorf",
-      "description": "Erfahre mehr über Ercan Cicek, einen erfahrenen Frontend-Entwickler und UX-Designer mit Sitz in Düsseldorf, der über mehr als neun Jahre Erfahrung in der Konzeption und Implementierung von Webanwendungen verfügt. Er ist spezialisiert auf Vue, React & Figma und schlägt die Brücke zwischen Design und Entwicklung."
+      "description": "Erfahre mehr über Ercan Cicek, einen erfahrenen Frontend-Entwickler und UX-Designer mit Sitz in Düsseldorf, der über mehr als 10 Jahre Erfahrung in der Konzeption und Implementierung von Webanwendungen verfügt. Er ist spezialisiert auf Vue, React & Figma und schlägt die Brücke zwischen Design und Entwicklung."
     },
     "ec-title": {
       "part-before-linebreak": "Entwickler. Designer.",
@@ -86,7 +86,7 @@
     },
     "profile-image-alt": "Ercan Cicek Profilbild",
     "ec-description": {
-      "part-before-skills-list": "Ich verfüge über mehr als neun Jahre Erfahrung in der Frontend-Entwicklung und im UI/UX-Design, wobei ich mich auf ",
+      "part-before-skills-list": "Ich verfüge über mehr als 10 Jahre Erfahrung in der Frontend-Entwicklung und im UI/UX-Design, wobei ich mich auf ",
       "and": "und",
       "part-after-skills-list": " als meine bevorzugten Werkzeuge spezialisiert habe. Zudem habe ich mich auf Barrierefreiheit nach WCAG spezialisiert, um Unternehmen dabei zu unterstützen, barrierefreie digitale Produkte zu entwickeln und dem ",
       "a11y": {

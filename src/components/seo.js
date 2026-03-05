@@ -18,6 +18,9 @@ export const Seo = ({ title, description, pathname, image, currentLocale, noinde
     url: `${siteUrl}${pathname || ``}`,
   }
 
+  const altLocale = currentLocale === "de" ? "en" : "de"
+  const basePath = pathname || "/"
+
   return (
     <Helmet>
       <html lang={currentLocale} />
@@ -32,6 +35,9 @@ export const Seo = ({ title, description, pathname, image, currentLocale, noinde
       <meta property="og:type" content="website" />
       <link rel="icon" href={ecLogo} />
       <link rel="canonical" href={seo.url} />
+      {currentLocale && <link rel="alternate" hrefLang={currentLocale} href={`${siteUrl}/${currentLocale}${basePath}`} />}
+      {currentLocale && <link rel="alternate" hrefLang={altLocale} href={`${siteUrl}/${altLocale}${basePath}`} />}
+      {currentLocale && <link rel="alternate" hrefLang="x-default" href={`${siteUrl}/en${basePath}`} />}
       {noindex && <meta name="robots" content="noindex, nofollow" />}
       {children}
     </Helmet>

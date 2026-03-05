@@ -78,7 +78,7 @@
   "about-me": {
     "meta": {
       "title": "About Ercan Cicek | Experienced Frontend Developer & UX Designer in Dusseldorf",
-      "description": "Learn more about Ercan Cicek, an experienced Frontend Developer and UX Designer based in Dusseldorf with over nine years of experience in conceptualizing and implementing web applications. Specializing in Vue, React, Figma and building the bridge between design and development."
+      "description": "Learn more about Ercan Cicek, an experienced Frontend Developer and UX Designer based in Dusseldorf with over 10 years of experience in conceptualizing and implementing web applications. Specializing in Vue, React, Figma and building the bridge between design and development."
     },
     "ec-title": {
       "part-before-linebreak": "Developer. Designer.",
@@ -86,7 +86,7 @@
     },
     "profile-image-alt": "Ercan Cicek profile image",
     "ec-description": {
-      "part-before-skills-list": "With over nine years of experience in frontend development and UI/UX design, I specialize in ",
+      "part-before-skills-list": "With over 10 years of experience in frontend development and UI/UX design, I specialize in ",
       "and": "and",
       "part-after-skills-list": " as my preferred tools. My passion lies in creating intuitive and attractive interfaces that provide real added value to users. Continuously seeking out new trends and technologies, I strive to enhance user experience and project performance. My expertise in accessibility ensures that I help companies design websites in compliance with the ",
       "a11y": {
@@ -97,7 +97,7 @@
       "part-after-ielts": " C1 certificate and possessing multilingual communication skills, I effectively collaborate with international teams and stakeholders to implement their requirements and feedback."
     },
     "ai-chatbot": {
-      "first-message": "I am a GPT trained to answer questions on behalf of Ercan. Feel free to ask me anything. For specific inquiries, please consider direct contact.",
+      "first-message": "I am an AI trained to answer questions on behalf of Ercan. Feel free to ask me anything. For specific inquiries, please consider direct contact.",
       "loading-answer": "The AI is thinking. Please wait...",
       "placeholder": "Start typing...",
       "send-message-title": "Send message",

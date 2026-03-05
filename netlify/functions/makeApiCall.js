@@ -22,25 +22,28 @@ const fetchGist = async () => {
   return gistFile.content
 }
 
-const fetchOpenAICompletions = async (messages) => {
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+const fetchClaudeCompletion = async (systemPrompt, messages) => {
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      "x-api-key": process.env.ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
-      model: "gpt-3.5-turbo",
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 1024,
+      system: systemPrompt,
       messages: messages,
       temperature: 0.33,
     }),
   })
 
   if (!response.ok) {
-    if(response.status === 429) {
+    if (response.status === 429) {
       throw new Error(`Rate limit exceeded`)
     }
-    throw new Error(`Could not connect to OPENAI API.`)
+    throw new Error(`Could not connect to Claude API.`)
   }
 
   return await response.json()
@@ -48,13 +51,16 @@ const fetchOpenAICompletions = async (messages) => {
 
 exports.handler = async (event) => {
   try {
-    let messages = JSON.parse(event.body).messages
-    if (!messages.some((message) => message.role === "system")) {
-      const gistContent = await fetchGist(messages)
-      messages.unshift({ role: "system", content: gistContent })
-    }
+    const rawMessages = JSON.parse(event.body).messages
 
-    const data = await fetchOpenAICompletions(messages)
+    const gistContent = await fetchGist()
+
+    const messages = rawMessages.map((msg) => ({
+      role: msg.messagerRole === "assistant" ? "assistant" : "user",
+      content: msg.content,
+    }))
+
+    const data = await fetchClaudeCompletion(gistContent, messages)
 
     return {
       statusCode: 200,
