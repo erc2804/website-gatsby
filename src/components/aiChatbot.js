@@ -172,9 +172,9 @@ const AiChatbot = ({ intl }) => {
       {/* --- user message input --- */}
       <div className="flex flex-col gap-2" ref={typingContainerRef}>
         <form onSubmit={handleFormSubmit} className="relative">
-          <label htmlFor="chat-input" className="sr-only">{intl.formatMessage({ id: 'about-me.ai-chatbot.input-label-sr-only' })}</label>
           <input
             id="chat-input"
+            aria-label={intl.formatMessage({ id: 'about-me.ai-chatbot.input-label-sr-only' })}
             onChange={(e) => handleInputTyping(e)}
             value={inputValue}
             type="text"
