@@ -51,7 +51,26 @@ const fetchClaudeCompletion = async (systemPrompt, messages) => {
 
 exports.handler = async (event) => {
   try {
-    const rawMessages = JSON.parse(event.body).messages
+    if (event.httpMethod !== 'POST') {
+      return { statusCode: 405, body: JSON.stringify({ message: 'Method not allowed' }) }
+    }
+
+    const body = JSON.parse(event.body)
+    const rawMessages = body.messages
+
+    if (!Array.isArray(rawMessages) || rawMessages.length === 0) {
+      return { statusCode: 400, body: JSON.stringify({ message: 'Invalid input' }) }
+    }
+
+    if (rawMessages.length > 50) {
+      return { statusCode: 400, body: JSON.stringify({ message: 'Too many messages' }) }
+    }
+
+    for (const msg of rawMessages) {
+      if (!msg.content || typeof msg.content !== 'string' || msg.content.length > 10000) {
+        return { statusCode: 400, body: JSON.stringify({ message: 'Invalid message format' }) }
+      }
+    }
 
     const gistContent = await fetchGist()
 

@@ -1,7 +1,25 @@
 [build]
   functions = "netlify/functions"
 
+[dev]
+  command = "gatsby develop"
+  framework = "#custom"
+  targetPort = 8000
+  port = 8888
+
 [[headers]]
   for = "/*"
     [headers.values]
       Cache-Control = "public, max-age=86400, must-revalidate"
+      X-Content-Type-Options = "nosniff"
+      X-Frame-Options = "DENY"
+      X-XSS-Protection = "1; mode=block"
+      Referrer-Policy = "strict-origin-when-cross-origin"
+      Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/.netlify/functions/*"
+    [headers.values]
+      Access-Control-Allow-Origin = "https://www.ercancicek.com"
+      Access-Control-Allow-Methods = "POST"
+      Access-Control-Allow-Headers = "Content-Type"
