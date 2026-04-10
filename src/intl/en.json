@@ -110,7 +110,8 @@
     "opens-in-new-tab": "opens in new tab"
   },
   "error": {
-    "rate-limit-exceeded": "So many people used this chatbot that we've reached the cost limit for now. Thank you for your interest and please try again later or contact me directly.",
+    "rate-limit-api": "So many people used this chatbot that we've reached the cost limit for now. Thank you for your interest and please try again later or contact me directly.",
+    "rate-limit-user": "Please wait a moment before sending another message.",
     "generic": "An unexpected error occurred. Please try again later.",
     "page-not-found": "Page not found.",
     "main-action": "Go home"

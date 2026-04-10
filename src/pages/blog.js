@@ -6,6 +6,7 @@ import { CalendarIcon } from "../components/icons/calendarIcon"
 import { ChevronDownIcon } from "../components/icons/chevronDownIcon"
 import ecLogoWithBg from "../images/logo_original_with_bg.png"
 import { injectIntl } from "gatsby-plugin-intl"
+import DOMPurify from "dompurify"
 
 const formatDate = (dateString, currentLocale) => {
   const options = { year: 'numeric', month: 'long', day: 'numeric' }
@@ -111,7 +112,7 @@ const BlogPage = ({ data, intl }) => {
                 </h2>
                 <div
                   className="prose mb-24"
-                  dangerouslySetInnerHTML={{ __html: blogPost.htmlContent }}
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blogPost.htmlContent) }}
                 ></div>
               </div>
             </article>

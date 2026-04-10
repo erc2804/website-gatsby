@@ -77,8 +77,10 @@ const AiChatbot = ({ intl }) => {
       } catch (error) {
         console.error("error: ", error.message)
         let userErrorMessage;
-        if (error.message.includes("Rate limit exceeded")) {
-          userErrorMessage = intl.formatMessage({ id: 'error.rate-limit-exceeded' })     
+        if (error.message.includes("Rate limit exceeded. Please wait")) {
+          userErrorMessage = intl.formatMessage({ id: 'error.rate-limit-user' })
+        } else if (error.message.includes("Rate limit exceeded")) {
+          userErrorMessage = intl.formatMessage({ id: 'error.rate-limit-api' })
         } else {
           userErrorMessage = intl.formatMessage({ id: 'error.generic' })
         }

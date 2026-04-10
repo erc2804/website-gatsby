@@ -1,5 +1,25 @@
 const fetch = require("node-fetch")
 
+const rateLimitMap = new Map()
+const RATE_LIMIT_WINDOW = 60 * 1000
+const MAX_REQUESTS = 10 // --- 10 requests per minute
+
+const checkRateLimit = (ip) => {
+  const now = Date.now()
+  const userRequests = rateLimitMap.get(ip) || []
+
+  const recentRequests = userRequests.filter(timestamp => now - timestamp < RATE_LIMIT_WINDOW)
+
+  if (recentRequests.length >= MAX_REQUESTS) {
+    return false
+  }
+
+  recentRequests.push(now)
+  rateLimitMap.set(ip, recentRequests)
+
+  return true
+}
+
 const fetchGist = async () => {
   const gistResponse = await fetch(
     `https://api.github.com/gists/${process.env.GITHUB_GIST_ID}`,
@@ -51,7 +71,39 @@ const fetchClaudeCompletion = async (systemPrompt, messages) => {
 
 exports.handler = async (event) => {
   try {
+    const ip = event.headers['x-forwarded-for'] || event.headers['x-nf-client-connection-ip'] || 'unknown'
+
+    if (!checkRateLimit(ip)) {
+      return {
+        statusCode: 429,
+        body: JSON.stringify({ message: 'Rate limit exceeded. Please wait before sending another message.' }),
+      }
+    }
+
     const rawMessages = JSON.parse(event.body).messages
+
+    if (!Array.isArray(rawMessages) || rawMessages.length === 0) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: 'Invalid input' }),
+      }
+    }
+
+    if (rawMessages.length > 50) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: 'Too many messages' }),
+      }
+    }
+
+    for (const msg of rawMessages) {
+      if (!msg.content || typeof msg.content !== 'string' || msg.content.length > 10000) {
+        return {
+          statusCode: 400,
+          body: JSON.stringify({ message: 'Invalid message format' }),
+        }
+      }
+    }
 
     const gistContent = await fetchGist()
 
