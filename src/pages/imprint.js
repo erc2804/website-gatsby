@@ -17,7 +17,7 @@ const ImprintPage = ({ intl }) => {
               <li>{ intl.formatMessage({ id: 'legal-texts.imprint.address.second-line' }) }</li>
               <li>{ intl.formatMessage({ id: 'legal-texts.imprint.address.third-line' }) }</li>
               <li>
-              { intl.formatMessage({ id: 'legal-texts.imprint.address.email' }) }<a href="mailto:erc2804@outlook.de">erc2804@outlook.de</a>
+              { intl.formatMessage({ id: 'legal-texts.imprint.address.email' }) }<a href="mailto:contact@ercancicek.com">contact@ercancicek.com</a>
               </li>
               <li>
               { intl.formatMessage({ id: 'legal-texts.imprint.address.phone' }) }<a href="tel:+4915203684025">+49 1520 3684025</a>

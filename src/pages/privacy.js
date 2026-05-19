@@ -20,7 +20,7 @@ const PrivacyPolicyPage = ({ intl }) => {
           </h2>
           <p>
             {intl.formatMessage({ id: "legal-texts.privacy.contact.desc" })}
-            <a href="mailto:erc2804@outlook.de">erc2804@outlook.de</a>
+            <a href="mailto:contact@ercancicek.com">contact@ercancicek.com</a>
           </p>
         </div>
       </main>
