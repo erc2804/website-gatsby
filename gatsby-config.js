@@ -28,14 +28,16 @@ module.exports = {
         `,
         resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
         resolvePages: ({ allSitePage: { nodes: allPages } }) => {
-          return allPages.map((page) => {
-            return { ...page }
-          })
+          return allPages
+            .filter((page) => /^\/(en|de)\//.test(page.path))
+            .filter((page) => !page.path.includes("/404"))
+            .map((page) => ({ ...page }))
         },
         serialize: ({ path }) => {
           return {
             url: path,
             changefreq: "monthly",
+            lastmod: new Date().toISOString(),
           }
         },
       },

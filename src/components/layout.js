@@ -10,7 +10,7 @@ export default function Layout({
   children,
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { title, description, pathname, image, noindex } = seo
+  const { title, description, pathname, image, noindex, structuredData } = seo
 
   const handleMobileMenuToggle = (isOpen) => {
     setIsMobileMenuOpen(isOpen)
@@ -25,6 +25,7 @@ export default function Layout({
         pathname={pathname}
         image={image}
         currentLocale={currentLocale}
+        structuredData={structuredData}
       />
       <Header onDark={onDark} onMobileMenuToggle={handleMobileMenuToggle} />
       <div inert={isMobileMenuOpen ? 'true' : undefined}>

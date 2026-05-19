@@ -20,13 +20,14 @@
     "language-switcher": "Keine Sorge, ich spreche beide Sprachen.",
     "legal-links": "Wirklich?",
     "main-links": "Wohin als nächstes?",
+    "ai": "\"Stimmt! Ich lag falsch. Danke für den Hinweis!\"",
     "a11y": "Gute Wahl!",
     "first-name": "Mein Name wird Erdschan ausgesprochen (wie bei Dschungel)."
   },
   "index": {
     "meta": {
-      "title": "Ercan Cicek | Erfahrener Frontend-Entwickler & UX-Designer in Düsseldorf | Portfolio & Blog",
-      "description": "Willkommen auf der Webseite von Ercan Cicek, einem Frontend-Entwickler und UX-Designer aus Düsseldorf. Erkunde das Portfolio mit innovativen Webanwendungen, lese aufschlussreiche Artikel in meinem Blog und erfahre mehr über mich und meine Arbeit."
+      "title": "Ercan Cicek | Frontend-Entwickler & UX-Designer in Düsseldorf | Portfolio & Blog",
+      "description": "Willkommen auf der Webseite von Ercan Cicek, einem Frontend-Entwickler und UX-Designer aus dem Großraum Düsseldorf. Erkunde das Portfolio mit innovativen Webanwendungen, lese Artikel in meinem Blog und erfahre mehr über mich und meine Arbeit."
     },
     "main-content": {
       "aria-label": "Ercan Cicek, UX Designer und UX Developer"
@@ -77,8 +78,8 @@
   },
   "about-me": {
     "meta": {
-      "title": "Über Ercan Cicek | Erfahrener Frontend-Entwickler & UX-Designer in Düsseldorf",
-      "description": "Erfahre mehr über Ercan Cicek, einen erfahrenen Frontend-Entwickler und UX-Designer mit Sitz in Düsseldorf, der über mehr als 10 Jahre Erfahrung in der Konzeption und Implementierung von Webanwendungen verfügt. Er ist spezialisiert auf Vue, React & Figma und schlägt die Brücke zwischen Design und Entwicklung."
+      "title": "Über Ercan Cicek | Frontend-Entwickler & UX-Designer in Düsseldorf",
+      "description": "Erfahre mehr über Ercan Cicek, einen erfahrenen Frontend-Entwickler und UX-Designer mit Sitz im Großraum Düsseldorf, der über mehr als 10 Jahre Erfahrung in der Konzeption und Implementierung von Webanwendungen verfügt. Er ist spezialisiert auf Vue, React & Figma und schlägt die Brücke zwischen Design und Entwicklung."
     },
     "ec-title": {
       "part-before-linebreak": "Entwickler. Designer.",

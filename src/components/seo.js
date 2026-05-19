@@ -1,9 +1,10 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { buildStructuredData } from "./structuredData"
 import ecLogo from "../images/logo_original.png"
 
-export const Seo = ({ title, description, pathname, image, currentLocale, noindex = false, children }) => {
+export const Seo = ({ title, description, pathname, image, currentLocale, noindex = false, structuredData, children }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -39,6 +40,17 @@ export const Seo = ({ title, description, pathname, image, currentLocale, noinde
       {currentLocale && <link rel="alternate" hrefLang={altLocale} href={`${siteUrl}/${altLocale}${basePath}`} />}
       {currentLocale && <link rel="alternate" hrefLang="x-default" href={`${siteUrl}/en${basePath}`} />}
       {noindex && <meta name="robots" content="noindex, nofollow" />}
+      {!noindex &&
+        structuredData &&
+        buildStructuredData({
+          types: structuredData,
+          image: image || ecLogo,
+          locale: currentLocale,
+        }).map((schema, idx) => (
+          <script key={`ld-${idx}`} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
       {children}
     </Helmet>
   )

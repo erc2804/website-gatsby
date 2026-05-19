@@ -17,6 +17,7 @@ const HomePage = ({ intl }) => {
     description: intl.formatMessage({ id: "index.meta.description" }),
     pathname: "/",
     image: ecPhoto,
+    structuredData: ["service", "person"],
   }
   return (
     <Layout seo={seoInfo} currentLocale={intl.locale} onDark>

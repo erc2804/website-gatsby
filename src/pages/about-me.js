@@ -43,7 +43,8 @@ const AboutmePage = ({ intl }) => {
     title: intl.formatMessage({ id: 'about-me.meta.title' }),
     description: intl.formatMessage({ id: 'about-me.meta.description' }),
     pathname: `/about-me`,
-    image: ecAvatar
+    image: ecAvatar,
+    structuredData: ["person"],
   }
 
   return (
